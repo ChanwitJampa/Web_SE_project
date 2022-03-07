@@ -1,0 +1,188 @@
+.container{
+  width: 100rem;
+  height: 50rem;
+  padding: 100px 20px 10px 20px;
+}
+
+.container2{
+  flex-direction: row;
+  /* z-index: 2; */
+  height: 100%;
+}
+
+.mapBox{
+  text-align: center;
+  /* background-color: #FFF; */
+  background-color: #f7f3e3;
+  /* background-color: rgb(43, 153, 43); */
+  padding: 0;
+  /* margin-left: -15rem;
+  margin-top: -23rem; */
+  /* margin-left: -750rem; */
+  /* margin-right: -700rem; */
+  /* margin-top: -212rem; */
+  /* width: 100%; */
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.mySepecialClass{
+  font-size: 2rem !important;
+}
+
+.tableprovince{
+  margin: 2rem;
+  margin-left: 3rem;
+}
+
+.informationBox{
+  justify-content: center;
+  align-items: center;
+  margin-top: 8rem;
+  margin-right: 15rem;
+  width: 150rem;
+  height: 100%;
+  background-color: crimson;
+  z-index: 0;
+  border-radius: 2rem;
+  text-align: center;
+}
+
+.headerInformation{
+  margin-top: 5rem;
+  color: #FFF;
+}
+
+.provinceName{
+  color: #FFF;
+  font-weight: bold;
+  font-size: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.infoText{
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.history{
+  /* margin-top: 10rem; */
+  display: flex;
+  flex-direction: row;
+  /* margin-left: ; */
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.historyHeader{
+  color: #FFF;
+  font-size: 2rem;
+}
+
+.textHistory{
+  font-size: 1.5rem;
+  color: #FFF;
+}
+
+.box1{
+margin: 4rem;
+text-align: start;
+}
+
+.box2{
+  margin: 4rem;
+  text-align: start;
+
+}
+
+.box3{
+  margin: 4rem;
+  text-align: start;
+
+}
+
+.loadingbar{
+  margin-top: 10rem;
+
+}
+
+.space1{
+  margin-bottom: 5rem;
+}
+
+.space2{
+  /* margin-top: 5rem; */
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3rem;
+  /* background-color: rgb(20, 54, 207); */
+  
+  /* margin-left: 2rem; */
+}
+
+.space3{
+  /* margin: 0rem; */
+  height: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+
+}
+
+.chartRow{
+  height: 10rem;
+  width: 20rem;
+background-color: #FFF;
+margin: 1rem;
+
+}
+
+.chartBox{
+  height: 14rem;
+  margin-left: 2rem;
+}
+
+.newTable{
+  width: 50%;
+  height: 50%;
+  margin-left: 25%;
+  margin-bottom: 5rem;
+  background-color: #FFF;
+}
+
+.css-pfr4gq {
+  position: absolute;
+  height: 4px;
+  overflow: hidden;
+  background-color: #ffffff!important;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  display: block;
+  border-radius: 2px;
+  will-change: left,right;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation: animation-1dkbetu 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+  animation: animation-1dkbetu 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+
+.css-1tgyhd0 {
+  position: absolute;
+  height: 4px;
+  overflow: hidden;
+  background-color: #ffffff!important;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  display: block;
+  border-radius: 2px;
+  will-change: left,right;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation: animation-1rt1w7v 2.1s 1.15s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+  animation: animation-1rt1w7v 2.1s 1.15s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+}

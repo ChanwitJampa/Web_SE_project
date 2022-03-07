@@ -1,0 +1,108 @@
+/* The side navigation menu */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
+
+body{
+    font-family:'Prompt', sans-serif;
+    margin:0;
+    background-color: #F7F3E3;
+}
+.sidenav {
+    height: 100%;
+    width: 70px;
+    position: fixed;
+    z-index: 0;
+    left: 0;
+    top: 0px;
+    background-color: #2B2118;
+    overflow-x: hidden;
+    padding-top: 100px;
+    transition: 0.5s;
+    display: flexbox;
+}
+
+/* ON HOVER */
+.sidenav:hover{
+   width: 250px;
+   color: #f1f1f1;
+}
+
+/* The navigation menu links */
+.sidenav-link{
+    padding: 14px 10px 14px 10px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    transition: 0.3ss;
+    white-space: nowrap;  /* ไม่ขึ้นบรรทัดใหม่ */
+}
+
+.sidenav-link:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+    background-color: #B00020;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.sidenav-icon{
+    padding: 0px 40px 0px 20px;
+}
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+.navbar{
+    background-color: #B00020;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 99;
+    font-size: 16px;
+    color: #f1f1f1;
+    justify-content: space-between;
+}
+.navbar ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    
+}
+.navbar ul li{
+    display: flex;
+    align-items: center;
+    padding: 10px 15px 0px 15px;
+}
+.navbar-link, .navbar-logolink{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+.navbar-link:hover, .navbar-logolink:hover{
+    color: #111;
+}
+.navbar-logolink h2{
+    font-size: 30px;
+}
+.navbar-logo{
+    padding: 5px 15px 0px 15px;
+}
+
+.content-main{
+    width:  100%;
+    padding: 8px 8px 10px 100px;
+    top: 0;
+    left: 0;
+}
+.content-main h1{
+    padding: 8px 8px 10px 150px;
+}
+.navbar-icon{
+    padding: 10px;
+}

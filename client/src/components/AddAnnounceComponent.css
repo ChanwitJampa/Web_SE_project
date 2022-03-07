@@ -1,0 +1,29 @@
+.content-box{
+    padding: 40px 120px 60px 60px;
+    background-color: #BCBEC0;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.text-line{
+    display: flex;
+}
+.tap-select{
+    padding: 10px 20px 10px 20px;
+}
+.tap-select select{
+    padding: 5px;
+    border-radius: 5px;
+}
+.tap-top-select-in{
+    display: flex;
+}
+.button-vaccine{
+    background-color: #2B2118;
+    color: #FFFFFF;
+    border-radius: 20px;
+    width: 150px;
+}
+.button-vaccine:hover{
+    background-color: black;
+}

@@ -1,0 +1,68 @@
+
+  .outerRegister {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .innerRegister {
+    width: 450px;
+    margin: auto;
+    background: #ffffff;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    padding: 40px 55px 45px 55px;
+    border-radius: 30px;
+    transition: all .3s;
+  }
+  
+  .outerRegister .form-control:focus {
+    border-color: #167bff;
+    box-shadow: none;
+  }
+  
+  .outerRegister h3 {
+    text-align: left;
+    margin: 0;
+    line-height: 1;
+    padding-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .custom-control-label {
+    font-weight: 400;
+  }
+  
+  .forgot-password,
+  .forgot-password a {
+    text-align: left;
+    font-size: 13px;
+    color: #7f7d7d;
+    margin: 0;
+  }
+  
+  .forgot-password a {
+    color: #167bff;
+  }
+
+  .form-group label{
+    padding-bottom: 6px;
+  }
+
+  .form-group input{
+    margin-bottom: 10px;
+    border-radius: 20px;
+  }
+
+  .innerRegister button{
+    border-radius: 20px;
+    width: 341px;
+    margin-top: 20px;
+  }
+
+  .form-group select{
+    border-radius: 20px;
+    display: block;
+    width: 341px;
+    height: 40px;
+}
