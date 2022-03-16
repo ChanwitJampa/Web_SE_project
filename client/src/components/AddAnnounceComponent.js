@@ -14,46 +14,20 @@ const AddAnnounceComponent=()=>{
         setState({...state,[name]:hospitalID,hospitalName,vaccinationSite})
         
     }
-    const {hospitalID,hospitalName,vaccinationSite,DateStart,DateEnd,numberPeople,vaccine,registrationType,linkRegistration,image,more}=state
+    const {hospitalID,hospitalName,vaccinationSite,DateStart,DateEnd,numberPeople,vaccine,registrationType,linkRegistration,image,topic}=state
     return(
         <div>
             <NavbarComponent/>
             <div className="container"> 
-                <h1>เขียนประกาศ</h1>
+                <h1>กรอกข้อมูลประกาศ</h1>
                 <div className="content-box">
-                    <h4>โรงพยาบาล</h4>
                     <div className="form-group">
-                        <input type="text" value={hospitalName} className="form-control" disabled/>
+                    <label>หัวข้อ</label>
+                    <input type="text" className="form-control" onChange={inputValue("topic")} />
                     </div>
                     <div className="form-group">
-                    <label>สถานที่ฉีดวัคซีน</label>
-                    <input type="text" className="form-control" placeholder="ex มหาวิทยาลัยเกษตรศาสตร์" onChange={inputValue("vaccinationSite")}/>
-                    </div>
-                    <div className="form-group">
-                    <label>จำนวนวัน</label>
-                    <select class="form-select" searchable="Search here.." >
-                              <option value="1" disabled selected>เลือกจำนวนวัน</option>
-                              <option value="1">1 วัน</option>
-                              <option value="2">หลายวัน</option>
-                    </select>
-                    </div>
-                    <div className="form-group">
-                    <label>ระยะเวลา</label>
-                    <input type="date" className="form-control" onChange={inputValue("DateStart")}/>
-                        ถึงวันที่
-                    <input type="date" className="form-control" onChange={inputValue("DateEnd")}/>
-                    </div>
-                    <div className="form-group">
-                    <label>จำนวนคนน</label>
-                    <input type="number" className="form-control" placeholder="ex 500, 3000" onChange={inputValue("numberPeople")}/>
-                    </div>
-                    <div className="form-group">
-                    <label>เวลารอบเช้า</label>
-                    <input type="time"  onChange={inputValue("vaccinationSite")}/>
-                    </div>
-                    <div className="form-group">
-                    <label>เวลารอบบ่าย</label>
-                    <input type="time"  onChange={inputValue("vaccinationSite")}/>
+                    <label>รายละเอียด</label>
+                    <input type="text" className="form-control" placeholder="กรอกรายละเอียดของคุณ" onChange={inputValue("vaccinationSite")}/>
                     </div>
                     
                     <div className="text-line">
@@ -90,27 +64,7 @@ const AddAnnounceComponent=()=>{
                     </div>
                     <button type="button" className="button-vaccine"><FontAwesomeIcon icon={faAdd}/>Add vaccine</button>
                     </div>
-                    <div className="form-group">
-                    <label>ประเภทการลงทะเบียน</label>
-                    <select class="form-select" searchable="Search here.." onChange={inputValue("registrationType")}>
-                              <option value="1" disabled selected>เลือกเภท</option>
-                              <option value="1">Register</option>
-                              <option value="2">Walk in</option>
-                    </select>
-                    </div>
-                    <div className="form-group">
-                    <label>ลิงค์ลงทะเบียน (สำหรับแบบลงทะเบียน)</label>
-                    <input type="url"  className="form-control" onChange={inputValue("linkRegistration")} placeholder= "ex http://hospitalnakornpathom.com"/>
-                    </div>
-                    <div className="form-group">
-                    <label>เพิ่มไฟล์รูปคิวอาโค้ด (สำหรับแบบลงทะเบียน)</label>
-                    <input type="file"  className="form-control" onChange={inputValue("image")} />
-                    </div>
-                    <div className="form-group">
-                    <label>ประกาศเพิ่มเติม</label>
-                    <input type="text" className="form-control" onChange={inputValue("more")} />
-                    </div>
-                    
+
                 </div>
             </div>
         </div>
