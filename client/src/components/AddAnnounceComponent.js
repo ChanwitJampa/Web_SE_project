@@ -62,7 +62,7 @@ const AddAnnounceComponent=()=>{
                         </select>
                     </div>
                     </div>
-                    <button type="button" className="button-vaccine"><FontAwesomeIcon icon={faAdd}/>Add vaccine</button>
+                    <button type="submit" className="btn btn-color" >อัพโหลดประกาศ</button>  
                     </div>
 
                 </div>

@@ -72,7 +72,7 @@ const HospitalComponent = () => {
         <h1>กรอกข้อมูลสถานประการ</h1>
         <div className="content-box">
 
-          <button type="submit" className="btn btn-color-greenlight" >ยืนยัน</button>  
+          <button type="submit" className="btn btn-color" >ยืนยัน</button>  
            
         </div>
       </div>

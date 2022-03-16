@@ -49,13 +49,6 @@
     padding: 8px;
     border-radius: 5px;
 }
-.button-addnew{
-    padding: 15px 30px 15px 20px;
-    background-color: #2B2118;
-    border-radius: 20px;
-    color: #FFFFFF;
-    text-decoration: none;
-}
-.button-addnew:hover{
-    background-color: black;
+.content-box button{
+    background-color: #28A745;
 }

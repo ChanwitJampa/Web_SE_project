@@ -18,12 +18,6 @@
 .tap-top-select-in{
     display: flex;
 }
-.button-vaccine{
-    background-color: #2B2118;
-    color: #FFFFFF;
-    border-radius: 20px;
-    width: 150px;
-}
-.button-vaccine:hover{
-    background-color: black;
+.content-box button{
+    background-color: #28A745;
 }
