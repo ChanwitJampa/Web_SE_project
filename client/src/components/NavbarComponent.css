@@ -10,13 +10,13 @@ body{
     height: 100%;
     width: 70px;
     position: fixed;
-    z-index: 0;
+    z-index: 100;
     left: 0;
     top: 0px;
-    background-color: #2B2118;
+    background-color: #2F3337;
     overflow-x: hidden;
-    padding-top: 100px;
-    transition: 0.5s;
+    padding-top: 10px;
+    transition: 0.25s;
     display: flexbox;
 }
 
@@ -40,7 +40,7 @@ body{
 
 .sidenav-link:hover, .offcanvas a:focus{
     color: #f1f1f1;
-    background-color: #B00020;
+    background-color: #02BC77;
 }
 
 .sidenav .closebtn {
@@ -50,16 +50,23 @@ body{
     font-size: 36px;
     margin-left: 50px;
 }
+.sidenav-iconRole{
+    padding: 0px 40px 0px 20px;
+}
 .sidenav-icon{
     padding: 0px 40px 0px 20px;
+}
+.sidenav-icon2{
+    color: #2F3337;
 }
 #main {
     transition: margin-left .5s;
     padding: 20px;
 }
 .navbar{
-    background-color: #B00020;
+    background-color: #02BC77;
     width: 100%;
+    height: 7%;
     top: 0;
     position: fixed;
     z-index: 99;
@@ -85,13 +92,15 @@ body{
     color: #FFFFFF;
 }
 .navbar-link:hover, .navbar-logolink:hover{
-    color: #111;
+    color: #005334;
 }
 .navbar-logolink h2{
-    font-size: 30px;
+    font-size: 1.5rem;
+    /* font-weight: bold; */
 }
 .navbar-logo{
     padding: 5px 15px 0px 15px;
+    margin-left: 25%;
 }
 
 .content-main{
@@ -105,4 +114,35 @@ body{
 }
 .navbar-icon{
     padding: 10px;
+}
+.listIcon{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    color: #f1f1f1;
+
+}
+
+.roleBar{
+    display: flex;
+    flex-direction: row;
+    /* text-align: center; */
+}
+.roleText{
+    /* margin-left: 2rem; */
+    font-size: 1rem;
+}
+
+.userName{
+    margin-top: 0.7em;
+    font-size: 1rem;
+}
+
+.space1{
+    margin-top: 4rem;
+}
+
+.roleText{
+    padding: 1.5rem 10px 14px 10px;
+
+    color: #02BC77;
 }

@@ -1,6 +1,6 @@
 import {Link,withRouter} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowRightFromBracket, faBullhorn, faHome, faHospital, faMap, faPlus, faRegistered, faSyringe } from "@fortawesome/free-solid-svg-icons";
+import {faArrowRightFromBracket, faBullhorn, faHome, faHospital, faMap, faPlus, faRegistered, faSyringe, faList, faUser, faPowerOff, faNewspaper, faIndustry, faBuilding, faClipboardCheck, faFileContract, faChartLine, faBuildingColumns } from "@fortawesome/free-solid-svg-icons";
 //import { getUser,logout } from "../servies/authorize";
 import './NavbarComponent.css';
 const NavbarComponent=(props)=>{
@@ -9,15 +9,18 @@ const NavbarComponent=(props)=>{
             <div className="navbar">
                 <div className="navbar-logo">
                     <Link to="/" className="navbar-logolink">
-                        <FontAwesomeIcon icon={faMap} className="navbar-icon"/>
-                        <h2 >CoMap</h2>
+                        <h2 >ระบบจัดการการฝึกงาน มหาวิทยาลัยเกษตรศาสตร์</h2>
                     </Link>
                 </div>
-                <ul> 
+                <ul>
+                    <li>
+                        <h3 className="userName">คุณชายเจ้าละเอียด ละเมียดละไม 6220504640</h3> 
+
+                    </li>
                 <li>
-                    <Link to="/" className="navbar-link"><FontAwesomeIcon icon={faHome} className="navbar-icon"/><span>Home</span></Link>
+                    <Link to="/" className="navbar-link"><FontAwesomeIcon icon={faPowerOff} className="navbar-icon"/><span>logout</span></Link>
                 </li>
-                <li>
+                {/* <li>
                     <Link to="/announce" className="navbar-link"><FontAwesomeIcon icon={faBullhorn} className="navbar-icon"/>Announce</Link>
                 </li>
                 <li>
@@ -25,7 +28,7 @@ const NavbarComponent=(props)=>{
                 </li>
                 <li>
                     <Link to="/register" className="navbar-link"><FontAwesomeIcon icon={faRegistered} className="navbar-icon"/>Register</Link>
-                </li>
+                </li> */}
                 {/* 
                     <li className="nav-item pt-3 pb-3">
                         <button onClick={()=>logout(()=>props.history.push("/"))} className="nav-link">Logout</button>
@@ -34,9 +37,20 @@ const NavbarComponent=(props)=>{
                 </ul>
             </div>
     <div class="sidenav">
-        <Link to="/addannounce" className="sidenav-link"><FontAwesomeIcon icon={faSyringe} className="sidenav-icon"/>เพิ่มประกาศวัคซีน</Link>
-        <Link to="/hospital" className="sidenav-link"><FontAwesomeIcon icon={faHospital} className="sidenav-icon"/>จัดการโรงพยาบาล</Link>
-        <Link to="/addhospital" className="sidenav-link"><FontAwesomeIcon icon={faPlus} className="sidenav-icon"/>เพิ่มโรงพยาบาล</Link>
+        {/* <div className="roleBar">
+            <FontAwesomeIcon icon={faUser} className="listIcon"/>
+            <h2 className="roleText">ROLE : NISIT </h2>
+        </div> */}
+
+        {/* <div className="space1"></div> */}
+        <Link to="/" className="sidenav-link"><FontAwesomeIcon icon={faUser} className="sidenav-iconRole"/><h1 className="roleText">role : Nisit</h1></Link>
+        <Link to="/" className="sidenav-link"><FontAwesomeIcon icon={faUser} className="sidenav-icon2"/></Link>
+        <Link to="/" className="sidenav-link"><FontAwesomeIcon icon={faList} className="sidenav-icon"/></Link>
+        <Link to="/addannounce" className="sidenav-link"><FontAwesomeIcon icon={faNewspaper} className="sidenav-icon"/>ข่าวสารประกาศ</Link>
+        <Link to="/hospital" className="sidenav-link"><FontAwesomeIcon icon={faBuilding} className="sidenav-icon"/>สถานประกอบการ</Link>
+        <Link to="/addhospital" className="sidenav-link"><FontAwesomeIcon icon={faClipboardCheck} className="sidenav-icon"/>ตรวจสอบสถานะ</Link>
+        <Link to="/addhospital" className="sidenav-link"><FontAwesomeIcon icon={faFileContract} className="sidenav-icon"/>เอกสารที่เกี่ยวข้อง</Link>
+        <Link to="/addhospital" className="sidenav-link"><FontAwesomeIcon icon={faChartLine} className="sidenav-icon"/>ผลการฝึกงาน</Link>
     </div>
     </div>
         
