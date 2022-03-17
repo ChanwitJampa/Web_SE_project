@@ -65,29 +65,27 @@ const HospitalComponent = () => {
       })
       .catch((err) => alert(err));
   };
-
   return ( 
     <div>
       <NavbarComponent />
       <div className="container">
         <h1>กรอกข้อมูลสถานประกอบการ</h1>
         <div className="content-box">
-        {/*<form>
-          <fieldset disabled>
+        <form>
           <div class="form-group">
-          <label for="disabledTextInput">l</label>
-          <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+            <label>ชื่อสถานประกอบการ/หน่วยงาน</label>
+              <input class="form-control" id="disabledInput" type="text" onChange={""} />
+            <label>ประเภทธุรกิจ</label>
+              <input class="form-control" id="disabledInput" type="text" onChange={""} />
+            <label>ที่อยู่สถานประกอบการ</label>
+              <input class="form-control" id="disabledInput" type="text" onChange={""} />
+            <label>เบอร์โทรศัพท์ของสถานประกอบการ/หน่วยงาน</label>
+              <input class="form-control" id="disabledInput" type="text" onChange={""} />
+            <label>เบอร์โทรสาร</label>
+              <input class="form-control" id="disabledInput" type="text" onChange={""} />
+          <button type="submit" className="btn btn-color">ยืนยัน</button> 
           </div>
-          <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
-          
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </fieldset>
-  </form>*/}
-  
-          <button type="submit" className="btn btn-color" >ยืนยัน</button>  
-           
+         </form> 
         </div>
       </div>
     </div>

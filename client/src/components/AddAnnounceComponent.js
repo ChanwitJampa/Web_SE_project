@@ -9,6 +9,8 @@ const AddAnnounceComponent=()=>{
         organizationID:"621a99528503e41d702f31f0",
         organizationName:"มหาวิทยาลัยเกษตรกำแพงแสน",
         webSite:"",
+        flexRadioDefault : "",
+
     })
     const inputValue=name=>event=>{
         setState({...state,[name]:organizationID,organizationName,webSite})
@@ -62,15 +64,19 @@ const AddAnnounceComponent=()=>{
                             </select>
                             </div>
                         </div>*/}
-                    
-                    {/*<label class="form-check-label" for="disabledFieldsetCheck">
-                    ฝึกงาน
-                    </label>
-                    <label class="form-check-label" for="disabledFieldsetCheck">
-                    สหกิจ
-                    </label>*/}
-                    
-                     </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                        ฝึกงาน
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                        <label class="form-check-label" for="flexRadioDefault2">
+                        สหกิจ
+                        </label>
+                    </div>
+                    </div>
 
                 <button type="submit" className="btn btn-color" >อัพโหลดประกาศ</button> 
                 </div>
