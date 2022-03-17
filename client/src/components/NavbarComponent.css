@@ -15,7 +15,7 @@ body{
     top: 0px;
     background-color: #2F3337;
     overflow-x: hidden;
-    padding-top: 10px;
+    padding-top: 0px;
     transition: 0.25s;
     display: flexbox;
 }
@@ -38,9 +38,26 @@ body{
     white-space: nowrap;  /* ไม่ขึ้นบรรทัดใหม่ */
 }
 
+.sidenav-link2{
+    padding: 14px 10px 14px 10px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    transition: 0.3ss;
+    white-space: nowrap;  /* ไม่ขึ้นบรรทัดใหม่ */
+    cursor: default;
+
+}
+
 .sidenav-link:hover, .offcanvas a:focus{
     color: #f1f1f1;
     background-color: #02BC77;
+}
+.sidenav-link2:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+    /* background-color: #02BC77; */
 }
 
 .sidenav .closebtn {
@@ -59,6 +76,12 @@ body{
 .sidenav-icon2{
     color: #2F3337;
 }
+.sidenav-icon3{
+    color: #FFFFFF;
+    padding-left: 1.2rem;
+    cursor: default;
+    /* color: #2F3337; */
+}
 #main {
     transition: margin-left .5s;
     padding: 20px;
@@ -73,6 +96,8 @@ body{
     font-size: 16px;
     color: #f1f1f1;
     justify-content: space-between;
+    align-items: center;
+    
 }
 .navbar ul{
     display: flex;
@@ -94,13 +119,22 @@ body{
 .navbar-link:hover, .navbar-logolink:hover{
     color: #005334;
 }
-.navbar-logolink h2{
+
+.navbar-link:hover, .navbar-logolink:hover, .roleText:hover{
+    color: #FFFFFF;
+}
+
+/* .sidenav-icon2:hover{
+    color: #02BC77;
+} */
+.navbar-logolink {
     font-size: 1.5rem;
     /* font-weight: bold; */
+    cursor: default;
 }
 .navbar-logo{
-    padding: 5px 15px 0px 15px;
-    margin-left: 25%;
+    /* padding: 5px 15px 0px 15px; */
+    margin-left: 30%;
 }
 
 .content-main{
@@ -133,7 +167,7 @@ body{
 }
 
 .userName{
-    margin-top: 0.7em;
+    margin-top: 0.5rem;
     font-size: 1rem;
 }
 
@@ -142,7 +176,7 @@ body{
 }
 
 .roleText{
-    padding: 1.5rem 10px 14px 10px;
+    padding: 1.5rem 1rem 1rem 1rem;
 
     color: #02BC77;
 }

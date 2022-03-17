@@ -8,9 +8,9 @@ const NavbarComponent=(props)=>{
         <div>
             <div className="navbar">
                 <div className="navbar-logo">
-                    <Link to="/" className="navbar-logolink">
-                        <h2 >ระบบจัดการการฝึกงาน มหาวิทยาลัยเกษตรศาสตร์</h2>
-                    </Link>
+                    <h1 className="navbar-logolink">
+                        ระบบจัดการการฝึกงาน มหาวิทยาลัยเกษตรศาสตร์
+                    </h1>
                 </div>
                 <ul>
                     <li>
@@ -18,7 +18,7 @@ const NavbarComponent=(props)=>{
 
                     </li>
                 <li>
-                    <Link to="/" className="navbar-link"><FontAwesomeIcon icon={faPowerOff} className="navbar-icon"/><span>logout</span></Link>
+                    <Link to="/login" className="navbar-link"><FontAwesomeIcon icon={faPowerOff} className="navbar-icon"/><span>logout</span></Link>
                 </li>
                 {/* <li>
                     <Link to="/announce" className="navbar-link"><FontAwesomeIcon icon={faBullhorn} className="navbar-icon"/>Announce</Link>
@@ -44,8 +44,8 @@ const NavbarComponent=(props)=>{
 
         {/* <div className="space1"></div> */}
         <Link to="/" className="sidenav-link"><FontAwesomeIcon icon={faUser} className="sidenav-iconRole"/><h1 className="roleText">role : Nisit</h1></Link>
-        <Link to="/" className="sidenav-link"><FontAwesomeIcon icon={faUser} className="sidenav-icon2"/></Link>
-        <Link to="/" className="sidenav-link"><FontAwesomeIcon icon={faList} className="sidenav-icon"/></Link>
+        <Link to="/" className="sidenav-link2"><FontAwesomeIcon icon={faUser} className="sidenav-icon2"/></Link>
+        <Link to="/" className="sidenav-link2"><FontAwesomeIcon icon={faList} className="sidenav-icon3"/></Link>
         <Link to="/addannounce" className="sidenav-link"><FontAwesomeIcon icon={faNewspaper} className="sidenav-icon"/>ข่าวสารประกาศ</Link>
         <Link to="/hospital" className="sidenav-link"><FontAwesomeIcon icon={faBuilding} className="sidenav-icon"/>สถานประกอบการ</Link>
         <Link to="/addhospital" className="sidenav-link"><FontAwesomeIcon icon={faClipboardCheck} className="sidenav-icon"/>ตรวจสอบสถานะ</Link>

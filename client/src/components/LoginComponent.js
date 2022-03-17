@@ -4,6 +4,9 @@ import NavbarComponent from "./NavbarComponent";
 import "./LoginComponent.css";
 import axios from "axios";
 import Swal from "sweetalert2";
+import kuLogo2 from "../assets/ku_logo.jpg";
+import LOGO from "../assets/img/login_photo.png";
+
 const LoginComponent=()=>{
     const [user,setUser]=useState({
         email:"",
@@ -37,30 +40,46 @@ const LoginComponent=()=>{
 
     return(
         <div>  
-            <NavbarComponent/>
-            <div className="container">
-                <div className="outerLogin">
-                    <div className="innerLogin">
-                        <form onSubmit={signinForm}>
-                            <h3>Login</h3>
-                            <div className="form-group">
-                                <label>Email</label>
-                                <input type="email" className="form-control" placeholder="Enter email" onChange={inputValue("email")}/>
-                            </div>
+            {/* <NavbarComponent/> */}
+            <div className="containerLogin">
+                <div>
+                    <div className="logoImg">
+                        <img src={kuLogo2} alt="KULogo" width="250" height="250" />
+                        <h3 className="loginText2">ระบบจัดการการฝึกงาน</h3>
+                        <h3 className="loginText">Login</h3>
+                    </div>
+                    
+                    <div className="outerLogin">
+                        <div className="innerLogin">
+                            <form onSubmit={signinForm}>
+                                <div className="form-group">
+                                    <label>Nontri Account</label>
+                                    <input type="email" className="form-control" placeholder="bxxxxxxxxxx" onChange={inputValue("email")}/>
+                                </div>
 
-                            <div className="form-group">
-                                <label>Password</label>
-                                <input type="password" className="form-control" placeholder="Enter password" id="password" onChange={inputValue("password")}/>
-                            </div>
+                                <div className="form-group">
+                                    <label>Password</label>
+                                    <input type="password" className="form-control" placeholder="Enter password" id="password" onChange={inputValue("password")}/>
+                                </div>
 
-                            <p className="forgot-password text-right">
-                                Don't have an account <Link to="/register" >Register</Link>
-                            </p>
-                            
-                            <button type="submit" className="btn btn-danger" >Sign in</button>
-                        </form>
+                                {/* <p className="forgot-password text-right">
+                                    Don't have an account <Link to="/register" >Register</Link>
+                                </p> */}
+                                
+                                <button type="submit" className="btn btn-success" >Sign in</button>
+                                <button type="submit" className="btn btn-success" style={{backgroundColor:"#005334"}}>Login as Guest</button>
+                                
+                            </form>
+                        </div>
                     </div>
                 </div>
+                <img className="logo_login" src={LOGO} alt="Logo" width="700" height="700" />
+
+                <div>
+
+                </div>
+
+
             </div>
         </div>
     )

@@ -51,10 +51,6 @@ import { Button } from "antd";
 function App() {
   const [hospital, setHospital] = useState([]);
 
-
-  const [pName, setpName] = useState("กรุณาเลือกจังหวัด");
-
-
   const fetchData = () => {
     axios
       .get(
@@ -130,7 +126,10 @@ function App() {
   return (
     <div className="container2">
       <NavbarComponent />
-      
+
+      <div className="container3">
+
+      </div>
 
      
     </div>

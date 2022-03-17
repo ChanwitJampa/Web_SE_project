@@ -1,4 +1,31 @@
 
+  .containerLogin{
+    height: 60rem;
+    /* background-color: #ffffff; */
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  .logoImg{
+    margin-left: 10rem;
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .loginText{
+    margin-bottom: 1rem;
+    margin-left: 5rem;
+  }
+
+  .loginText2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-left: -1rem;
+  }
+
   .outerLogin {
     display: flex;
     justify-content: center;
@@ -8,9 +35,10 @@
   
   .innerLogin {
     width: 450px;
-    margin: auto;
+    /* margin: auto; */
+    margin-left: 4.5rem;
     background: #ffffff;
-    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    /* box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2); */
     padding: 40px 55px 45px 55px;
     border-radius: 30px;
     transition: all .3s;
@@ -51,7 +79,8 @@
 
   .form-group input{
     margin-bottom: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
+    background-color: #F7F7F8;
   }
 
   .form-group input::placeholder{
@@ -59,7 +88,18 @@
   }
 
   .innerLogin button {
-      border-radius: 20px;
+      border-radius: 10px;
       width: 341px;
       margin-top: 15px;
+  }
+  
+  .btnGuest{
+    height: 2.5rem;
+    background-color:#005334 ;
+    color: #ffffff;
+  }
+
+  .logo_login{
+    margin-left: 20rem;
+    margin-top: 8rem;
   }
