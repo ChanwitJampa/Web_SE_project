@@ -1,14 +1,24 @@
+.container h1 {
+    text-align: center;
+}
+  
 .content-box{
     padding: 40px 120px 60px 60px;
     background-color: #EEEEEE;
     border-radius: 20px;
     margin: auto;
 }
-
-.text-line{
-    display: flex;
+.content-box form{
+    background-color: #EEEEEE;
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
 }
-.tap-select{
+
+/*.text-line{
+    display: flex;
+}*/
+/*.tap-select{
     padding: 10px 20px 10px 20px;
 }
 .tap-select select{
@@ -17,7 +27,7 @@
 }
 .tap-top-select-in{
     display: flex;
-}
+}*/
 .content-box button{
-    background-color: #28A745;
+    background-color: #02BC77;
 }

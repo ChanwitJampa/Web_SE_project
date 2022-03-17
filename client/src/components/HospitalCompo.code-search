@@ -1,0 +1,71 @@
+# Query: HospitalCompo
+# ContextLines: 1
+
+21 results - 5 files
+
+client\src\MyRoute.js:
+   4  import AnnounceComponent from "./components/AnnounceComponent";
+   5: import AddOrganizationComponent from "./components/AddOrganizationComponent";
+   6  import App from "./App"
+   7: import OrganizationComponent from "./components/OrganizationComponent";
+   8  import AddAnnounceComponent from "./components/AddAnnounceComponent";
+   9  import TestComponent from "./components/TestComponent";
+  10: import EditOrganizationComponent from "./components/EditOrganizationComponent";
+  11  const MyRoute=()=>{
+
+  18                  <Route path="/register" exact component={RegisterComponent}/>
+  19:                 <Route path="/addhospital" exact component={AddOrganizationComponent}/>
+  20:                 <Route path="/hospital" exact component={OrganizationComponent}/>
+  21                  <Route path="/addannounce" exact component={AddAnnounceComponent}/>
+  22                  <Route path="/test" exact component={TestComponent}/>
+  23:                 <Route path="/edithospital/:_id" exact component={EditOrganizationComponent}/>
+  24              </Switch>
+
+client\src\components\AddHospitalComponent.js:
+    2  import { useEffect, useState } from "react";
+    3: import "./AddOrganizationComponent.css";
+    4  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+    7  import Swal from "sweetalert2";
+    8: const AddOrganizationComponent = () => {
+    9    const [allprovinces, setAllProvinces] = useState([]);
+
+  151  };
+  152: export default AddOrganizationComponent;
+
+client\src\components\EditHospitalComponent.js:
+    2  import { useEffect, useState } from "react";
+    3: import "./AddOrganizationComponent.css";
+    4  import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+
+    7  import axios from "axios";
+    8: const EditOrganizationComponent=(props)=>{
+    9      useEffect(()=>{
+
+  213  }
+  214: export default EditOrganizationComponent;
+
+client\src\components\HospitalComponent.js:
+   2  import NavbarComponent from "./NavbarComponent";
+   3: import "./OrganizationComponent.css";
+   4  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+   9  import { Link, withRouter } from "react-router-dom";
+  10: const OrganizationComponent = () => {
+  11    const [hospital, setHospital] = useState([]);
+
+  86  };
+  87: export default OrganizationComponent;
+  88  
+
+client\src\components\test.js:
+    2  import { useEffect, useState } from "react";
+    3: import "./AddOrganizationComponent.css";
+    4  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+    7  import Swal from "sweetalert2";
+    8: const AddOrganizationComponent = () => {
+    9    const [allprovinces, setAllProvinces] = useState([]);
+
+  154  };
+  155: export default AddOrganizationComponent;

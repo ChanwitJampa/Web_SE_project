@@ -1,3 +1,6 @@
+.container h1 {
+    text-align: center;
+}
 .content-box{
     padding: 40px 120px 60px 60px;
     background-color: #EEEEEE;
@@ -50,5 +53,5 @@
     border-radius: 5px;
 }
 .content-box button{
-    background-color: #28A745;
+    background-color: #02BC77;
 }
