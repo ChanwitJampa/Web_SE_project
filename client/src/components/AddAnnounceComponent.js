@@ -31,7 +31,6 @@ const AddAnnounceComponent=()=>{
                     <label>รายละเอียด</label>
                     <input type="text" className="form-control" placeholder="กรอกรายละเอียดของคุณ" onChange={inputValue("website")}/>
                     </div>
-                    
                     <div className="text-line">
                         {/*<p>วัคซีน</p>
                         <div className="tap-top-select-in">

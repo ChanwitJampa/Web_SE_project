@@ -1,22 +1,24 @@
 .container h1 {
     text-align: center;
-}
-  
+}  
+
 .content-box{
-    padding: 40px 120px 60px 60px;
+    /*padding: 40px 120px 60px 60px;*/
     background-color: #EEEEEE;
     border-radius: 20px;
     margin: auto;
 }
 .content-box form{
     background-color: #EEEEEE;
-    width: 300px;
-    height: 100px;
+    width: 1000px;
+    height: auto;
     padding: 50px;
     box-sizing: content-box;
+    margin: auto;
 }
-
-
+.content-box form-check{
+    padding: 10px;
+}
 /*.text-line{
     display: flex;
 }*/

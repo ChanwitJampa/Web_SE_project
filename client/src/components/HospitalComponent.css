@@ -3,16 +3,16 @@
     margin: auto;
 }
 .content-box{
-    padding: 20px 120px 60px 60px;
+    /*padding: 20px 120px 60px 60px;*/
     background-color: #EEEEEE;
     margin: auto;
 }
 .content-box form{
     background-color: #EEEEEE;
-    width: 300px;
+    width: 1000px;
     height: 100px;
     padding: 50px;
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 .table-thead{
     background-color: #2B2118;
