@@ -89,9 +89,12 @@ const AddHospitalComponent = () => {
     <div>
       <NavbarComponent />
       <div className="container">
-        <h1>Add hospital</h1>
-        <div className="content-box">
-          <form onSubmit={submitForm}>
+        <h1>เอกสารที่เกี่ยวข้อง</h1>
+
+        <button type="submit" className="btn btn-color">Download</button> 
+
+        <button type="submit" className="btn btn-color">Download</button> 
+          {/*<form onSubmit={submitForm}>
             <div className="form-group">
               <label>ชื่อโรงพยาบาล</label>
               <input
@@ -137,16 +140,15 @@ const AddHospitalComponent = () => {
                   <option value={district.district}>{district.district}</option>
                 ))}
               </select>
-            </div>
+                </div>
             <br />
             <button type="submit" className="button-addnew">
               <FontAwesomeIcon icon={faAdd} />
               Add New
             </button>
-          </form>
+                </form>*/}
         </div>
       </div>
-    </div>
   );
 };
 export default AddHospitalComponent;

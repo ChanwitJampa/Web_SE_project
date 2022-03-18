@@ -16,9 +16,10 @@
     box-sizing: content-box;
     margin: auto;
 }
-/*.text-line{
+.text-line{
     display: flex;
-}*/
+    margin: auto;
+}
 /*.tap-select{
     padding: 10px 20px 10px 20px;
 }

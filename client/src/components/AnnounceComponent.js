@@ -38,8 +38,12 @@ const AnnounceComponent=()=>{
         <div>
             <NavbarComponent/>
             <div className="container"> 
-                <h1>Announce</h1>
-                <div className="tap-top-select">
+                <h1>ตรวจสอบสถานะ</h1>
+                <div className="content-box">
+                
+
+            
+                {/*<div className="tap-top-select">
                     <div className="tap-top-select-in">
                             <div className="tap-select">
                             <select class="mdb-select " searchable="Search here.." onChange={(event)=>{                      
@@ -52,48 +56,47 @@ const AnnounceComponent=()=>{
                                 <option value={provinces.province}>{provinces.province}</option>
                                 ))}
                             </select>
-                            
-                    </div>
-                    <div className="tap-select">
-                        <select class="mdb-select" searchable="Search here.." onChange={(event)=>{
+                            </div>
+                            <div className="tap-select">
+                            <select class="mdb-select" searchable="Search here.." onChange={(event)=>{
                                 setSearchAnnounce(event.target.value)
                                 }}>
                                 <option selected disabled>เลือกอำเภอ</option>
                                 {district.map((district) => (
                                 <option value={district.district}>{district.district}</option>
                                 ))}
-                        </select>
-                    </div>
-                    <div className="tap-select">
+                            </select>
+                            </div>
+                            <div className="tap-select">
                             <select aria-label="Default select example" onChange={(event)=>{
                                 setSearchAnnounce(event.target.value)
                                 }}>
-                            <option elected disabled>เลือกประเภทการลงทะเบียน</option>
-                            <option value="register">Register</option>
-                            <option value="walkin">Walk in</option>
-                        </select>
+                                <option elected disabled>เลือกประเภทการลงทะเบียน</option>
+                                <option value="register">Register</option>
+                                <option value="walkin">Walk in</option>
+                            </select>
+                            </div>
+                            <div className="tap-select">
+                            <select  aria-label="Default select example">
+                                <option elected disabled>เลือกช่วงอายุ</option>
+                                <option value="1">เด็ก 12-18 ปี</option>
+                                <option value="2">18 ปีขึ้นไป</option>
+                                <option value="3">สูงกว่า 60 ปี</option>
+                            </select> 
+                            </div>
                     </div>
-                    <div className="tap-select">
-                        <select  aria-label="Default select example">
-                            <option elected disabled>เลือกช่วงอายุ</option>
-                            <option value="1">เด็ก 12-18 ปี</option>
-                            <option value="2">18 ปีขึ้นไป</option>
-                            <option value="3">สูงกว่า 60 ปี</option>
-                        </select> 
-                    </div>
-                    </div>
-                        <div className='search'>
+                    <div className='search'>
                             <input 
                             type='search'
                             placeholder="ค้นหา..."
                             onChange={(event)=>{
                             setSearchAnnounce(event.target.value);
                             }}/>
-                        </div>
+                    </div>
                 </div>
-                <div className="tap-top-check">
+            <div className="tap-top-check">
                 <FontAwesomeIcon icon={faSyringe} className="logo-vacc"/>
-                <div class="form-check form-check-inline">
+                    <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"/>
                     <label class="form-check-label" for="inlineCheckbox1">ไฟเซอร์</label>
                     </div>
@@ -113,7 +116,7 @@ const AnnounceComponent=()=>{
                     <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5"/>
                     <label class="form-check-label" for="inlineCheckbox5">ซิโนแวก</label>
                     </div>            
-                </div>
+            </div>
                 {(announce).filter((announce)=>{
                     if(searchAnnounce == ''){
                         return announce
@@ -128,7 +131,7 @@ const AnnounceComponent=()=>{
                     }
                 }).map((announce)=>(
                     
-                <div className="text-box">
+            <div className="text-box">
                     <div className="text-header">
                         <div style={{padding:"10px"}}>
                             <h3>{announce.hospitalName}</h3>
@@ -137,9 +140,9 @@ const AnnounceComponent=()=>{
                             <h1 style={{color:"#B00020"}}>{announce.registrationType}</h1>
                         </div>
                     </div>
-                    <div className="text-line">
+                        <div className="text-line">
                         <p>{announce.vaccinationSite}</p>
-                    </div>
+                        </div>
                     <div className="text-line">
                         <p><span>วันที่ 8 - 12 กุมภาพันธ์ 2565</span>
                             <span>วันละ {announce.numberPeople} คน</span>
@@ -170,12 +173,15 @@ const AnnounceComponent=()=>{
                     <div className="text-line">
                         <p><span>เพิ่มเติม: {announce.more}</span></p>
                     </div>   
-                </div>
-                ))}
+            </div>
+            ))}
                 <footer>
                     <hr className="line"/>
                     <p>2022 ©ภาควิชาวิศวกรรมคอมพิวเตอร์ Kasetsart University © Version : 1.0</p>
-                </footer>
+                            </footer>*/}
+            </div>
+            <button type="submit" className="btn btn-color">Download หนังสือขอความอนุเคราะห์</button> 
+            <button2 type="submit" className="btn btn-color">Download หนังสือส่งตัว</button2> 
             </div>
         </div>
     )

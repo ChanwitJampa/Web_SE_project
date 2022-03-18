@@ -1,4 +1,15 @@
-.tap-top-select{
+.container h1 {
+    text-align: left;
+}  
+.content-box button{
+    background-color: #2AB883;
+    color: #FFFFFF
+}
+.content-box button2{
+    background-color: #ADBBB6;
+    margin: 20px;
+}
+/*.tap-top-select{
     display: flex;
     justify-content: space-between;
 }
@@ -73,4 +84,4 @@
     display: flex;
     justify-content: space-between;
     text-align: center;
-}
+}*/
