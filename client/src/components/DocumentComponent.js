@@ -2,7 +2,10 @@ import NavbarComponent from "./NavbarComponent";
 import { useEffect, useState } from "react";
 import "./DocumentComponent.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileLines } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRightLong,
+  faFileLines,
+} from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import Swal from "sweetalert2";
 const DocumentComponent = () => {
@@ -18,7 +21,9 @@ const DocumentComponent = () => {
   };
   const fetchDistrict = (pro) => {
     axios
-      .get(`https://thaiaddressapi-thaikub.herokuapp.com/v1/thailand/provinces/${pro}`)
+      .get(
+        `https://thaiaddressapi-thaikub.herokuapp.com/v1/thailand/provinces/${pro}`
+      )
       .then((res) => {
         console.log(res.data.data);
         setAllDistrict(res.data.data);
@@ -35,14 +40,8 @@ const DocumentComponent = () => {
     longitude: "0",
     district: "",
   });
-  const [province,setProvince] =useState('');
-  const {
-    hospitalName,
-    address,
-    latitude,
-    longitude,
-    district,
-  } = state;
+  const [province, setProvince] = useState("");
+  const { hospitalName, address, latitude, longitude, district } = state;
   const inputValue = (name) => (event) => {
     console.log(name, "=", event.target.value);
     setState({ ...state, [name]: event.target.value });
@@ -57,7 +56,8 @@ const DocumentComponent = () => {
       province,
       district,
     });
-    axios.post(`http://localhost:5000/api/hospitals`, {
+    axios
+      .post(`http://localhost:5000/api/hospitals`, {
         hospitalName,
         address,
         latitude,
@@ -65,7 +65,7 @@ const DocumentComponent = () => {
         province,
         district,
       })
-      .then(response => {
+      .then((response) => {
         Swal.fire("Alert", "บันทึกข้อมูลเรียบร้อย", "success");
         setState({
           ...state,
@@ -77,12 +77,8 @@ const DocumentComponent = () => {
         });
         setProvince("");
       })
-      .catch(error=> {
-        Swal.fire(
-          "Alert",
-          error.response.data.error,
-          "error"
-        );
+      .catch((error) => {
+        Swal.fire("Alert", error.response.data.error, "error");
       });
   };
   return (
@@ -91,17 +87,48 @@ const DocumentComponent = () => {
       <div className="container">
         <h1>เอกสารที่เกี่ยวข้อง</h1>
         <div className="text-line">
-          <FontAwesomeIcon icon={faFileLines} style=""/>
-          <h4>
-            หนังสือขอความอนุเคราะห์การฝึกงาน
-          </h4>
-          <button type="submit" className="btn btn-color">Download</button>
+          <i className="faFileLines">
+            <FontAwesomeIcon icon={faFileLines} />
+          </i>
+          <h4>หนังสือขอความอนุเคราะห์การฝึกงาน</h4>
+          <i className="faArrowRightLong">
+            <FontAwesomeIcon icon={faArrowRightLong} />
+          </i>
+          <button type="submit" className="btn btn-success">
+            Download
+          </button>
         </div>
-         
 
-        <button type="submit" className="btn btn-color">Download</button> 
+        <div className="text-line">
+          <i className="faFileLines">
+            <FontAwesomeIcon icon={faFileLines} />
+          </i>
+          <h4>หนังสือส่งตัว</h4>
+          <i className="faArrowRightLong">
+            <FontAwesomeIcon icon={faArrowRightLong} />
+          </i>
+          <button type="submit" className="btn btn-success">
+            Download
+          </button>
+        </div>
+        <p>
+          _______________________________________________________________________________________________________
+        </p>
+
+        <div>
+          <div className="borderRadiusTop">
+            <span>ชื่อเอกสาร</span><br />
+            <input type="text" class="form-control"></input>
+          </div>
+          <br />
+          <div className="borderRadiusBottom">
+            <span>ชื่อเอกสาร</span><br />
+            <input type="file" className=""></input><br></br><br></br>
+            <button type="submit" class="btn btn-success" >Upload</button>
+          </div>
         </div>
       </div>
+    </div>
   );
 };
 export default DocumentComponent;

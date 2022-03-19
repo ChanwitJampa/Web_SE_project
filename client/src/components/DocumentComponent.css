@@ -21,3 +21,32 @@
     font-weight: 100;
 }
 
+.faFileLines{
+    padding-top: 3px;
+    margin-right: 10px;
+}
+.faArrowRightLong{
+    padding-top: 5px;
+    margin-left: 10px;
+}
+
+button{
+    margin-left: 10px;
+}
+
+.borderRadiusTop{
+    background-color: #dbdbdb;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.borderRadiusBottom{
+    background-color: #dbdbdb;
+    border-radius: 20px;
+    padding: 100px;
+}
+
+/* .upload-button{
+    float: right;
+    margin-top: 50px;
+} */
