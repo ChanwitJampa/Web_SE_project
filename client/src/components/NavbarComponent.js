@@ -46,11 +46,11 @@ const NavbarComponent=(props)=>{
         <Link to="/" className="sidenav-link"><FontAwesomeIcon icon={faUser} className="sidenav-iconRole"/><h1 className="roleText">role : Nisit</h1></Link>
         <Link to="/" className="sidenav-link2"><FontAwesomeIcon icon={faUser} className="sidenav-icon2"/></Link>
         <Link to="/" className="sidenav-link2"><FontAwesomeIcon icon={faList} className="sidenav-icon3"/></Link>
-        <Link to="/addannounce" className="sidenav-link"><FontAwesomeIcon icon={faNewspaper} className="sidenav-icon"/>ข่าวสารประกาศ</Link>
-        <Link to="/hospital" className="sidenav-link"><FontAwesomeIcon icon={faBuilding} className="sidenav-icon"/>สถานประกอบการ</Link>
-        <Link to="/announce" className="sidenav-link"><FontAwesomeIcon icon={faClipboardCheck} className="sidenav-icon"/>ตรวจสอบสถานะ</Link>
-        <Link to="/addhospital" className="sidenav-link"><FontAwesomeIcon icon={faFileContract} className="sidenav-icon"/>เอกสารที่เกี่ยวข้อง</Link>
-        <Link to="/addhospital" className="sidenav-link"><FontAwesomeIcon icon={faChartLine} className="sidenav-icon"/>ผลการฝึกงาน</Link>
+        <Link to="/news" className="sidenav-link"><FontAwesomeIcon icon={faNewspaper} className="sidenav-icon"/>ข่าวสารประกาศ</Link>
+        <Link to="/organization" className="sidenav-link"><FontAwesomeIcon icon={faBuilding} className="sidenav-icon"/>สถานประกอบการ</Link>
+        <Link to="/checkstatus" className="sidenav-link"><FontAwesomeIcon icon={faClipboardCheck} className="sidenav-icon"/>ตรวจสอบสถานะ</Link>
+        <Link to="/documents" className="sidenav-link"><FontAwesomeIcon icon={faFileContract} className="sidenav-icon"/>เอกสารที่เกี่ยวข้อง</Link>
+        <Link to="/result" className="sidenav-link"><FontAwesomeIcon icon={faChartLine} className="sidenav-icon"/>ผลการฝึกงาน</Link>
     </div>
     </div>
         

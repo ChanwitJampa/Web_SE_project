@@ -1,11 +1,11 @@
 import NavbarComponent from "./NavbarComponent";
 import { useEffect, useState } from "react";
-import "./AddHospitalComponent.css";
+import "./DocumentComponent.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileLines } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import Swal from "sweetalert2";
-const AddHospitalComponent = () => {
+const DocumentComponent = () => {
   const [allprovinces, setAllProvinces] = useState([]);
   const [alldistrict, setAllDistrict] = useState([]);
   const fetchData = () => {
@@ -100,61 +100,8 @@ const AddHospitalComponent = () => {
          
 
         <button type="submit" className="btn btn-color">Download</button> 
-          {/*<form onSubmit={submitForm}>
-            <div className="form-group">
-              <label>ชื่อโรงพยาบาล</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="ชื่อโรงพยาบาล"
-                value={hospitalName}
-                onChange={inputValue("hospitalName")}
-              />
-            </div>
-            <div className="form-group">
-              <label>ที่อยู่</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="ที่อยู่"
-                value={address}
-                onChange={inputValue("address")}
-              />
-            </div>
-            <div className="form-group">
-              <label>จังหวัด</label>
-              <select
-                class="mdb-select "
-                searchable="Search here.."
-                onChange={(event) => {
-                  console.log("province = "+event.target.value);
-                  setProvince(event.target.value);
-                  fetchDistrict(event.target.value);
-                }}>
-                {allprovinces.map((provinces) => (
-                  <option value={provinces.province}>{provinces.province}</option>
-                ))}
-              </select>
-            </div>
-            <div className="form-group">
-              <label>อำเภอ</label>
-              <select 
-                class="mdb-select" 
-                searchable="Search here.."
-                onChange={inputValue("district")}>
-                {alldistrict.map((district) => (
-                  <option value={district.district}>{district.district}</option>
-                ))}
-              </select>
-                </div>
-            <br />
-            <button type="submit" className="button-addnew">
-              <FontAwesomeIcon icon={faAdd} />
-              Add New
-            </button>
-                </form>*/}
         </div>
       </div>
   );
 };
-export default AddHospitalComponent;
+export default DocumentComponent;

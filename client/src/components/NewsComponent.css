@@ -1,0 +1,35 @@
+.container h1 {
+    text-align: center;
+}  
+
+.content-box{
+    /*padding: 40px 120px 60px 60px;*/
+    background-color: #EEEEEE;
+    border-radius: 20px;
+    margin: auto;
+}
+.content-box form{
+    background-color: #EEEEEE;
+    width: 1000px;
+    height: auto;
+    padding: 50px;
+    box-sizing: content-box;
+    margin: auto;
+}
+.text-line{
+    display: flex;
+    margin: auto;
+}
+/*.tap-select{
+    padding: 10px 20px 10px 20px;
+}
+.tap-select select{
+    padding: 5px;
+    border-radius: 5px;
+}
+.tap-top-select-in{
+    display: flex;
+}*/
+.content-box button{
+    background-color: #02BC77;
+}

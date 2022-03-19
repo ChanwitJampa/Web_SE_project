@@ -1,0 +1,87 @@
+.container h1 {
+    text-align: left;
+}  
+.content-box button{
+    background-color: #2AB883;
+    color: #FFFFFF
+}
+.content-box button2{
+    background-color: #ADBBB6;
+    margin: 20px;
+}
+/*.tap-top-select{
+    display: flex;
+    justify-content: space-between;
+}
+.tap-select{
+    padding: 10px 20px 10px 20px;
+}
+.tap-select select{
+    padding: 8px;
+    border-radius: 5px;
+}
+.tap-top-select-in{
+    display: flex;
+}
+.tap-top-check{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+.search{
+    width: 420px;
+}
+.search input{
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Prompt', sans-serif;
+    border-bottom: 3px solid gray;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    outline: none;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 8px;
+}
+.search input:hover{
+    border-bottom: 3px solid #B00020;
+}
+.logo-vacc{
+    width: 25px;
+    height: 25px;
+    padding-right: 20px;
+    color: #2B2118;
+}
+.text-box{
+    background-color: aliceblue;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 20px;
+}
+.text-line{
+    display: flex;
+    justify-items: center;
+    text-align: center;
+    
+}
+.text-line p{
+    padding: 10px;
+}
+.text-line p span{
+    padding: 0px 20px 0px 0px;
+}
+.table-container{
+    padding: 10px 40px 10px 40px;
+    margin: 10px;
+}
+.line{
+    width:100% ;
+    text-align: left;
+    margin-left:0;
+}
+.text-header{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}*/

@@ -1,0 +1,23 @@
+.content-box{
+    padding: 40px 60px 60px 60px;
+    background-color: #BCBEC0;
+    border-radius: 20px;
+    margin: 20px;
+}
+/*.button-addnew{
+    padding: 15px 30px 15px 20px;
+    background-color: #2B2118;
+    border-radius: 20px;
+    color: #FFFFFF;
+}*/
+/*.button-addnew:hover{
+    background-color: red;
+}*/
+.content-box button{
+    background-color: #02BC77;
+    color: #FFFFFF;
+}
+.name text{
+    font-weight: 100;
+}
+

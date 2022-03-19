@@ -8,6 +8,11 @@ import HospitalComponent from "./components/HospitalComponent";
 import AddAnnounceComponent from "./components/AddAnnounceComponent";
 import TestComponent from "./components/TestComponent";
 import EditHospitalComponent from "./components/EditHospitalComponent";
+import NewsComponent from "./components/NewsComponent";
+import OrganizationComponent from "./components/OrganizationComponent";
+import CheckStatusComponent from "./components/CheckStatusComponent";
+import DocumentComponent from "./components/DocumentComponent";
+import ResultComponent from "./components/ResultComponent";
 const MyRoute=()=>{
     return(
         <BrowserRouter>
@@ -21,6 +26,13 @@ const MyRoute=()=>{
                 <Route path="/addannounce" exact component={AddAnnounceComponent}/>
                 <Route path="/test" exact component={TestComponent}/>
                 <Route path="/edithospital/:_id" exact component={EditHospitalComponent}/>
+
+
+                <Route path="/news" exact component={NewsComponent}/>
+                <Route path="/organization" exact component={OrganizationComponent} />
+                <Route path="/checkstatus" exact component={CheckStatusComponent} />
+                <Route path="/documents" exact component={DocumentComponent} />
+                <Route path="/result" exact component={ResultComponent} />
             </Switch>
         </BrowserRouter>
     );
