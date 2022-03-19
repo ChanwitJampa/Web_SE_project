@@ -31,6 +31,7 @@ import {
   HeartTwoTone,
   CheckCircleTwoTone,
   ClockCircleOutlined,
+  NotificationOutlined
 } from "@ant-design/icons";
 
 import {
@@ -123,11 +124,113 @@ function App() {
   //   }
   // }, [pName]);
 
+  let time = new Date().toLocaleDateString();
+
+  const [ctime, setCtime] = useState(time);
+  
+  
+
   return (
     <div className="container2">
       <NavbarComponent />
 
       <div className="container3">
+
+        <h1 className="timeText">{ctime}</h1>
+
+        <h1 className="welcomText">ยินดีต้อนรับเข้าสู่ระบบจัดการฝึกงาน</h1>
+
+        <div className="searchArea">
+          <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+
+        <div className="box1">
+
+          <h1 style={{marginBottom:"2rem"}}>ข่าวสารประกาศ</h1>
+
+          <div className="newBox">
+
+            <div className="topBox">
+              <h1 className="corpName">เงินเทอร์โบ</h1>
+
+              <h1 className="postDate"><NotificationOutlined style={{marginRight:"1rem",fontSize:"1.2rem",color:"#019267"}} />วันที่ 10 กุมพาพันธ์ 2565</h1>
+              
+            </div>
+
+            <div className="bottomBox">
+
+              <h1 className="postText">เปิดรับนักศึกษาฝึกงานตำแหน่ง frontend, backend, automation engineer ที่เรียนจบมาในสาขาวิชา วิศวกรรมคอมพิวเตอร์ จำนวนมากสามารถสมัครมาได้ที่ช่องทางดังนี้ 
+              fackbook line เเละทางเว็บไซต์ของทางบริษัท  </h1>
+              
+
+              <h1 className="postType">ฝึกงาน</h1>
+
+
+            </div>
+
+
+          </div>
+          <div className="newBox">
+
+            <div className="topBox">
+              <h1 className="corpName">เงินเทอร์ไม่โบ</h1>
+
+              <h1 className="postDate"><NotificationOutlined style={{marginRight:"1rem",fontSize:"1.2rem",color:"#019267"}} />วันที่ 5 กุมพาพันธ์ 2565</h1>
+              
+            </div>
+
+            <div className="bottomBox">
+
+              <h1 className="postText">เปิดรับนักศึกษาฝึกงานตำแหน่ง frontend, backend, automation engineer ที่เรียนจบมาในสาขาวิชา วิศวกรรมคอมพิวเตอร์ จำนวนมากสามารถสมัครมาได้ที่ช่องทางดังนี้ 
+              fackbook line เเละทางเว็บไซต์ของทางบริษัท  </h1>
+              
+
+              <h1 className="postType">สหกจ</h1>
+
+
+            </div>
+
+
+          </div>
+          <div className="newBox">
+
+            <div className="topBox">
+              <h1 className="corpName">Gofive company</h1>
+
+              <h1 className="postDate"><NotificationOutlined style={{marginRight:"1rem",fontSize:"1.2rem",color:"#019267"}} />วันที่ 1 กุมพาพันธ์ 2565</h1>
+              
+            </div>
+
+            <div className="bottomBox">
+
+              <h1 className="postText">เปิดรับนักศึกษาฝึกงานตำแหน่ง frontend, backend, automation engineer ที่เรียนจบมาในสาขาวิชา วิศวกรรมคอมพิวเตอร์ จำนวนมากสามารถสมัครมาได้ที่ช่องทางดังนี้ 
+              fackbook line เเละทางเว็บไซต์ของทางบริษัท  </h1>
+              
+
+              <h1 className="postType">ฝึกงาน</h1>
+
+
+            </div>
+
+
+          </div>
+
+
+
+
+        </div>
+
+
+        <div style={{padding:"5rem"}}>
+
+        </div>
+
+
+
+
 
       </div>
 
