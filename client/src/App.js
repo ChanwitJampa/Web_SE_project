@@ -124,11 +124,20 @@ function App() {
   //   }
   // }, [pName]);
 
-  let time = new Date().toLocaleDateString();
 
-  const [ctime, setCtime] = useState(time);
-  
-  
+  let d = new Date();
+
+  var monthNamesThai = ["มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน",
+  "กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤษจิกายน","ธันวาคม"];
+
+  var dayNames = ["วันอาทิตย์","วันจันทร์","วันอังคาร","วันพุทธ","วันพฤหัสบดี","วันศุกร์","วันเสาร์"];
+
+  var monthNamesEng = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+
+  var dayNamesEng = ['Sunday','Monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+
+  const thTIme2 =dayNames[d.getDay()]+",  "+d.getDate()+ " "+monthNamesThai[d.getMonth()]+"  "+d.getFullYear();
 
   return (
     <div className="container2">
@@ -136,7 +145,7 @@ function App() {
 
       <div className="container3">
 
-        <h1 className="timeText">{ctime}</h1>
+        <h1 className="timeText">{thTIme2}</h1>
 
         <h1 className="welcomText">ยินดีต้อนรับเข้าสู่ระบบจัดการฝึกงาน</h1>
 

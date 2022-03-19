@@ -170,9 +170,10 @@
 
 .corpName{
   font-size: 1.8rem;
+  font-weight: bold;
   padding-left: 2rem;
   padding-top: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   
 }
 .postDate{
@@ -183,7 +184,7 @@
 
 .postText{
   font-size: 1rem;
-  margin-left: 4rem;
+  margin-left: 3rem;
 }
 
 .postType{
@@ -191,6 +192,6 @@
   font-size: 1.5rem;
   color: #02BC77;
   margin-right: 1rem;
-  margin-top: 6rem;
+  margin-top: 7rem;
   margin-left: 10rem;
 }
