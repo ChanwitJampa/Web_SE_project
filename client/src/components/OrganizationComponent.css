@@ -1,20 +1,36 @@
 .container h1 {
-    text-align: center;
+    text-align: left;
     margin: auto;
 }
 .content-box{
-    /*padding: 20px 120px 60px 60px;*/
+    /*padding: 40px 120px 60px 60px;*/
     background-color: #EEEEEE;
+    border-radius: 20px;
     margin: auto;
 }
 .content-box form{
     background-color: #EEEEEE;
     width: 1000px;
-    height: 100px;
+    height: auto;
     padding: 50px;
-    box-sizing: border-box;
+    box-sizing: content-box;
+    margin: auto;
 }
-.table-thead{
+/*.content-box{
+    padding: 20px 120px 60px 60px;
+    background-color: #EEEEEE;
+    margin: auto;
+}
+.content-box form{
+    background-color: #EEEEEE;
+    /*width: 1000px;
+    height: 100px;*/
+    /*padding: 50px;*/
+    /*box-sizing: border-box;*/
+    /*margin: auto;
+}*/
+
+/*.table-thead{
     background-color: #2B2118;
     color: aliceblue;
 }
@@ -59,12 +75,13 @@
     padding: 8px;
     border-radius: 5px;
 }*/
-.content-box form-control{
+/*.content-box form-control{
     background-color: #FFFF;
     width: 100%;
     height: 150px;
-    box-sizing: border-box;
-}
+    /*box-sizing: border-box;*/
+    /*margin: auto;
+}*/
 .content-box button{
     background-color: #02BC77;
 }
