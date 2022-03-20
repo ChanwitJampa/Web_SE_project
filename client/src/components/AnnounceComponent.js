@@ -6,9 +6,9 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import axios from "axios";
 const AnnounceComponent=()=>{
     const [searchAnnounce,setSearchAnnounce]=useState('');
-    const [announce,setAnnounce]=useState([]);
     const [district,setDistrict]=useState([]);
     const [provinces,setProvinces]=useState([]);
+    const [announce,setAnnounce]=useState([]);
     const fetchData=()=>{
         axios.get(`http://localhost:5000/api/announces`)
         .then((res)=>{

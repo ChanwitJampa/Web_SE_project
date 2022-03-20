@@ -56,7 +56,7 @@ const OrganizationComponent = () => {
       }
     });
   };
-  const deleteHospital = (id) => {
+ const deleteHospital = (id) => {
     axios
       .delete(`http://localhost:5000/api/hospitals/${id}`)
       .then((response) => {

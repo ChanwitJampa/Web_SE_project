@@ -54,7 +54,7 @@ const LoginComponent=()=>{
                             <form onSubmit={signinForm}>
                                 <div className="form-group">
                                     <label>Nontri Account</label>
-                                    <input type="email" className="form-control" placeholder="bxxxxxxxxxx" onChange={inputValue("email")}/>
+                                    <input type="text" className="form-control" placeholder="bxxxxxxxxxx" onChange={inputValue("email")}/>
                                 </div>
 
                                 <div className="form-group">
