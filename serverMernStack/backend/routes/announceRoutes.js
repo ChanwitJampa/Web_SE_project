@@ -1,16 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const { getAnnounces,setAnnounce,putAnnounce,deleteAnnounce,getAnnounce } = require('../controllers/AnnounceController')
+const {getannounces,setannounce,deleteannounce,putannounce} = require('../controllers/announcesController')
 
 
-router.route('/').get(getAnnounces).post(setAnnounce)
-router.route('/:id').put(putAnnounce).delete(deleteAnnounce).get(getAnnounce)
-
-
-// router.get('/', getAnnounces)
-// router.post('/',postAnnounce)
-
-// router.put('/:id', putAnnounce)
-// router.delete('/:id', deleteAnnounce)
+router.route('/').get(getannounces).post(setannounce)
+router.route('/:id').put(putannounce).delete(deleteannounce)
 
 module.exports = router

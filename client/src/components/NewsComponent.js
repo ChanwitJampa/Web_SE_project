@@ -28,10 +28,10 @@ const NewsComponent=()=>{
     });*/
     
     const inputValue=name=>event=>{
-        setState({...state,[name]:organizationID,organizationName,webSite})
+        setState({...state,[name]:organizationID,organizationName,detial})
         
     }
-    const {organizationID,organizationName,webSite,DateStart,DateEnd,numberPeople,vaccine,registrationType,linkRegistration,image,topic}=state
+    const {organizationID,organizationName,image,topic,detial}=state
     return(
         <div>
             <NavbarComponent/>
@@ -44,7 +44,7 @@ const NewsComponent=()=>{
                     </div>
                     <div className="form">
                     <label>รายละเอียด</label>
-                    <input type="text" className="form-control" placeholder="กรอกรายละเอียดของคุณ" onChange={inputValue("website")}/>
+                    <input type="text" className="form-control" placeholder="กรอกรายละเอียดของคุณ" onChange={inputValue("detial")}/>
                     </div>
                         {/*<p>วัคซีน</p>
                         <div className="tap-top-select-in">
