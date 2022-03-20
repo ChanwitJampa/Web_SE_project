@@ -116,19 +116,33 @@ const DocumentComponent = () => {
         </p>
 
         <div>
-          <div className="borderRadiusTop">
-            <span>ชื่อเอกสาร</span><br />
-            <input type="text" class="form-control"></input>
-          </div>
-          <br />
-          <div className="borderRadiusBottom">
-            <span>ชื่อเอกสาร</span><br />
-            <input type="file" className=""></input><br></br><br></br>
-            <button type="submit" class="btn btn-success" >Upload</button>
-          </div>
+          <form>
+            <div className="borderRadiusTop">
+              <span>ชื่อเอกสาร</span>
+              <br />
+              <input type="text" class="form-control"></input>
+            </div>
+            <br />
+            <div className="borderRadiusBottom">
+              <br />
+              <div class="drop-zone">
+                <span class="drop-zone__prompt">
+                  Drop file here or click to upload
+                </span>
+                <input type="file" name="myFile" class="drop-zone__input" />
+              </div>
+              <div className="upload-button">
+                <button type="submit" class="btn btn-success">
+                  Upload
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   );
 };
+<script src="./src/components/scriptDocumentComponent.js"></script>;
+
 export default DocumentComponent;
