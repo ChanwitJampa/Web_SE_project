@@ -3,14 +3,17 @@ const mongoose = require('mongoose')
 var companySchema = mongoose.Schema({
     companyName: {
         type: String,
+        required:[true,'Please add a companyName']
        
     },
     businessType:{
         type: String,
+        required:[true,'Please add a businessType']
         
     },
     address:{
         type: String,
+        required:[true,'Please add a address']
       
     },
     phoneNumber:{
