@@ -1,14 +1,89 @@
 .container h1 {
     text-align: left;
 }  
-.content-box button{
+
+.contentBox{
+    height: 20rem;
+    /* background-color: whitesmoke; */
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    border-radius: 0.5rem;
+    border-width: 0.1rem;
+    border-style: solid;
+    border-color: black;
+}
+
+.buttonBox{
+    margin-top: 2rem;
+    margin-left: 0rem;
+}
+
+.btextStatus{
+    margin-left: 2rem;
+    padding-top: 1rem;
+    font-size: 1.25rem;
+    color: rgba(0,0,0,.45);
+    font-weight: bold;
+    
+}
+
+.btextStatus2{
+    margin-left: 2rem;
+    /* padding-top: 3rem; */
+    font-size: 1.25rem;
+    color: rgba(0,0,0,.45);
+    font-weight: bold;
+
+
+}
+
+.textStatus{
+    margin-left: 2rem;
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+
+.textStatus2{
+    margin-left: 2rem;
+    /* padding-top: 3rem; */
+    font-size: 1.25rem;
+}
+
+.leftBoxC{
+
+}
+
+.rightBoxC{
+
+}
+
+.divider1{
+    position: relative;
+    /* top: 5rem; */
+    display: inline-block;
+    height: 0.9em;
+    width: 0.1rem;
+    /* margin: 0 8px; */
+    vertical-align: middle;
+    border-top: 0;
+    background-color: rgb(153, 153, 153);
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+}
+/* .content-box button{
     background-color: #2AB883;
-    color: #FFFFFF
+    color: #c50000
 }
 .content-box button2{
-    background-color: #ADBBB6;
+    background-color: #0cbd7f;
     margin: 20px;
-}
+} */
+
+
+
+
 /*.tap-top-select{
     display: flex;
     justify-content: space-between;

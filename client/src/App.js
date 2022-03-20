@@ -35,6 +35,7 @@ import {
   PhoneOutlined,
   MailOutlined,
   DeleteOutlined,
+  DeleteFilled,
   EditOutlined
 } from "@ant-design/icons";
 
@@ -184,7 +185,7 @@ function App() {
 
               <div className="rightBotBox">
               <EditOutlined  style={{marginRight:"1rem", color:"#39AEA9", fontSize:"1.5rem"}}/>
-              <DeleteOutlined style={{marginRight:"1rem", color:"#B33030", fontSize:"1.5rem"}}/>
+              <DeleteFilled style={{marginRight:"3rem", color:"#B33030", fontSize:"1.5rem" }}/>
                 <h1 className="postType">ฝึกงาน</h1>
 
               </div>
@@ -215,7 +216,7 @@ function App() {
 
               <div className="rightBotBox">
               <EditOutlined  style={{marginRight:"1rem", color:"#39AEA9", fontSize:"1.5rem"}}/>
-              <DeleteOutlined style={{marginRight:"1rem", color:"#B33030", fontSize:"1.5rem"}}/>
+              <DeleteFilled style={{marginRight:"3rem", color:"#B33030", fontSize:"1.5rem"}}/>
                 <h1 className="postType">ฝึกงาน</h1>
 
               </div>
@@ -246,7 +247,7 @@ function App() {
 
               <div className="rightBotBox">
               <EditOutlined  style={{marginRight:"1rem", color:"#39AEA9", fontSize:"1.5rem"}}/>
-              <DeleteOutlined style={{marginRight:"1rem", color:"#B33030", fontSize:"1.5rem"}}/>
+              <DeleteFilled style={{marginRight:"3rem", color:"#B33030", fontSize:"1.5rem"}}/>
                 <h1 className="postType">ฝึกงาน</h1>
 
               </div>
