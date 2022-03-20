@@ -2,13 +2,7 @@ import NavbarComponent from "./NavbarComponent";
 import { useEffect, useState } from "react";
 import "./ResultComponent.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFileLines,
-  faAdd,
-  faInfo,
-  faInfoCircle,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import Swal from "sweetalert2";
 const ResultComponent = () => {
@@ -117,20 +111,39 @@ const ResultComponent = () => {
           <span>ผลการฝึกงาน/สหกิจ</span>
         </div>
 
-        <div className="result-table">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Vaccine Name</th>
-                <th scope="col">Dose total</th>
-                <th scope="col">Condition</th>
-                <th scope="col">Walk-in</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
-              </tr>
-            </thead>
-          </table>
+        <div className="result">
+          <div>
+            <span>s</span>
+          </div>
+          <div className="result-table">
+            <table
+              class="table table-bordered border-primary"
+              className="table"
+            >
+              <thead>
+                <tr className="colInfo">
+                  <th scope="col">บริษัท</th>
+                  <th scope="col">ตำแหน่ง</th>
+                  <th scope="col">ฝึกงานหรือสหกิจ</th>
+                  <th scope="col">ผลการฝึก</th>
+                  <th scope="col">ช่วงเวลา</th>
+                  <th scope="col">อัพโหลดรายงาน</th>
+                </tr>
+                <tr className="colInfo">
+                  <td>ไทยใจดี จำกัด</td>
+                  <td>โปรเเกรมเมอร์</td>
+                  <td>ฝึกงาน</td>
+                  <td>ผ่าน</td>
+                  <td>04/64 - 06/64</td>
+                  <td>
+                    <div className="faArrowUpFromBracket">
+                      <FontAwesomeIcon icon={faArrowUpFromBracket} />
+                    </div>
+                  </td>
+                </tr>
+              </thead>
+            </table>
+          </div>
         </div>
       </div>
     </div>

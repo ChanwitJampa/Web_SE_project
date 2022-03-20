@@ -61,9 +61,34 @@
 .header-table{
     text-align: center;
     font-size: 25px;
+    margin-top: 50px;
+}
+
+.result{
+    flex-direction: column;
+    background-color: #eeeeee;
 }
 
 .result-table{
     background-color: #eeeeee;
     margin-top: 50px;
+}
+
+.faArrowUpFromBracket{
+    width: 50px;
+    border-radius: 10px;
+    /* margin-left: 30px; */
+    background-color: #00eb95;
+}
+
+table{
+    background-color: #FFFFFF;
+    height: 100px;
+    width: 200px;
+
+}
+
+.colInfo{
+    text-align: center;
+    
 }
