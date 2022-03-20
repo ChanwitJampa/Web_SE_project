@@ -5,31 +5,17 @@
 .content-box{
     /*padding: 40px 120px 60px 60px;*/
     background-color: #EEEEEE;
-    border-radius: 20px;
+    border-radius: 0px;
     margin: auto;
 }
 .content-box form{
     background-color: #EEEEEE;
     width: 1000px;
     height: auto;
-    padding: 50px;
+    /*padding: 50px;*/
     box-sizing: content-box;
     margin: auto;
 }
-/*.content-box{
-    padding: 20px 120px 60px 60px;
-    background-color: #EEEEEE;
-    margin: auto;
-}
-.content-box form{
-    background-color: #EEEEEE;
-    /*width: 1000px;
-    height: 100px;*/
-    /*padding: 50px;*/
-    /*box-sizing: border-box;*/
-    /*margin: auto;
-}*/
-
 /*.table-thead{
     background-color: #2B2118;
     color: aliceblue;
