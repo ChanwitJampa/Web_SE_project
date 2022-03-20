@@ -35,13 +35,13 @@ button{
 }
 
 .borderRadiusTop{
-    background-color: #f0f0f0;
+    background-color: #eeeeee;
     border-radius: 20px;
     padding: 20px;
 }
 
 .borderRadiusBottom{
-    background-color: #f0f0f0;
+    background-color: #eeeeee;
     border-radius: 20px;
     padding: 100px;
 }
