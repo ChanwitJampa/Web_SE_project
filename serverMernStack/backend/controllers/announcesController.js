@@ -18,7 +18,11 @@ const getannounces = asyncHandler(async (req, res) => {
 const setannounce = asyncHandler(async (req, res) => {
     const announce = await Announce.create({
         titleName: req.body.titleName,
-        detail: req.body.detail
+        detail: req.body.detail,
+        phoneNumber: req.body.phoneNumber,
+        email: req.body.email,
+        type: req.body.type
+
      
     })
     res.status(200).json(announce)

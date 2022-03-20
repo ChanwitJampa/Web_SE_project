@@ -1,6 +1,11 @@
 const mongoose = require('mongoose')
+const moment = require('moment');
 
-const userSchema = mongoose.Schema({
+const getDate=()=>{
+    
+}
+
+var userSchema = mongoose.Schema({
     firstName: {
         type: String,
         required: [true, 'Please add a firstName']
@@ -15,7 +20,7 @@ const userSchema = mongoose.Schema({
     },
     studentID:{
         type: String,
-        required:[true,'Please add a email']
+        required:[true,'Please add a studentID']
     },
     email:{
         type: String,
@@ -24,7 +29,7 @@ const userSchema = mongoose.Schema({
     password:{
         type: String,
         select: false,
-        required:[true,'Please add a assword']
+        required:[true,'Please add a password']
     },
     role:{
         type: String,
@@ -32,12 +37,25 @@ const userSchema = mongoose.Schema({
     },
     token:{
         type:String
+    },
+    time:{
+        type:String
     }
-    
-},
-    {
-        timestamps: true,
-    }
+}
 )
+
+userSchema.pre('save', function(next) {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    let mm = today.getMonth() + 1; // Months start at 0!
+    let dd = today.getDate();
+
+    if (dd < 10) dd = '0' + dd;
+    if (mm < 10) mm = '0' + mm;
+
+    const date = dd + '/' + mm + '/' + yyyy;
+    this.time = date
+    next();
+  });
 
 module.exports = mongoose.model('users', userSchema)
