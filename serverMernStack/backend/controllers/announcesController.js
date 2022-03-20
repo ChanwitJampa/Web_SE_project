@@ -33,7 +33,7 @@ const putannounce = asyncHandler(async (req, res) => {
     const announce = await Announce.findById(req.params.id)
     if (!announce) {
         res.status(400)
-        throw new Error('user id not found')
+        throw new Error('annouce id not found')
     }
 
     const updatedannounce = await Announce.findByIdAndUpdate(req.params.id, req.body, { new: true })

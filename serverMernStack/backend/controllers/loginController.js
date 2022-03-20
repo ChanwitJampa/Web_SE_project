@@ -14,26 +14,26 @@ const login = asyncHandler(async (req, res) => {
 
 
 
-    const { email, password } = req.body
+    const { studentID, password } = req.body
 
     //validate user input
-    if (!(email && password)) {
+    if (!(studentID && password)) {
         res.status(400)
-        throw new Error('email or password are  required')
+        throw new Error('studentID or password are  required')
     }
 
-    const user = await User.findOne({ email }).select('+password')
+    const user = await User.findOne({ studentID }).select('+password')
 
     if (user) {
         if ((await bcrypt.compare(password, user.password))) {
             const token = jwt.sign(
-                { user_id: user._id, email },
+                { user_id: user._id, studentID },
                 process.env.TOKEN_KEY, {
                 expiresIn: "24h"
             })
             //save token in uuser
-            const oldUser = await User.findOne({ email },'-createdAt -updatedAt -__v')
-            //if want to deselect _id await User.findOne({ email }, '-_id')
+            const oldUser = await User.findOne({ studentID },'-createdAt -updatedAt -__v')
+            //if want to deselect _id await User.findOne({ studentID }, '-_id')
             oldUser.token = token
             res.status(200).json(oldUser)
         }

@@ -21,14 +21,19 @@ const getUsers = asyncHandler(async (req, res) => {
 //@access Private
 const setUser = asyncHandler(async (req, res) => {
 
-    const { email, password } = req.body
+    const { email,studentID, password } = req.body
 
 
     if (email) {
-        const oldUser = await User.findOne({ email })
+        var oldUser = await User.findOne({ email })
         if (oldUser) {
             res.status(400)
             throw new Error('email user is aleady use')
+        }
+        oldUser = await User.findOne({ studentID })
+        if (oldUser) {
+            res.status(400)
+            throw new Error('studentID user is aleady use')
         }
     }
     else {
@@ -43,15 +48,14 @@ const setUser = asyncHandler(async (req, res) => {
         lastName: req.body.lastName,
         idCard: req.body.idCard,
         email: req.body.email,
+        studentID: req.body.studentID,
         password: encryptedPassword,
-        hospitalName: req.body.hospitalName,
-        hospitalID: req.body.hospitalID,
-        role: req.body.role === undefined ? "user" : req.body.role
+        role: req.body.role === undefined ? "student" : req.body.role
     })
 
     //create token
     const token = jwt.sign(
-        { user_id: user._id, email },
+        { user_id: user._id, studentID },
         process.env.TOKEN_KEY, {
         expiresIn: "2h"
     }
