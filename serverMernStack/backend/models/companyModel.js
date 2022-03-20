@@ -18,14 +18,15 @@ var companySchema = mongoose.Schema({
     },
     phoneNumber:{
         type: String,
+        default:"null"
     
-    }
-    ,
+    },
     tel:{
         type: String,
+        default:"null"
       
     },
-    time:{
+    createtime:{
         type:String
     }
 },)
@@ -40,7 +41,7 @@ companySchema.pre('save', function(next) {
     if (mm < 10) mm = '0' + mm;
 
     const date = dd + '/' + mm + '/' + yyyy;
-    this.time = date
+    this.createtime = date
     next();
   });
 

@@ -33,12 +33,13 @@ var userSchema = mongoose.Schema({
     },
     role:{
         type: String,
-        select: false
+        select: false,
+        default:"student"
     },
     token:{
         type:String
     },
-    time:{
+    createtime:{
         type:String
     }
 }
@@ -54,7 +55,7 @@ userSchema.pre('save', function(next) {
     if (mm < 10) mm = '0' + mm;
 
     const date = dd + '/' + mm + '/' + yyyy;
-    this.time = date
+    this.createtime = date
     next();
   });
 

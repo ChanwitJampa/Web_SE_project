@@ -8,7 +8,7 @@ const Company = require('../models/companyModel')
 //@route GET /api/Companys
 //@access Private
 const getCompanys = asyncHandler(async (req, res) => {
-    const companys = await Company.find()
+    const companys = await Company.find().select('-__v')
     res.status(200).json(companys)
 })
 

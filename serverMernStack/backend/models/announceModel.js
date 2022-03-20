@@ -13,10 +13,12 @@ var announceSchema = mongoose.Schema({
     },
     phoneNumber:{
         type: String,
+        default:"null"
         
     },
     email:{
         type: String,
+        default:"null"
         
         
     },
@@ -24,7 +26,7 @@ var announceSchema = mongoose.Schema({
         type: String,
         required:[true,'Please add a type']
     },
-    time:{type:String}
+    createtime:{type:String}
 },)
 
 announceSchema.pre('save', function(next) {
@@ -37,7 +39,7 @@ announceSchema.pre('save', function(next) {
     if (mm < 10) mm = '0' + mm;
 
     const date = dd + '/' + mm + '/' + yyyy;
-    this.time = date
+    this.createtime = date
     next();
   });
 

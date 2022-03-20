@@ -5,12 +5,12 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const { getMaxListeners } = require('../models/userModel');
 const { hidden } = require('colors');
-
+const mongoose = require('mongoose')
 //@desc Get users
 //@route GET /api/users
 //@access Private
 const getUsers = asyncHandler(async (req, res) => {
-    const users = await User.find()
+    const users = await User.find().select('-__v')
     res.status(200).json(users)
 })
 
@@ -50,7 +50,7 @@ const setUser = asyncHandler(async (req, res) => {
         email: req.body.email,
         studentID: req.body.studentID,
         password: encryptedPassword,
-        role: req.body.role === undefined ? "student" : req.body.role
+        role: req.body.role 
     })
 
     //create token
@@ -124,12 +124,22 @@ const deleteUser = asyncHandler(async (req, res) => {
 //@route GET /api/users/:id
 //@access Private
 const getUser = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.params.id)
-    if (!user) {
-        res.status(400)
-        throw new Error('user id not found')
+   
+    var   user
+    if( mongoose.Types.ObjectId.isValid(req.params.id) ) {
+        user = await User.findById(req.params.id)
     }
-    res.status(200).json(user)
+   
+  if(!user){
+      user = await User.findOne({'studentID':req.params.id})
+  }
+   if (user) {
+       res.status(200).json(user)
+   }
+   else{
+       res.status(404)
+   }
+
 })
 
 
