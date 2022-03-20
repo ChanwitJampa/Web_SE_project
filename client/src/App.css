@@ -161,11 +161,17 @@
   justify-content: space-between;
 }
 
+.middleBox{
+  width: 70%;
+  height: 7rem;
+}
+
 
 .bottomBox{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 96%;
 }
 
 .corpName{
@@ -190,7 +196,7 @@
 .postText2{
   font-size: 1rem;
   margin-left: 3rem;
-  margin-top: 5rem;
+  /* margin-top: 5rem; */
 }
 
 .postType{
@@ -207,12 +213,22 @@
 }
 
 .rightBotBox{
-  padding: 0;
-  width: 30rem;
-  height: 2rem;
+  /* padding: 0;
+  width: 30rem; */
+  /* height: 2rem; */
   display: flex;
   flex-direction: row;
-  margin-left: 20rem;
-  margin-top: 7rem;
-  margin-right: -7rem;
+  /* margin-left: 20rem; */
+  /* margin-top: 7rem; */
+  margin-right: -2rem;
+}
+
+.headerBox{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.addReqBtn{
+
 }
