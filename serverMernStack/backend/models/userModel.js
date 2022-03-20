@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const hospitalSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
     firstName: {
         type: String,
         required: [true, 'Please add a firstName']
@@ -13,6 +13,10 @@ const hospitalSchema = mongoose.Schema({
         type: String,
         required:[true,'Please add a idCard']
     },
+    studentID:{
+        type: String,
+        required:[true,'Please add a email']
+    },
     email:{
         type: String,
         required:[true,'Please add a email']
@@ -21,15 +25,6 @@ const hospitalSchema = mongoose.Schema({
         type: String,
         select: false,
         required:[true,'Please add a assword']
-    },
-    hospitalName:{
-        type: String,
-        required:[true,'Please add a hospitalName']
-    },
-    hospitalID:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref:"Hospital",
-        required:[true,'Please add a hospital ID']
     },
     role:{
         type: String,
@@ -45,4 +40,4 @@ const hospitalSchema = mongoose.Schema({
     }
 )
 
-module.exports = mongoose.model('User', hospitalSchema)
+module.exports = mongoose.model('users', userSchema)
