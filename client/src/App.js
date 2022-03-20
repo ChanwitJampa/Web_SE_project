@@ -31,7 +31,11 @@ import {
   HeartTwoTone,
   CheckCircleTwoTone,
   ClockCircleOutlined,
-  NotificationOutlined
+  NotificationOutlined,
+  PhoneOutlined,
+  MailOutlined,
+  DeleteOutlined,
+  EditOutlined
 } from "@ant-design/icons";
 
 import {
@@ -158,7 +162,7 @@ function App() {
 
         <div className="box1">
 
-          <h1 style={{marginBottom:"2rem"}}>ข่าวสารประกาศ</h1>
+          <h1 style={{marginBottom:"2rem",fontWeight:"bold",color:"#FF6464"}}>ข่าวสารประกาศ</h1>
 
           <div className="newBox">
 
@@ -170,12 +174,20 @@ function App() {
             </div>
 
             <div className="bottomBox">
+    
+              <div className="leftBotBox">
+                <h1 className="postText">เปิดรับนักศึกษาฝึกงานตำแหน่ง frontend, backend, automation engineer ที่เรียนจบมาในสาขาวิชา วิศวกรรมคอมพิวเตอร์ จำนวนมากสามารถสมัครมาได้ที่ช่องทางดังนี้ 
+                fackbook line เเละทางเว็บไซต์ของทางบริษัท  </h1>
+                
+                <h1 className="postText2"><PhoneOutlined style={{marginLeft:"0rem",marginRight:"1rem",fontSize:"1.5rem",color:"#488FB1"}}/> 066-6666666  <MailOutlined style={{marginLeft:"2rem",marginRight:"1rem",fontSize:"1.5rem",color:"#019267"}} /> artid_yenpram@gmail.com</h1>
+              </div>
 
-              <h1 className="postText">เปิดรับนักศึกษาฝึกงานตำแหน่ง frontend, backend, automation engineer ที่เรียนจบมาในสาขาวิชา วิศวกรรมคอมพิวเตอร์ จำนวนมากสามารถสมัครมาได้ที่ช่องทางดังนี้ 
-              fackbook line เเละทางเว็บไซต์ของทางบริษัท  </h1>
-              
+              <div className="rightBotBox">
+              <EditOutlined  style={{marginRight:"1rem", color:"#39AEA9", fontSize:"1.5rem"}}/>
+              <DeleteOutlined style={{marginRight:"1rem", color:"#B33030", fontSize:"1.5rem"}}/>
+                <h1 className="postType">ฝึกงาน</h1>
 
-              <h1 className="postType">ฝึกงาน</h1>
+              </div>
 
 
             </div>
@@ -193,11 +205,20 @@ function App() {
 
             <div className="bottomBox">
 
-              <h1 className="postText">เปิดรับนักศึกษาฝึกงานตำแหน่ง frontend, backend, automation engineer ที่เรียนจบมาในสาขาวิชา วิศวกรรมคอมพิวเตอร์ จำนวนมากสามารถสมัครมาได้ที่ช่องทางดังนี้ 
-              fackbook line เเละทางเว็บไซต์ของทางบริษัท  </h1>
-              
+              <div>
+                <h1 className="postText">เปิดรับนักศึกษาฝึกงานตำแหน่ง frontend, backend, automation engineer ที่เรียนจบมาในสาขาวิชา วิศวกรรมคอมพิวเตอร์ จำนวนมากสามารถสมัครมาได้ที่ช่องทางดังนี้ 
+                fackbook line เเละทางเว็บไซต์ของทางบริษัท  </h1>
+                
+                <h1 className="postText2"><PhoneOutlined style={{marginLeft:"0rem",marginRight:"1rem",fontSize:"1.5rem",color:"#488FB1"}}/> 066-6666666  <MailOutlined style={{marginLeft:"2rem",marginRight:"1rem",fontSize:"1.5rem",color:"#019267"}} /> artid_yenpram@gmail.com</h1>
+                
+              </div>
 
-              <h1 className="postType">สหกจ</h1>
+              <div className="rightBotBox">
+              <EditOutlined  style={{marginRight:"1rem", color:"#39AEA9", fontSize:"1.5rem"}}/>
+              <DeleteOutlined style={{marginRight:"1rem", color:"#B33030", fontSize:"1.5rem"}}/>
+                <h1 className="postType">ฝึกงาน</h1>
+
+              </div>
 
 
             </div>
@@ -215,11 +236,20 @@ function App() {
 
             <div className="bottomBox">
 
-              <h1 className="postText">เปิดรับนักศึกษาฝึกงานตำแหน่ง frontend, backend, automation engineer ที่เรียนจบมาในสาขาวิชา วิศวกรรมคอมพิวเตอร์ จำนวนมากสามารถสมัครมาได้ที่ช่องทางดังนี้ 
-              fackbook line เเละทางเว็บไซต์ของทางบริษัท  </h1>
-              
+              <div>
+                <h1 className="postText">เปิดรับนักศึกษาฝึกงานตำแหน่ง frontend, backend, automation engineer ที่เรียนจบมาในสาขาวิชา วิศวกรรมคอมพิวเตอร์ จำนวนมากสามารถสมัครมาได้ที่ช่องทางดังนี้ 
+                fackbook line เเละทางเว็บไซต์ของทางบริษัท  </h1>
+                
+                <h1 className="postText2"><PhoneOutlined style={{marginLeft:"0rem",marginRight:"1rem",fontSize:"1.5rem",color:"#488FB1"}}/> 066-6666666  <MailOutlined style={{marginLeft:"2rem",marginRight:"1rem",fontSize:"1.5rem",color:"#019267"}} /> artid_yenpram@gmail.com</h1>
+                
+              </div>
 
-              <h1 className="postType">ฝึกงาน</h1>
+              <div className="rightBotBox">
+              <EditOutlined  style={{marginRight:"1rem", color:"#39AEA9", fontSize:"1.5rem"}}/>
+              <DeleteOutlined style={{marginRight:"1rem", color:"#B33030", fontSize:"1.5rem"}}/>
+                <h1 className="postType">ฝึกงาน</h1>
+
+              </div>
 
 
             </div>
