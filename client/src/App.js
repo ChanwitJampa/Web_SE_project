@@ -31,6 +31,12 @@ import {
   HeartTwoTone,
   CheckCircleTwoTone,
   ClockCircleOutlined,
+  NotificationOutlined,
+  PhoneOutlined,
+  MailOutlined,
+  DeleteOutlined,
+  DeleteFilled,
+  EditOutlined
 } from "@ant-design/icons";
 
 import {
@@ -123,11 +129,148 @@ function App() {
   //   }
   // }, [pName]);
 
+
+  let d = new Date();
+
+  var monthNamesThai = ["มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน",
+  "กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤษจิกายน","ธันวาคม"];
+
+  var dayNames = ["วันอาทิตย์","วันจันทร์","วันอังคาร","วันพุทธ","วันพฤหัสบดี","วันศุกร์","วันเสาร์"];
+
+  var monthNamesEng = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+
+  var dayNamesEng = ['Sunday','Monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+
+  const thTIme2 =dayNames[d.getDay()]+",  "+d.getDate()+ " "+monthNamesThai[d.getMonth()]+"  "+d.getFullYear();
+
   return (
     <div className="container2">
       <NavbarComponent />
 
       <div className="container3">
+
+        <h1 className="timeText">{thTIme2}</h1>
+
+        <h1 className="welcomText">ยินดีต้อนรับเข้าสู่ระบบจัดการฝึกงาน</h1>
+
+        <div className="searchArea">
+          <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+
+        <div className="box1">
+
+          <h1 style={{marginBottom:"2rem",fontWeight:"bold",color:"#FF6464"}}>ข่าวสารประกาศ</h1>
+
+          <div className="newBox">
+
+            <div className="topBox">
+              <h1 className="corpName">เงินเทอร์โบ</h1>
+
+              <h1 className="postDate"><NotificationOutlined style={{marginRight:"1rem",fontSize:"1.2rem",color:"#019267"}} />วันที่ 10 กุมพาพันธ์ 2565</h1>
+              
+            </div>
+
+            <div className="bottomBox">
+    
+              <div className="leftBotBox">
+                <h1 className="postText">เปิดรับนักศึกษาฝึกงานตำแหน่ง frontend, backend, automation engineer ที่เรียนจบมาในสาขาวิชา วิศวกรรมคอมพิวเตอร์ จำนวนมากสามารถสมัครมาได้ที่ช่องทางดังนี้ 
+                fackbook line เเละทางเว็บไซต์ของทางบริษัท  </h1>
+                
+                <h1 className="postText2"><PhoneOutlined style={{marginLeft:"0rem",marginRight:"1rem",fontSize:"1.5rem",color:"#488FB1"}}/> 066-6666666  <MailOutlined style={{marginLeft:"2rem",marginRight:"1rem",fontSize:"1.5rem",color:"#019267"}} /> artid_yenpram@gmail.com</h1>
+              </div>
+
+              <div className="rightBotBox">
+              <EditOutlined  style={{marginRight:"1rem", color:"#39AEA9", fontSize:"1.5rem"}}/>
+              <DeleteFilled style={{marginRight:"3rem", color:"#B33030", fontSize:"1.5rem" }}/>
+                <h1 className="postType">ฝึกงาน</h1>
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+          <div className="newBox">
+
+            <div className="topBox">
+              <h1 className="corpName">เงินเทอร์ไม่โบ</h1>
+
+              <h1 className="postDate"><NotificationOutlined style={{marginRight:"1rem",fontSize:"1.2rem",color:"#019267"}} />วันที่ 5 กุมพาพันธ์ 2565</h1>
+              
+            </div>
+
+            <div className="bottomBox">
+
+              <div>
+                <h1 className="postText">เปิดรับนักศึกษาฝึกงานตำแหน่ง frontend, backend, automation engineer ที่เรียนจบมาในสาขาวิชา วิศวกรรมคอมพิวเตอร์ จำนวนมากสามารถสมัครมาได้ที่ช่องทางดังนี้ 
+                fackbook line เเละทางเว็บไซต์ของทางบริษัท  </h1>
+                
+                <h1 className="postText2"><PhoneOutlined style={{marginLeft:"0rem",marginRight:"1rem",fontSize:"1.5rem",color:"#488FB1"}}/> 066-6666666  <MailOutlined style={{marginLeft:"2rem",marginRight:"1rem",fontSize:"1.5rem",color:"#019267"}} /> artid_yenpram@gmail.com</h1>
+                
+              </div>
+
+              <div className="rightBotBox">
+              <EditOutlined  style={{marginRight:"1rem", color:"#39AEA9", fontSize:"1.5rem"}}/>
+              <DeleteFilled style={{marginRight:"3rem", color:"#B33030", fontSize:"1.5rem"}}/>
+                <h1 className="postType">ฝึกงาน</h1>
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+          <div className="newBox">
+
+            <div className="topBox">
+              <h1 className="corpName">Gofive company</h1>
+
+              <h1 className="postDate"><NotificationOutlined style={{marginRight:"1rem",fontSize:"1.2rem",color:"#019267"}} />วันที่ 1 กุมพาพันธ์ 2565</h1>
+              
+            </div>
+
+            <div className="bottomBox">
+
+              <div>
+                <h1 className="postText">เปิดรับนักศึกษาฝึกงานตำแหน่ง frontend, backend, automation engineer ที่เรียนจบมาในสาขาวิชา วิศวกรรมคอมพิวเตอร์ จำนวนมากสามารถสมัครมาได้ที่ช่องทางดังนี้ 
+                fackbook line เเละทางเว็บไซต์ของทางบริษัท  </h1>
+                
+                <h1 className="postText2"><PhoneOutlined style={{marginLeft:"0rem",marginRight:"1rem",fontSize:"1.5rem",color:"#488FB1"}}/> 066-6666666  <MailOutlined style={{marginLeft:"2rem",marginRight:"1rem",fontSize:"1.5rem",color:"#019267"}} /> artid_yenpram@gmail.com</h1>
+                
+              </div>
+
+              <div className="rightBotBox">
+              <EditOutlined  style={{marginRight:"1rem", color:"#39AEA9", fontSize:"1.5rem"}}/>
+              <DeleteFilled style={{marginRight:"3rem", color:"#B33030", fontSize:"1.5rem"}}/>
+                <h1 className="postType">ฝึกงาน</h1>
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+
+
+
+        </div>
+
+
+        <div style={{padding:"5rem"}}>
+
+        </div>
+
+
+
+
 
       </div>
 
