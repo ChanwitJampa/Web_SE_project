@@ -89,21 +89,34 @@ const ResultComponent = () => {
       <NavbarComponent />
       <div className="container">
         <h1>ผลการฝึกงาน</h1>
-        <span class="header-info">ข้อมูลนิสิต</span>
+        <div class="headd">
+          <span>ข้อมูลนิสิต</span>
+        </div>
+
         <div className="headerInfo">
-          <img
-            className="catImg"
-            src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg"
-          ></img>
-          <div className="info">
-            <p className="info">
-              6220504623<br></br>
-              นาย จิตติพล คำอุไร<br></br>
+          <div>
+            <img
+              className="catImg"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg"
+            ></img>
+          </div>
+          <div className="nisit">
+            <span>
+              6220504623
+              <br />
+              นาย จิตติพล คำอุไร
+              <br />
               คณะ วิศวกรรมศาสตร์ สาขา วิศวกรรมคอมพิวเตอร์ E29
-            </p>
+            </span>
+          </div>
+          <div className="pak">
+            <span>ภาคปกติ</span>
           </div>
         </div>
-        <span class="header-table">ผลการฝึกงาน/สหกิจ</span>
+        <div class="header-table">
+          <span>ผลการฝึกงาน/สหกิจ</span>
+        </div>
+
         <div className="result-table">
           <table class="table">
             <thead>
