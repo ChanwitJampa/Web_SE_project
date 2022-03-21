@@ -8,11 +8,12 @@ const OrganizationComponent1 = () => {
     return ( 
       <div>
            <NavbarComponent />
-              <div className={"content-box"}>
-                <h1  > สถานประกอบการ</h1>
+              <div className={"contenthead-box"}>
+                <h1> สถานประกอบการ</h1>
                   <input id="disabledInput" type="text" placeholder="ค้นหาสถานประกอบการ" onChange={""} ></input>
                  <button type="submit" className="btn btn-color">ยืนยัน</button> 
               </div>
+
               <div className='content1-box'>
                  <button class="button button1">ข้อมูลสถานประกอบการ</button>
                  <button class="button button2">จัดการข้อมูลสถานประกอบการ</button>
