@@ -34,7 +34,7 @@ const CheckStatusComponent = () => {
     <div>
       <NavbarComponent />
       <div className="container">
-        {requests.filter(request => request.studentID.includes('6220504999')).map((filteredRequest) => {
+        {requests.filter(request => request.studentID.includes('6220504888')).map((filteredRequest) => {
           return (
             <div>
               <h1
@@ -66,13 +66,13 @@ const CheckStatusComponent = () => {
                 <div className="rightBoxC">
                   <h1 className="textStatus">{filteredRequest.status}</h1>
 
-                  <h1 className="textStatus2">รายละเอียด</h1>
-                  <h1 className="textStatus2">กรุงไทย</h1>
-                  <h1 className="textStatus2">ฝึกงาน</h1>
+                  {/* <h1 className="textStatus2">รายละเอียด</h1> */}<br />
+                  <h1 className="textStatus2">{filteredRequest.companyName}</h1>
+                  <h1 className="textStatus2">{filteredRequest.typeRequest}</h1>
                   <h1 className="textStatus2">
-                    14 เมษายน 2565 - 30 มิถุนายน 2565
+                    {filteredRequest.dateStart} - {filteredRequest.dateEnd}
                   </h1>
-                  <h1 className="textStatus2">FULLSTACK DEVELOPER</h1>
+                  <h1 className="textStatus2">{filteredRequest.jobTitle}</h1>
                 </div>
 
                 {/* <h1 className="textStatus">สถานะ  : อณุมัติเเล้ว</h1>
