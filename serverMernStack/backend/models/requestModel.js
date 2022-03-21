@@ -63,7 +63,7 @@ var requestSchema = mongoose.Schema({
     },
      status:{
         type: String,  
-        default:"disapproved"
+        default:"รอการอนุมัติ"
     },
     createtime:{
         type:String
