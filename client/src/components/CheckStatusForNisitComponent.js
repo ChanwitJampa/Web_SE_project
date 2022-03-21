@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import NavbarComponent from "./NavbarComponent";
-import "./CheckStatusComponent.css";
+import "./CheckStatusForNisitComponent.css";
 import { faSyringe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
@@ -8,7 +8,7 @@ import { Table, Divider } from "antd";
 // import 'antd/dist/antd.css';
 import { DownloadOutlined } from "@ant-design/icons";
 
-const CheckStatusComponent = () => {
+const CheckStatusForNisitComponent = () => {
   
   const [searchAnnounce, setSearchAnnounce] = useState("");
   const [requests, setRequest] = useState([]);
@@ -75,12 +75,7 @@ const CheckStatusComponent = () => {
                   <h1 className="textStatus2">{filteredRequest.jobTitle}</h1>
                 </div>
 
-                {/* <h1 className="textStatus">สถานะ  : อณุมัติเเล้ว</h1>
-
-            <h1 className="textStatus2">รายละเอียด</h1>
-            <h1 className="textStatus2">บริษัท : กรุงไทย  ประเภท : ฝึกงาน</h1>
-            <h1 className="textStatus2">ระยะเวลา :  14 เมษายน 2565 - 30 มิถุนายน 2565</h1>
-            <h1 className="textStatus2">ตำแหน่ง : FULLSTACK DEVELOPER</h1> */}
+                
               </div>
 
               <div className="buttonBox">
@@ -111,7 +106,7 @@ const CheckStatusComponent = () => {
     </div>
   );
 };
-export default CheckStatusComponent;
+export default CheckStatusForNisitComponent;
 
 {
   /* <Table

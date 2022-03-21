@@ -50,7 +50,8 @@ const NavbarComponent=(props)=>{
         <Link to="/organization1" className="sidenav-link"><FontAwesomeIcon icon={faBuilding} className="sidenav-icon"/>สถานประกอบการ</Link>
         <Link to="/req" className="sidenav-link"><FontAwesomeIcon icon={faEnvelopeOpen} className="sidenav-icon"/>คำร้องฝึกงาน</Link>
         {/*<Link to="/organization" className="sidenav-link"><FontAwesomeIcon icon={faBuilding} className="sidenav-icon"/>สถานประกอบการ</Link>*/}
-        <Link to="/checkstatus" className="sidenav-link"><FontAwesomeIcon icon={faClipboardCheck} className="sidenav-icon"/>ตรวจสอบสถานะ</Link>
+        <Link to="/checkstatusfornisit" className="sidenav-link"><FontAwesomeIcon icon={faClipboardCheck} className="sidenav-icon"/>ตรวจสอบสถานะ forNisit</Link>
+        <Link to="/checkstatusforsuper" className="sidenav-link"><FontAwesomeIcon icon={faClipboardCheck} className="sidenav-icon"/>ตรวจสอบสถานะ forSuper</Link>
         <Link to="/documents" className="sidenav-link"><FontAwesomeIcon icon={faFileContract} className="sidenav-icon"/>เอกสารที่เกี่ยวข้อง</Link>
         <Link to="/result" className="sidenav-link"><FontAwesomeIcon icon={faChartLine} className="sidenav-icon"/>ผลการฝึกงาน</Link>
     </div>
