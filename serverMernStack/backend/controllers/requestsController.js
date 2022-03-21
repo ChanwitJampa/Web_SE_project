@@ -76,7 +76,8 @@ const getRequest = asyncHandler(async (req, res) => {
     }
    
   if(!request){
-      request = await Request.findOne({'studentID':req.params.id})
+      request = await Request.find({'studentID':req.params.id})
+     // request = await Request.findOne({'studentID':req.params.id})
   }
    if (request) {
        res.status(200).json(request)
