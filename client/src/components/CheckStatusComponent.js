@@ -24,27 +24,7 @@ const CheckStatusComponent = () => {
       .catch((err) => {
         console.log(err);
       });
-    axios
-      .get(`https://thaiaddressapi-thaikub.herokuapp.com/v1/thailand/provinces`)
-      .then((res) => {
-        console.log(res.data.data);
-        setProvinces(res.data.data);
-      });
   };
-  const fetchDistrict = (pro) => {
-    axios
-      .get(
-        `https://thaiaddressapi-thaikub.herokuapp.com/v1/thailand/provinces/${pro}`
-      )
-      .then((res) => {
-        console.log(res.data.data);
-        setDistrict(res.data.data);
-      });
-  };
-  useEffect(() => {
-    fetchData();
-    fetchDistrict("กระบี่");
-  }, []);
 
   // const columns = [
   //     {
