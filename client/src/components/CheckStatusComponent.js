@@ -9,15 +9,15 @@ import { Table, Divider } from "antd";
 import { DownloadOutlined } from "@ant-design/icons";
 
 const CheckStatusComponent = () => {
+  
   const [searchAnnounce, setSearchAnnounce] = useState("");
-  const [announce, setAnnounce] = useState([]);
-  const [district, setDistrict] = useState([]);
-  const [provinces, setProvinces] = useState([]);
+  const [requests, setRequest] = useState([]);
+
   const fetchData = () => {
     axios
       .get(`http://localhost:5000/api/requests`)
       .then((res) => {
-        setAnnounce(res.data);
+        setRequest(res.data);
         console.log(res);
       })
       .catch((err) => {
@@ -27,109 +27,83 @@ const CheckStatusComponent = () => {
 
   useEffect(() => {
     fetchData();
+    console.log(requests);
   }, []);
-
-  // const columns = [
-  //     {
-  //       title: 'หัวข้อ',
-  //       dataIndex: 'name',
-  //       render: text => <a>{text}</a>,
-  //     },
-  //     {
-  //       title: 'Cash Assets',
-  //       className: 'column-money',
-  //       dataIndex: 'money',
-  //       align: 'right',
-  //     },
-  //     {
-  //       title: 'Address',
-  //       dataIndex: 'address',
-  //     },
-  //   ];
-
-  //   const data = [
-  //     {
-  //       key: '1',
-  //       name: 'สถานะ',
-  //       money: '￥300,000.00',
-  //       address: 'New York No. 1 Lake Park',
-  //     },
-  //     {
-  //       key: '2',
-  //       name: '',
-  //       money: '￥1,256,000.00',
-  //       address: 'London No. 1 Lake Park',
-  //     },
-  //     {
-  //       key: '3',
-  //       name: 'Joe Black',
-  //       money: '￥120,000.00',
-  //       address: 'Sidney No. 1 Lake Park',
-  //     },
-  //   ];
 
   return (
     <div>
       <NavbarComponent />
       <div className="container">
-        <h1
-          style={{ fontWeight: "bold", marginTop: "4rem", marginLeft: "2rem" }}
-        >
-          ตรวจสอบสถานะ
-        </h1>
-        <div className="contentBox">
-          <div className="leftBoxC">
-            <h1 className="btextStatus">สถานะ </h1>
+        {requests.filter(request => request.studentID.includes('6220504888')).map((filteredRequest) => {
+          return (
+            <div>
+              <h1
+                style={{
+                  fontWeight: "bold",
+                  marginTop: "4rem",
+                  marginLeft: "2rem",
+                }}
+              >
+                ตรวจสอบสถานะ
+              </h1>
+              <div className="contentBox">
+                <div className="leftBoxC">
+                  <h1 className="btextStatus">สถานะ </h1>
 
-            <h1 className="btextStatus2">รายละเอียด</h1>
-            <h1 className="btextStatus2">บริษัท</h1>
-            <h1 className="btextStatus2">ประเภท </h1>
-            <h1 className="btextStatus2">ระยะเวลา </h1>
-            <h1 className="btextStatus2">ตำแหน่ง </h1>
-          </div>
+                  <h1 className="btextStatus2">รายละเอียด</h1>
+                  <h1 className="btextStatus2">บริษัท</h1>
+                  <h1 className="btextStatus2">ประเภท </h1>
+                  <h1 className="btextStatus2">ระยะเวลา </h1>
+                  <h1 className="btextStatus2">ตำแหน่ง </h1>
+                </div>
 
-          <Divider
-            type="vertical"
-            className="divider1"
-            style={{ height: "100%", marginLeft: "2rem" }}
-          />
+                <Divider
+                  type="vertical"
+                  className="divider1"
+                  style={{ height: "100%", marginLeft: "2rem" }}
+                />
 
-          <div className="rightBoxC">
-            <h1 className="textStatus">อนุมัติเเล้ว</h1>
+                <div className="rightBoxC">
+                  <h1 className="textStatus">{filteredRequest.status}</h1>
 
-            <h1 className="textStatus2">รายละเอียด</h1>
-            <h1 className="textStatus2">กรุงไทย</h1>
-            <h1 className="textStatus2">ฝึกงาน</h1>
-            <h1 className="textStatus2">14 เมษายน 2565 - 30 มิถุนายน 2565</h1>
-            <h1 className="textStatus2">FULLSTACK DEVELOPER</h1>
-          </div>
+                  <br />
+                  <h1 className="textStatus2">{filteredRequest.companyName}</h1>
+                  <h1 className="textStatus2">{filteredRequest.typeRequest}</h1>
+                  <h1 className="textStatus2">
+                    {filteredRequest.dateStart} - {filteredRequest.dateEnd}
+                  </h1>
+                  <h1 className="textStatus2">{filteredRequest.jobTitle}</h1>
+                </div>
 
-          {/* <h1 className="textStatus">สถานะ  : อณุมัติเเล้ว</h1>
+                {/* <h1 className="textStatus">สถานะ  : อณุมัติเเล้ว</h1>
 
             <h1 className="textStatus2">รายละเอียด</h1>
             <h1 className="textStatus2">บริษัท : กรุงไทย  ประเภท : ฝึกงาน</h1>
             <h1 className="textStatus2">ระยะเวลา :  14 เมษายน 2565 - 30 มิถุนายน 2565</h1>
             <h1 className="textStatus2">ตำแหน่ง : FULLSTACK DEVELOPER</h1> */}
-        </div>
+              </div>
 
-        <div className="buttonBox">
-          <button
-            type="submit"
-            className="btn btn-success"
-            style={{ marginRight: "2rem" }}
-          >
-            <DownloadOutlined
-              style={{ fontSize: "1rem", marginRight: "1rem" }}
-            />{" "}
-            หนังสือขอความอนุเคราะห์
-          </button>
-          <button type="submit" className="btn btn-outline-primary">
-            <DownloadOutlined
-              style={{ fontSize: "1rem", marginRight: "1rem" }}
-            />{" "}
-            หนังสือส่งตัว
-          </button>
-        </div>
+              <div className="buttonBox">
+                <button
+                  type="submit"
+                  className="btn btn-success"
+                  style={{ marginRight: "2rem" }}
+                >
+                  <DownloadOutlined
+                    style={{ fontSize: "1rem", marginRight: "1rem" }}
+                  />{" "}
+                  หนังสือขอความอนุเคราะห์
+                </button>
+                <button type="submit" className="btn btn-outline-primary">
+                  <DownloadOutlined
+                    style={{ fontSize: "1rem", marginRight: "1rem" }}
+                  />{" "}
+                  หนังสือส่งตัว
+                </button>
+              </div>
+            </div>
+          );
+        })}
 
         {/* <button type="submit" className="btn btn-color">Download หนังสือขอความอนุเคราะห์</button> 
             <button2 type="submit" className="btn btn-color">Download หนังสือส่งตัว</button2>  */}
