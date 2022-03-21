@@ -4,11 +4,9 @@ import "./CheckStatusComponent.css";
 import { faSyringe } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
-import { Table,Divider  } from 'antd';
+import { Table, Divider } from "antd";
 // import 'antd/dist/antd.css';
-import {
-    DownloadOutlined 
-  } from '@ant-design/icons';
+import { DownloadOutlined } from "@ant-design/icons";
 
 const CheckStatusComponent = () => {
   const [searchAnnounce, setSearchAnnounce] = useState("");
@@ -17,14 +15,19 @@ const CheckStatusComponent = () => {
   const [provinces, setProvinces] = useState([]);
   const fetchData = () => {
     axios
-      .get(`http://localhost:5000/api/announces`)
+      .get(`http://localhost:5000/api/requests`)
       .then((res) => {
         setAnnounce(res.data);
+        console.log(res);
       })
       .catch((err) => {
         console.log(err);
       });
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   // const columns = [
   //     {
@@ -69,43 +72,44 @@ const CheckStatusComponent = () => {
     <div>
       <NavbarComponent />
       <div className="container">
-        <h1 style={{ fontWeight: "bold",marginTop:"4rem",marginLeft:"2rem" }}>ตรวจสอบสถานะ</h1>
+        <h1
+          style={{ fontWeight: "bold", marginTop: "4rem", marginLeft: "2rem" }}
+        >
+          ตรวจสอบสถานะ
+        </h1>
         <div className="contentBox">
+          <div className="leftBoxC">
+            <h1 className="btextStatus">สถานะ </h1>
 
-            <div className="leftBoxC">
-                <h1 className="btextStatus">สถานะ  </h1>
+            <h1 className="btextStatus2">รายละเอียด</h1>
+            <h1 className="btextStatus2">บริษัท</h1>
+            <h1 className="btextStatus2">ประเภท </h1>
+            <h1 className="btextStatus2">ระยะเวลา </h1>
+            <h1 className="btextStatus2">ตำแหน่ง </h1>
+          </div>
 
-                <h1 className="btextStatus2">รายละเอียด</h1>
-                <h1 className="btextStatus2">บริษัท</h1>
-                <h1 className="btextStatus2">ประเภท </h1>
-                <h1 className="btextStatus2">ระยะเวลา </h1>
-                <h1 className="btextStatus2">ตำแหน่ง </h1>
+          <Divider
+            type="vertical"
+            className="divider1"
+            style={{ height: "100%", marginLeft: "2rem" }}
+          />
 
-            </div>
-            
-            <Divider type="vertical" className="divider1"  style={{height:"100%",marginLeft:"2rem"}}/>
+          <div className="rightBoxC">
+            <h1 className="textStatus">อนุมัติเเล้ว</h1>
 
+            <h1 className="textStatus2">รายละเอียด</h1>
+            <h1 className="textStatus2">กรุงไทย</h1>
+            <h1 className="textStatus2">ฝึกงาน</h1>
+            <h1 className="textStatus2">14 เมษายน 2565 - 30 มิถุนายน 2565</h1>
+            <h1 className="textStatus2">FULLSTACK DEVELOPER</h1>
+          </div>
 
-            <div className="rightBoxC">
-                <h1 className="textStatus">อณุมัติเเล้ว</h1>
-
-                <h1 className="textStatus2">รายละเอียด</h1>
-                <h1 className="textStatus2">กรุงไทย</h1>
-                <h1 className="textStatus2">ฝึกงาน</h1>
-                <h1 className="textStatus2">14 เมษายน 2565 - 30 มิถุนายน 2565</h1>
-                <h1 className="textStatus2">FULLSTACK DEVELOPER</h1>
-
-            </div>
-
-            {/* <h1 className="textStatus">สถานะ  : อณุมัติเเล้ว</h1>
+          {/* <h1 className="textStatus">สถานะ  : อณุมัติเเล้ว</h1>
 
             <h1 className="textStatus2">รายละเอียด</h1>
             <h1 className="textStatus2">บริษัท : กรุงไทย  ประเภท : ฝึกงาน</h1>
             <h1 className="textStatus2">ระยะเวลา :  14 เมษายน 2565 - 30 มิถุนายน 2565</h1>
             <h1 className="textStatus2">ตำแหน่ง : FULLSTACK DEVELOPER</h1> */}
-
-
-          
         </div>
 
         <div className="buttonBox">
@@ -114,10 +118,16 @@ const CheckStatusComponent = () => {
             className="btn btn-success"
             style={{ marginRight: "2rem" }}
           >
-            <DownloadOutlined style={{fontSize:"1rem",marginRight:"1rem"}}/> หนังสือขอความอนุเคราะห์
+            <DownloadOutlined
+              style={{ fontSize: "1rem", marginRight: "1rem" }}
+            />{" "}
+            หนังสือขอความอนุเคราะห์
           </button>
           <button type="submit" className="btn btn-outline-primary">
-          <DownloadOutlined style={{fontSize:"1rem",marginRight:"1rem"}}/> หนังสือส่งตัว
+            <DownloadOutlined
+              style={{ fontSize: "1rem", marginRight: "1rem" }}
+            />{" "}
+            หนังสือส่งตัว
           </button>
         </div>
 
@@ -129,12 +139,13 @@ const CheckStatusComponent = () => {
 };
 export default CheckStatusComponent;
 
-
-{/* <Table
+{
+  /* <Table
                     columns={columns}
                     dataSource={data}
                     bordered
                     title={() => 'สถานะของท่าน'}
                     footer={() => 'คุณชายเจ้าละเอียด ละเมียดละไม 6220504640'}
                     style={{backgroundColor:"#ffffff",marginTop:"3rem"}}
-                /> */}
+                /> */
+}
