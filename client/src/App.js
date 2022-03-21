@@ -11,7 +11,7 @@ import axios from "axios";
 import { Link, withRouter } from "react-router-dom";
 import Swal from "sweetalert2";
 
-import MapChart from "./MapChart";
+// import MapChart from "./MapChart";
 
 import BarLoader from "react-spinners/BarLoader";
 
