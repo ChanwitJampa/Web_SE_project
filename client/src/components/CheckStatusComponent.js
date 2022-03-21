@@ -10,15 +10,14 @@ import { DownloadOutlined } from "@ant-design/icons";
 
 const CheckStatusComponent = () => {
   const [searchAnnounce, setSearchAnnounce] = useState("");
-  const [announce, setAnnounce] = useState([]);
-  const [district, setDistrict] = useState([]);
-  const [provinces, setProvinces] = useState([]);
+  const [request, setRequest] = useState([]);
+  
   const fetchData = () => {
     axios
       .get(`http://localhost:5000/api/requests`)
       .then((res) => {
-        setAnnounce(res.data);
-        console.log(res);
+        setRequest(res.data);
+        // console.log(res);
       })
       .catch((err) => {
         console.log(err);
@@ -27,6 +26,7 @@ const CheckStatusComponent = () => {
 
   useEffect(() => {
     fetchData();
+    // console.log(request);
   }, []);
 
   // const columns = [
