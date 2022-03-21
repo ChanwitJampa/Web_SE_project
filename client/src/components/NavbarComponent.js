@@ -1,6 +1,6 @@
 import {Link,withRouter} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowRightFromBracket, faBullhorn, faHome, faHospital, faMap, faPlus, faRegistered, faSyringe, faList, faUser, faPowerOff, faNewspaper, faIndustry, faBuilding, faClipboardCheck, faFileContract, faChartLine, faBuildingColumns } from "@fortawesome/free-solid-svg-icons";
+import {faArrowRightFromBracket, faBullhorn, faHome, faHospital, faMap, faPlus, faRegistered, faSyringe, faList, faUser, faPowerOff, faNewspaper, faIndustry, faBuilding, faClipboardCheck, faFileContract, faChartLine, faBuildingColumns, faCircleCheck, faEnvelopeOpen } from "@fortawesome/free-solid-svg-icons";
 //import { getUser,logout } from "../servies/authorize";
 import './NavbarComponent.css';
 const NavbarComponent=(props)=>{
@@ -48,6 +48,7 @@ const NavbarComponent=(props)=>{
         <Link to="" className="sidenav-link2"><FontAwesomeIcon icon={faList} className="sidenav-icon3"/></Link>
         <Link to="/news" className="sidenav-link"><FontAwesomeIcon icon={faNewspaper} className="sidenav-icon"/>ข่าวสารประกาศ</Link>
         <Link to="/organization1" className="sidenav-link"><FontAwesomeIcon icon={faBuilding} className="sidenav-icon"/>สถานประกอบการ</Link>
+        <Link to="/result" className="sidenav-link"><FontAwesomeIcon icon={faEnvelopeOpen} className="sidenav-icon"/>คำร้องฝึกงาน</Link>
         {/*<Link to="/organization" className="sidenav-link"><FontAwesomeIcon icon={faBuilding} className="sidenav-icon"/>สถานประกอบการ</Link>*/}
         <Link to="/checkstatus" className="sidenav-link"><FontAwesomeIcon icon={faClipboardCheck} className="sidenav-icon"/>ตรวจสอบสถานะ</Link>
         <Link to="/documents" className="sidenav-link"><FontAwesomeIcon icon={faFileContract} className="sidenav-icon"/>เอกสารที่เกี่ยวข้อง</Link>

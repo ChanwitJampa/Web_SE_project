@@ -9,6 +9,7 @@ import { scaleSequential } from "d3-scale";
 import { interpolatePiYG } from "d3-scale-chromatic";
 import axios from "axios";
 import { Link, withRouter } from "react-router-dom";
+import Swal from "sweetalert2";
 
 import MapChart from "./MapChart";
 
@@ -49,6 +50,12 @@ function App() {
     console.log(announce);
   }
 
+  function swalalert() {
+    Swal.fire(
+      'ดีจ้า',
+  )
+  }
+
   const [announce, setAnnounce] = useState([]);
 
   const fetchData = () => {
@@ -68,8 +75,26 @@ function App() {
   //ใช้ useEffect ในการสั่งใช้งาน fetchData ทันทีที่เปิดหน้านี้ขึ้นมา
   useEffect(() => {
     fetchData();
-    console.log("Hello");
+    console.log(searchInput);
   }, []);
+
+  const [filteredResults, setFilteredResults] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
+
+  const searchItems = (searchValue) => {
+    setSearchInput(searchValue)
+    if (searchInput !== '') {
+        const filteredData = announce.filter((item) => {
+            return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase())
+        })
+        setFilteredResults(filteredData)
+        console.log(filteredData);
+    }
+    else{
+        setFilteredResults(announce)
+    }
+}
+
 
   let d = new Date();
 
@@ -146,8 +171,9 @@ function App() {
             <input
               class="form-control me-2"
               type="search"
-              placeholder="Search"
+              placeholder="Search.."
               aria-label="Search"
+              onChange={(e) => searchItems(e.target.value)}
             ></input>
             <button class="btn btn-outline-success" type="submit">
               Search
@@ -171,7 +197,7 @@ function App() {
               to=""
               type="submit"
               className="btn btn-success"
-              onClick={consolelog}
+              onClick={swalalert}
               style={{
                 backgroundColor: "#02BC77",
                 width: "10rem",
@@ -190,98 +216,205 @@ function App() {
             </button>
           </div>
 
-          {(announce).map((announce) => (
-            <div className="newBox">
 
-            <div className="topBox">
-              <h1 className="corpName">{announce.titleName}</h1>
-
-              <h1 className="postDate">
-                <NotificationOutlined
-                  style={{
-                    marginRight: "1rem",
-                    fontSize: "1.2rem",
-                    color: "#019267",
-                  }}
-                />
-                {announce.time}
-              </h1>
-            </div>
-
-            <div className="middleBox">
-
-            <h1 className="postText">
-                  {announce.detail}
-                </h1>
-
-            </div>
-
-            <div className="bottomBox">
-
-              <div className="leftBotBox">
+          {searchInput.length > 1 ? (
+                    filteredResults.map((announce) => {
+                        return (
+                            <div className="newBox">
                 
-
-                <h1 className="postText2">
-                  <PhoneOutlined
-                    style={{
-                      marginLeft: "0rem",
-                      marginRight: "1rem",
-                      fontSize: "1.5rem",
-                      color: "#488FB1",
-                    }}
-                  />{" "}
-                  {announce.phoneNumber}{" "}
-                  <MailOutlined
-                    style={{
-                      marginLeft: "2rem",
-                      marginRight: "1rem",
-                      fontSize: "1.5rem",
-                      color: "#019267",
-                    }}
-                  />{" "}
-                  {announce.email}
-                </h1>
-              </div>
-
-              <div className="rightBotBox">
+                            <div className="topBox">
+                              <h1 className="corpName">{announce.titleName}</h1>
                 
-                <div className="">
-                  <EditOutlined
-                    onClick={() => {
-                      alert("clicked");
-                    }}
-                    style={{
-                      marginRight: "1rem",
-                      color: "#39AEA9",
-                      fontSize: "1.5rem",
-                    }}
-                  />
-                  <DeleteFilled
-                    onClick={() => {
-                      alert("clicked");
-                    }}
-                    style={{
-                      marginRight: "3rem",
-                      color: "#B33030",
-                      fontSize: "1.5rem",
-                    }}
-                  />
-
-                </div>
-
-                <div className="">
-
-                  <h1 className="postType">{announce.type}</h1> 
-
-                  
-
-                </div>
+                              <h1 className="postDate">
+                                <NotificationOutlined
+                                  style={{
+                                    marginRight: "1rem",
+                                    fontSize: "1.2rem",
+                                    color: "#019267",
+                                  }}
+                                />
+                                {announce.createtime}
+                              </h1>
+                            </div>
                 
-              </div>
+                            <div className="middleBox">
+                
+                            <h1 className="postText">
+                                  {announce.detail}
+                                </h1>
+                
+                            </div>
+                
+                            <div className="bottomBox">
+                
+                              <div className="leftBotBox">
+                                
+                
+                                <h1 className="postText2">
+                                  <PhoneOutlined
+                                    style={{
+                                      marginLeft: "0rem",
+                                      marginRight: "1rem",
+                                      fontSize: "1.5rem",
+                                      color: "#488FB1",
+                                    }}
+                                  />{" "}
+                                  {announce.phoneNumber}{" "}
+                                  <MailOutlined
+                                    style={{
+                                      marginLeft: "2rem",
+                                      marginRight: "1rem",
+                                      fontSize: "1.5rem",
+                                      color: "#019267",
+                                    }}
+                                  />{" "}
+                                  {announce.email}
+                                </h1>
+                              </div>
+                
+                              <div className="rightBotBox">
+                                
+                                <div className="">
+                                  <EditOutlined
+                                    onClick={() => {
+                                      alert("clicked");
+                                    }}
+                                    style={{
+                                      marginRight: "1rem",
+                                      color: "#39AEA9",
+                                      fontSize: "1.5rem",
+                                    }}
+                                  />
+                                  <DeleteFilled
+                                    onClick={() => {
+                                      alert("clicked");
+                                    }}
+                                    style={{
+                                      marginRight: "3rem",
+                                      color: "#B33030",
+                                      fontSize: "1.5rem",
+                                    }}
+                                  />
+                
+                                </div>
+                
+                                <div className="">
+                
+                                  <h1 className="postType">{announce.type}</h1> 
+                
+                                  
+                
+                                </div>
+                                
+                              </div>
+                
+                            </div>
+                            </div>
+                          
+                        )
+                    })
+                ) : (
+                    announce.map((announce) => {
+                        return (
+                            <div className="newBox">
+                
+                            <div className="topBox">
+                              <h1 className="corpName">{announce.titleName}</h1>
+                
+                              <h1 className="postDate">
+                                <NotificationOutlined
+                                  style={{
+                                    marginRight: "1rem",
+                                    fontSize: "1.2rem",
+                                    color: "#019267",
+                                  }}
+                                />
+                                {announce.createtime}
+                              </h1>
+                            </div>
+                
+                            <div className="middleBox">
+                
+                            <h1 className="postText">
+                                  {announce.detail}
+                                </h1>
+                
+                            </div>
+                
+                            <div className="bottomBox">
+                
+                              <div className="leftBotBox">
+                                
+                
+                                <h1 className="postText2">
+                                  <PhoneOutlined
+                                    style={{
+                                      marginLeft: "0rem",
+                                      marginRight: "1rem",
+                                      fontSize: "1.5rem",
+                                      color: "#488FB1",
+                                    }}
+                                  />{" "}
+                                  {announce.phoneNumber}{" "}
+                                  <MailOutlined
+                                    style={{
+                                      marginLeft: "2rem",
+                                      marginRight: "1rem",
+                                      fontSize: "1.5rem",
+                                      color: "#019267",
+                                    }}
+                                  />{" "}
+                                  {announce.email}
+                                </h1>
+                              </div>
+                
+                              <div className="rightBotBox">
+                                
+                                <div className="">
+                                  <EditOutlined
+                                    onClick={() => {
+                                      alert("clicked");
+                                    }}
+                                    style={{
+                                      marginRight: "1rem",
+                                      color: "#39AEA9",
+                                      fontSize: "1.5rem",
+                                    }}
+                                  />
+                                  <DeleteFilled
+                                    onClick={() => {
+                                      alert("clicked");
+                                    }}
+                                    style={{
+                                      marginRight: "3rem",
+                                      color: "#B33030",
+                                      fontSize: "1.5rem",
+                                    }}
+                                  />
+                
+                                </div>
+                
+                                <div className="">
+                
+                                  <h1 className="postType">{announce.type}</h1> 
+                
+                                  
+                
+                                </div>
+                                
+                              </div>
+                
+                            </div>
+                            </div>
+                          
+                        )
+                    })
+                )}
 
-            </div>
-          </div>
-          ))}
+                
+          
+
+
 
           {/* <div className="newBox">
             <div className="topBox">
@@ -365,7 +498,7 @@ function App() {
 
         </div>
 
-        <div style={{ padding: "5rem" }}></div>
+        <div style={{ padding: "10rem" }}></div>
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ const NewsComponent=()=>{
     })*/
 
     const inputValue=name=>event=>{
-        setState({...state,[name]:organizationID,organizationName,phoneNumber,detial,type})
+        // setState({...state,[name]:organizationID,organizationName,phoneNumber,detial,type})
         /*setUser({...user,[name]:phoneNumber,email})*/
     }
     const {organizationID,organizationName,image,topic,detial}=state
