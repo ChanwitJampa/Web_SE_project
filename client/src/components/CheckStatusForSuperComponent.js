@@ -69,10 +69,10 @@ const CheckStatusForSuperComponent = () => {
                 .map((filteredRequest) => {
                   return (
                     <tr className="organ-in">
-                      <td>ไทยใจดี จำกัด</td>
-                      <td>โปรเเกรมเมอร์</td>
-                      <td>ฝึกงาน</td>
-                      <td>ผ่าน</td>
+                      <td>{filteredRequest.companyName}</td>
+                      <td>{filteredRequest.jobTitle}</td>
+                      <td>{filteredRequest.typeRequest}</td>
+                      <td>{filteredRequest.time}</td>
                       <td>{Button}</td>
                     </tr>
                   );
