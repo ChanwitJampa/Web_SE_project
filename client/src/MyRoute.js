@@ -14,6 +14,7 @@ import CheckStatusComponent from "./components/CheckStatusComponent";
 import DocumentComponent from "./components/DocumentComponent";
 import ResultComponent from "./components/ResultComponent";
 import OrganizationComponent1 from "./components/Organizationcomponent1";
+import ReqComponent from "./components/ReqComponent";
 const MyRoute=()=>{
     return(
         <BrowserRouter>
@@ -35,6 +36,7 @@ const MyRoute=()=>{
                 <Route path="/checkstatus" exact component={CheckStatusComponent} />
                 <Route path="/documents" exact component={DocumentComponent} />
                 <Route path="/result" exact component={ResultComponent} />
+                <Route path="/req" exact component={ReqComponent} />
             </Switch>
         </BrowserRouter>
     );
