@@ -14,6 +14,7 @@ import CheckStatusComponent from "./components/CheckStatusComponent";
 import DocumentComponent from "./components/DocumentComponent";
 import ResultComponent from "./components/ResultComponent";
 import OrganizationComponent1 from "./components/Organizationcomponent1";
+
 import ReqComponent from "./components/ReqComponent";
 const MyRoute=()=>{
     return(
@@ -33,6 +34,7 @@ const MyRoute=()=>{
                 <Route path="/news" exact component={NewsComponent}/>
                 <Route path="/organization" exact component={OrganizationComponent} />
                 <Route path="/organization1" exact component={OrganizationComponent1} />
+                <Route path="/petition" exact component={Petition} />
                 <Route path="/checkstatus" exact component={CheckStatusComponent} />
                 <Route path="/documents" exact component={DocumentComponent} />
                 <Route path="/result" exact component={ResultComponent} />
