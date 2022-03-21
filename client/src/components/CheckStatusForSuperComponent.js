@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import {Link} from "react-router-dom";
+
 import NavbarComponent from "./NavbarComponent";
 import "./CheckStatusForSuperComponent.css";
 import { faBarChart, faBars } from "@fortawesome/free-solid-svg-icons";
@@ -42,7 +44,7 @@ const CheckStatusForSuperComponent = () => {
 
   let Button
   if (1) {
-    Button = <button class="btn btn-danger">เปลี่ยนสถานะ</button>;
+    Button = <Link to="/appstatussuper"><button class="btn btn-danger">เปลี่ยนสถานะ</button></Link>;
   }else{
     Button = <button class="btn btn-primary">พิจารณา</button>;
   }
@@ -72,7 +74,7 @@ const CheckStatusForSuperComponent = () => {
                       <td>{filteredRequest.companyName}</td>
                       <td>{filteredRequest.jobTitle}</td>
                       <td>{filteredRequest.typeRequest}</td>
-                      <td>{filteredRequest.time}</td>
+                      <td>{filteredRequest.createtime}</td>
                       <td>{Button}</td>
                     </tr>
                   );

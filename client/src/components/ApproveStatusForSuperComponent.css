@@ -1,0 +1,21 @@
+.buttonBoxApp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    /* margin-left: 10rem; */
+    /* margin-right: -29rem; */
+    margin-top: 7rem;
+    
+}
+
+.leftBoxCApp{
+    width: 60%;
+
+}
+
+.rightBoxCAPP{
+    width: 150%;
+}
