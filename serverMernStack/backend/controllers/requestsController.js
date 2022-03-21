@@ -22,6 +22,7 @@ const setRequest = asyncHandler(async (req, res) => {
         jobTitle: req.body.jobTitle,
         studentID: req.body.studentID,
         assistanceName: req.body.assistanceName,
+        assistanceRole: req.body.assistanceRole,
         address: req.body.address,
         HRName: req.body.HRName,
         HRPhoneNumber: req.body.HRPhoneNumber,

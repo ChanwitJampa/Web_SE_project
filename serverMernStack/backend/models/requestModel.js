@@ -25,6 +25,10 @@ var requestSchema = mongoose.Schema({
         type: String,
         required:[true,'Please add a assistanceName']
     },
+    assistanceRole:{
+        type: String,
+        required:[true,'Please add a assistanceName']
+    },
     address:{
         type: String,
         required:[true,'Please add a address']
