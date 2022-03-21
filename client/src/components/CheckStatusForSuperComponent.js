@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import NavbarComponent from "./NavbarComponent";
 import "./CheckStatusForSuperComponent.css";
-import { faSyringe } from "@fortawesome/free-solid-svg-icons";
+import { faBarChart, faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { Table, Divider, Button } from "antd";
@@ -11,12 +11,23 @@ import { DownloadOutlined } from "@ant-design/icons";
 const CheckStatusForSuperComponent = () => {
   const [searchAnnounce, setSearchAnnounce] = useState("");
   const [requests, setRequest] = useState([]);
+  const [users, setUser] = useState([]);
 
   const fetchData = () => {
     axios
       .get(`http://localhost:5000/api/requests`)
       .then((res) => {
         setRequest(res.data);
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+      axios
+      .get(`http://localhost:5000/api/users`)
+      .then((res) => {
+        setUser(res.data);
         console.log(res);
       })
       .catch((err) => {
@@ -33,7 +44,7 @@ const CheckStatusForSuperComponent = () => {
   if (1) {
     Button = <button class="btn btn-danger">เปลี่ยนสถานะ</button>;
   }else{
-    Button = <button class="btn btn-danger">พิจารณา</button>;
+    Button = <button class="btn btn-primary">พิจารณา</button>;
   }
 
   return (
@@ -41,15 +52,17 @@ const CheckStatusForSuperComponent = () => {
       <NavbarComponent />
       <div className="container">
         <h1>คำร้อง</h1>
-        <div className="result-table">
+        <div className="">
           <table class="table table-hover">
             <thead>
-              <tr className="organ-head">
+            <tr className="organ-head">
                 <th scope="col">คำร้องที่ยื่นมา</th>
                 <th scope="col">ฝึกงานหรือสหกิจ</th>
                 <th scope="col">สถานะ</th>
                 <th scope="col">วันที่</th>
-                <th scope="col"></th>
+                <th scope="col"><div className="">
+                      <FontAwesomeIcon icon={faBars} />
+                    </div></th>
               </tr>
               {requests
                 .filter((request) => request.studentID.includes(""))
