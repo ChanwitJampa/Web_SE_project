@@ -34,7 +34,6 @@ const MyRoute=()=>{
                 <Route path="/news" exact component={NewsComponent}/>
                 <Route path="/organization" exact component={OrganizationComponent} />
                 <Route path="/organization1" exact component={OrganizationComponent1} />
-                <Route path="/petition" exact component={Petition} />
                 <Route path="/checkstatus" exact component={CheckStatusComponent} />
                 <Route path="/documents" exact component={DocumentComponent} />
                 <Route path="/result" exact component={ResultComponent} />
