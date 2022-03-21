@@ -20,25 +20,56 @@ const OrganizationComponent1 = () => {
                       <button  class="button button3">+ เพิ่มสถานประกอบการ</button>
                    </Link>
                    <div className="content2-box" onClick={" "}>
-                      <button class="button-correct"></button>
-                      <button class="button-delete"></button>
-                   </div>
-                   <div className="content3-box" onClick={" "}>
-                      <button class="button-correct"></button>
-                      <button class="button-delete"></button>
+                      <div className='companyName'>
+                              gofive
                       </div>
-                   <div className="content4-box" onClick={" "}>
-                      <button class="button-correct"></button>
-                      <button class="button-delete"></button>
+                      <div className='buttonGroup'>
+
+                         <button class="button-correct" ></button>
+                         <button class="button-delete"></button>
+                      </div>
                    </div>
-                   <div className="content5-box" onClick={" "}>
-                      <button class="button-correct"></button>
-                      <button class="button-delete"></button>
+
+                   <div className="content2-box" onClick={" "}>
+                      <div className='companyName'>
+                              gofive
+                      </div>
+                      <div className='buttonGroup'>
+                         <button class="button-correct"></button>
+                         <button class="button-delete"></button>
+                      </div>
                    </div>
-                   <div className="content6-box" onClick={" "}>
-                      <button class="button-correct"></button>
-                      <button class="button-delete"></button>
+
+                   <div className="content2-box" onClick={" "}>
+                      <div className='companyName'>
+                              gofive
+                      </div>
+                      <div className='buttonGroup'>
+                         <button class="button-correct"></button>
+                         <button class="button-delete"></button>
+                      </div>
                    </div>
+
+                   <div className="content2-box" onClick={" "}>
+                      <div className='companyName'>
+                              gofive
+                      </div>
+                      <div className='buttonGroup'>
+                         <button class="button-correct"></button>
+                         <button class="button-delete"></button>
+                      </div>
+                   </div>
+
+                   <div className="content2-box" onClick={" "}>
+                      <div className='companyName'>
+                              gofive
+                      </div>
+                      <div className='buttonGroup'>
+                         <button class="button-correct"></button>
+                         <button class="button-delete"></button>
+                      </div>
+                   </div>
+
               </div>    
       </div>
     );

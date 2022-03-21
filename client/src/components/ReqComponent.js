@@ -11,31 +11,131 @@ const ReqComponent=()=>{
    
     return ( 
         <div>
-             <NavbarComponent />
+            <NavbarComponent /> 
              <div className={"wallpaper"}>
 
                 <div className={"ReqComponent-box"}>
                     <h1>คำร้อง</h1>
                 </div> 
-                <div className={"ReqComponent2-box"}>
-                   <table class="table">
-                    <thead>
+
+                <table class="table">
+                    <thead class="thead-dark">
                      <tr>
-                         <th scope="co2">คำร้องที่ยื่นมา</th> 
-                         <th scope="co2">ฝึกงาน/สหกิจ</th>
-                         <th scope="co2">สภานะ</th>
-                         <th scope="co2">วันที่</th>
-                         <th scope="co2"> - </th>
-                     </tr>
+                       <th scope="col">คำร้องที่ยื่นมา</th>
+                       <th scope="col">ฝึกงาน/สหกิจ</th>
+                       <th scope="col">สถานะ</th>
+                       <th scope="col">วันที่</th>
+                       <th scope="col"></th>
+                    </tr>
                     </thead>
+                <tbody>
+                     <tr>
+                        <th scope="row">นายสมชาย ขายน้ำท่อม</th>
+                        <td>ฝึกงาน</td>
+                        <td>อนุมัติแล้ว</td>
+                        <td >12/12/2565</td>
+                        <td ><button>เปลี่ยนสถานะ</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">นายชะอม ขมคอ</th>
+                        <td>ฝึกงาน</td>
+                        <td>อนุมัติแล้ว</td>
+                        <td>15/2/2565</td>
+                        <td ><button>เปลี่ยนสถานะ</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">นายพชร หนอนไม้งาม</th>
+                        <td>สหกิจ</td>
+                        <td>รอพิจารณา</td>
+                        <td>15/5/2565</td>
+                        <td ><button>เปลี่ยนสถานะ</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">นายบรรจง ไม่ได้นอน</th>
+                        <td>ฝึกงาน</td>
+                        <td>รอพิจารณา</td>
+                        <td>14/01/2565</td>
+                        <td ><button>พิจารณา</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">นายม่อนน้อย ตบบอส </th>
+                        <td>ฝึกงาน</td>
+                        <td>รอพิจารณา</td>
+                        <td>29/02/2565</td>
+                        <td ><button>เปลี่ยนสถานะ</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">นายพอร์ช อยากโดมโถม</th>
+                        <td>ฝึกงาน</td>
+                        <td>รอพิจารณา</td>
+                        <td>31/02/2565</td>
+                        <td ><button>พิจารณา</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">นายปลาย โคตรขยัน</th>
+                        <td>ฝึกงาน</td>
+                        <td>รอพิจารณา</td>
+                        <td>03/03/2565</td>
+                        <td ><button>พิจารณา</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">นายเตซี่ มีแต่สาว</th>
+                        <td>ฝึกงาน</td>
+                        <td>รอพิจารณา</td>
+                        <td>02/03/2565</td>
+                        <td ><button>เปลี่ยนสถานะ</button></td>
+                    </tr>
+                        </tbody>
                 </table>
-                <div></div>
 
-                </div> 
+                {/* <div className={"ReqComponent2-box"}>
+                    <div className='groupRe3'>
+                            <div className={"ReqComponent3-box"}>
+                                 <h4>คำร้องที่ยื่นมา</h4>
+                            </div>
+                             <div className={"ReqComponent3-box"}>
+                                <h4>ฝึกงาน/สหกิจ</h4>
+                            </div>
+                            <div className={"ReqComponent3-box"}>
+                                <h4>สถานะ</h4>
+                            </div>
+                            <div className={"ReqComponent3-box"}>
+                                <h4>วันที่</h4>
+                            </div>/
+                            
+
+                    </div>
+
+                   <div className="contents-box">
+                       <div className='groupReport'>
+                            <div className='report1'>นายชะอม  ผสมใบท่อม</div>
+                                
+                            <div className='report2'>สหกิจ</div>
+                                
+                            <div className='report3'>ไม่ผ่านการอนุมัติ</div>
+                                
+                            <div className='report4'>04/12/2565</div>
+                                
+                            <div className='report5'></div>            
+                       </div>
+                   </div>
+                   <div className="contents-box">
+                       <div className='groupReport'>
+                            <div className='report1'> นายชะอม  ผสมใบท่อม</div>
+                               
+                            <div className='report2'> สกกิจ</div>
+                               
+                            <div className='report3'>ไม่ผ่านการอนุมัติ</div>
+                                
+                            <div className='report4'> 04/12/2565</div>
+                               
+                            <div className='report5'></div>            
+                       </div>
+                   </div>
 
 
-
-                
+                  
+                </div> */}
              </div>     
         </div>
       );
