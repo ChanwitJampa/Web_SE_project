@@ -16,6 +16,7 @@ import ResultComponent from "./components/ResultComponent";
 import OrganizationComponent1 from "./components/Organizationcomponent1";
 
 import ReqComponent from "./components/ReqComponent";
+import ReqAddComponent from "./components/ReqAddComponent";
 const MyRoute=()=>{
     return(
         <BrowserRouter>
@@ -38,6 +39,7 @@ const MyRoute=()=>{
                 <Route path="/documents" exact component={DocumentComponent} />
                 <Route path="/result" exact component={ResultComponent} />
                 <Route path="/req" exact component={ReqComponent} />
+                <Route path="/addreq" exact component={ReqAddComponent} />
             </Switch>
         </BrowserRouter>
     );

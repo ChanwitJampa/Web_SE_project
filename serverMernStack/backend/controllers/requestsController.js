@@ -29,6 +29,7 @@ const setRequest = asyncHandler(async (req, res) => {
         dateStart: req.body.dateStart,
         dateEnd: req.body.dateEnd,
         budget: req.body.budget,
+        status: req.body.status,
         accommodation: req.body.accommodation,
     })
     res.status(200).json(request)

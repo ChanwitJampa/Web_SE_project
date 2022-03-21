@@ -57,6 +57,10 @@ var requestSchema = mongoose.Schema({
         type: String,
         required:[true,'Please add a accommodation']
     },
+     status:{
+        type: String,  
+        default:"disapproved"
+    },
     createtime:{
         type:String
     }
