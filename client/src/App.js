@@ -95,6 +95,46 @@ function App() {
     }
 }
 
+  const deleteItem = (id) => {
+    //askbeforeDelete
+    Swal.fire({
+      title: 'คุณต้องการลบข้อมูลนี้ใช่หรือไม่?',
+      text: "ข้อมูลที่ลบจะไม่สามารถกู้คืนได้",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'ยืนยัน',
+      cancelButtonText: 'ยกเลิก'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+          'ลบข้อมูลสำเร็จ',
+          'ข้อมูลของคุณถูกลบเรียบร้อยแล้ว',
+          'success'
+        )
+        //delete
+        axios
+          .delete(`http://localhost:5000/api/announces/${id}`)
+          .then((res) => {
+            console.log("DELETE SUCCESS");
+            console.log(res);
+            fetchData();
+          })
+          .catch((err) => {
+            console.log("DELETE NOT SUCCESS");
+            console.log(err);
+          });
+      }
+    })
+
+    
+
+
+
+
+  }
+
 
   let d = new Date();
 
@@ -123,30 +163,6 @@ function App() {
     "วันเสาร์",
   ];
 
-  var monthNamesEng = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  var dayNamesEng = [
-    "Sunday",
-    "Monday",
-    "tuesday",
-    "wednesday",
-    "thursday",
-    "friday",
-    "saturday",
-  ];
 
   const thTIme2 =
     dayNames[d.getDay()] +
@@ -192,28 +208,31 @@ function App() {
             >
               ข่าวสารประกาศ
             </h1>
-
-            <button
-              to=""
-              type="submit"
-              className="btn btn-success"
-              onClick={swalalert}
-              style={{
-                backgroundColor: "#02BC77",
-                width: "10rem",
-                height: "3rem",
-              }}
-            >
-              <FormOutlined
+            
+            <Link to="/news">
+              <button
+                to=""
+                type="submit"
+                className="btn btn-success"
+                // onClick={}
                 style={{
-                  marginLeft: "0rem",
-                  marginRight: "1rem",
-                  fontSize: "1.5rem",
-                  color: "#FFFFF",
+                  backgroundColor: "#02BC77",
+                  width: "10rem",
+                  height: "3rem",
                 }}
-              />
-              เพิ่มคำร้อง
-            </button>
+              >
+                <FormOutlined
+                  style={{
+                    marginLeft: "0rem",
+                    marginRight: "1rem",
+                    fontSize: "1.5rem",
+                    color: "#FFFFF",
+                  }}
+                />
+                เพิ่มคำร้อง
+              </button>
+
+            </Link>
           </div>
 
 
@@ -277,7 +296,7 @@ function App() {
                                 <div className="">
                                   <EditOutlined
                                     onClick={() => {
-                                      alert("clicked");
+                                      deleteItem(announce._id);
                                     }}
                                     style={{
                                       marginRight: "1rem",
@@ -287,7 +306,7 @@ function App() {
                                   />
                                   <DeleteFilled
                                     onClick={() => {
-                                      alert("clicked");
+                                      deleteItem(announce._id);
                                     }}
                                     style={{
                                       marginRight: "3rem",
@@ -373,7 +392,7 @@ function App() {
                                 <div className="">
                                   <EditOutlined
                                     onClick={() => {
-                                      alert("clicked");
+                                      deleteItem(announce._id);
                                     }}
                                     style={{
                                       marginRight: "1rem",
@@ -383,7 +402,7 @@ function App() {
                                   />
                                   <DeleteFilled
                                     onClick={() => {
-                                      alert("clicked");
+                                      deleteItem(announce._id);
                                     }}
                                     style={{
                                       marginRight: "3rem",
