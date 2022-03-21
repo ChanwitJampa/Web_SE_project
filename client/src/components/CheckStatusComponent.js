@@ -66,7 +66,7 @@ const CheckStatusComponent = () => {
                 <div className="rightBoxC">
                   <h1 className="textStatus">{filteredRequest.status}</h1>
 
-                  {/* <h1 className="textStatus2">รายละเอียด</h1> */}<br />
+                  <br />
                   <h1 className="textStatus2">{filteredRequest.companyName}</h1>
                   <h1 className="textStatus2">{filteredRequest.typeRequest}</h1>
                   <h1 className="textStatus2">
