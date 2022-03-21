@@ -1,17 +1,17 @@
 .container h1 {
     text-align: center;
 }
-.content-box{
-    /*padding: 40px 120px 60px 60px;*/
+.content-boxnews{
+    padding: 40px 120px 60px 60px;
     background-color: #EEEEEE;
     border-radius: 20px;
     margin: auto;
 }
-.content-box form{
+.formnews{
     background-color: #EEEEEE;
     width: 1000px;
     height: auto;
-    padding: 20px;
+    padding: 10px;
     box-sizing: content-box;
     margin: auto;
 }
@@ -29,6 +29,9 @@
 .tap-top-select-in{
     display: flex;
 }*/
-.content-box button{
+.content-boxnews button{
     background-color: #02BC77;
+    padding: 10px 20px 10px 20px ;
+    display: flex;
+    margin: auto;
 }

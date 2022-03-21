@@ -80,7 +80,7 @@ const OrganizationComponent = () => {
             <label>ที่อยู่สถานประกอบการ</label>
               <input class="form-control" id="disabledInput" type="text" onChange={""} />
             <label>เบอร์โทรศัพท์ของสถานประกอบการ/หน่วยงาน</label>
-              <input class="form-control" id="disabledInput" type="text" onChange={""} />
+              <input class="form-control" id="disabledInput" type="text"  placeholder="xxxxxxxxxx" onChange={""} />
             <label>เบอร์โทรสาร</label>
               <input class="form-control" id="disabledInput" type="text" onChange={""} />
           <button type="submit" className="btn btn-color">ยืนยัน</button> 
