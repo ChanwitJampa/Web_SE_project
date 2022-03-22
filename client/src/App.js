@@ -191,9 +191,9 @@ function App() {
               aria-label="Search"
               onChange={(e) => searchItems(e.target.value)}
             ></input>
-            <button class="btn btn-outline-success" type="submit">
+            {/* <button class="btn btn-outline-success" type="submit">
               Search
-            </button>
+            </button> */}
           </form>
         </div>
 

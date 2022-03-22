@@ -118,7 +118,6 @@ const NewsComponent=()=>{
         })
     }
 
-
     return(
         <div>
             <NavbarComponent/>

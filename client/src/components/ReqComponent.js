@@ -6,6 +6,22 @@ import { useEffect, useState } from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
+import { Link, withRouter } from "react-router-dom";
+import {
+    SmileTwoTone,
+    HeartTwoTone,
+    CheckCircleTwoTone,
+    ClockCircleOutlined,
+    NotificationOutlined,
+    PhoneOutlined,
+    MailOutlined,
+    DeleteOutlined,
+    DeleteFilled,
+    EditOutlined,
+    PlusOutlined,
+    FormOutlined,
+  } from "@ant-design/icons";
+
 
 const ReqComponent=()=>{
    
@@ -18,6 +34,8 @@ const ReqComponent=()=>{
                     <h1>คำร้อง</h1>
                 </div> 
 
+                
+
                 <table class="table">
                     <thead class="thead-dark">
                      <tr>
@@ -25,7 +43,30 @@ const ReqComponent=()=>{
                        <th scope="col">ฝึกงาน/สหกิจ</th>
                        <th scope="col">สถานะ</th>
                        <th scope="col">วันที่</th>
-                       <th scope="col"></th>
+                       <th scope="col"><Link to="/addreq">
+              <button
+                to=""
+                type="submit"
+                className="btn btn-success"
+                // onClick={}
+                style={{
+                  backgroundColor: "#02BC77",
+                  width: "10rem",
+                  height: "3rem",
+                }}
+              >
+                <FormOutlined
+                  style={{
+                    marginLeft: "0rem",
+                    marginRight: "1rem",
+                    fontSize: "1.5rem",
+                    color: "#FFFFF",
+                  }}
+                />
+                เพิ่มคำร้อง
+              </button>
+
+            </Link></th>
                     </tr>
                     </thead>
                 <tbody>
