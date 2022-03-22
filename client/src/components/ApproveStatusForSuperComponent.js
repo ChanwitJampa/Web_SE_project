@@ -26,6 +26,33 @@ const ApproveStatusForSuperComponent = () => {
       });
   };
 
+
+  const approved = (_id) => {
+  
+    console.log("-----------test-------------")
+    axios
+      .put(`http://localhost:5000/api/requests/${_id}`,{status:'อนุมัติ'})
+      .then((response) => {
+        console.log(response.status)
+        console.log(response.data)
+      })
+      .catch((err) => alert(err));
+  };
+
+  const disApproved = (_id) => {
+  
+    console.log("-----------test-------------")
+    axios
+      .put(`http://localhost:5000/api/requests/${_id}`,{status:'ไม่อนุมัติ'})
+      .then((response) => {
+        console.log(response.status)
+        console.log(response.data)
+      })
+      .catch((err) => alert(err));
+  };
+
+
+
   const inputStatus = (event)=>{
     setStatus(event.target.value)
   }
@@ -96,13 +123,12 @@ const ApproveStatusForSuperComponent = () => {
                   </div>
                   {/* onSubmit={submitForm} */}
                   <div className="buttonBoxApp">
-                    <form >
+                 
                       <input type={"text"} name="_id" value={filteredRequest._id}></input>
                       <button
-                        // onClick={inputStatus="status"}
-                        // name="status"
-                        // value={"อนุมัติ"}
-                        type="submit"
+
+                        onClick={()=>approved(filteredRequest._id)}
+                        // type="submit"
                         className="btn btn-success"
                         style={{ marginRight: "2rem" }}
                       >
@@ -111,7 +137,10 @@ const ApproveStatusForSuperComponent = () => {
                         />{" "}
                         อนุมัติ
                       </button>
+
+
                       <button
+                         onClick={()=>disApproved(filteredRequest._id)}
                         type="submit"
                         className="btn btn-outline-primary"
                         style={{
@@ -119,6 +148,7 @@ const ApproveStatusForSuperComponent = () => {
                           backgroundColor: "#B33030",
                           borderColor: "#B33030",
                           color: "#EEEEEE",
+                          
                         }}
                       >
                         <CheckOutlined
@@ -126,7 +156,7 @@ const ApproveStatusForSuperComponent = () => {
                         />{" "}
                         ไม่อนุมัติ
                       </button>
-                    </form>
+                   
                   </div>
                 </div>
               </div>
