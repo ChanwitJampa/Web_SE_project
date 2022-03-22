@@ -4,7 +4,7 @@ const version = require('nodemon/lib/version')
 const mongoose = require('mongoose')
 const Request = require('../models/requestModel')
 
-const User = required('../models/userModel')
+const User = require('../models/userModel')
 //@desc Get requests
 //@route GET /api/requests
 //@access Private
