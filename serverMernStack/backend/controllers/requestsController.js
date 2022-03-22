@@ -4,6 +4,7 @@ const version = require('nodemon/lib/version')
 const mongoose = require('mongoose')
 const Request = require('../models/requestModel')
 
+const User = required('../models/userModel')
 //@desc Get requests
 //@route GET /api/requests
 //@access Private
@@ -72,6 +73,16 @@ const setRequest = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('ใส่ accommodation ด้วย')
     }
+
+    
+    var user = await User.findById(req.params.id) || await User.find({'studentID':req.params.id})
+
+    if(!user){
+        res.status(401)
+        throw new Error('อย่าใส่ studentID มั่วมา หาไม่เจอเหวย')
+    }
+
+
     const request = await Request.create({
         companyName: req.body.companyName,
         typeRequest: req.body.typeRequest,
