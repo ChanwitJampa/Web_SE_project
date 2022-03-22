@@ -73,7 +73,7 @@ const setUser = asyncHandler(async (req, res) => {
         idCard: req.body.idCard,
         email: req.body.email,
         studentID: req.body.studentID,
-        password: encryptedPassword,
+        password: req.body.password,
    
     })
 
