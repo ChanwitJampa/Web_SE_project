@@ -96,14 +96,14 @@ const ApproveStatusForSuperComponent = () => {
                     <CheckOutlined
                         style={{ fontSize: "1rem", marginRight: "1rem"}}
                     />{" "}
-                    อณุมัติ
+                    อนุมัติ
                     </button>
                     <button type="submit" className="btn btn-outline-primary"
                     style={{ marginRight: "2rem" , backgroundColor:"#B33030", borderColor:"#B33030", color:"#EEEEEE" }}>
                     <CheckOutlined
                         style={{ fontSize: "1rem", marginRight: "1rem" }}
                     />{" "}
-                    ไม่อณุมัติ
+                    ไม่อนุมัติ
                     </button>
                 </div>
                 
