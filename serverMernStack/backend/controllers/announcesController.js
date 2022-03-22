@@ -79,9 +79,31 @@ const deleteannounce = asyncHandler(async (req, res) => {
     res.status(200).json({id:req.params.id})
 })
 
+//@desc Delete announce
+//@route DELETE /api/announces/:id
+//@access Private
+const getAnnouce = asyncHandler(async (req, res) => {
+    var request
+    if (mongoose.Types.ObjectId.isValid(req.params.id)) {
+        request = await Announce.findById(req.params.id)
+    }
+    else {
+        res.status(400)
+        throw new Error('ใส่ object id มาผิด')
+    }
+
+    if (request) {
+        res.status(200).json(request)
+    }
+    else {
+        res.status(400)
+        throw new Error(' เอา object id ไปหาแล้ว หาไม่เจออะ พยายามละ โทษหวะ')
+    }
+})
 module.exports = {
     getannounces,
     putannounce,
     setannounce,
     deleteannounce,
+    getAnnouce
 }
