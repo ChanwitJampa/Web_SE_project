@@ -10,7 +10,7 @@ const mongoose = require('mongoose')
 //@route GET /api/users
 //@access Private
 const getUsers = asyncHandler(async (req, res) => {
-    const users = await User.find().select('-__v')
+    const users = await User.find().select('+password').select('+role').select('-__v').select('-createtime')
     res.status(200).json(users)
 })
 
@@ -155,7 +155,7 @@ const getUser = asyncHandler(async (req, res) => {
     }
    
   if(!user){
-      user = await User.findOne({'studentID':req.params.id})
+      user = await User.findOne({'studentID':req.params.id}).select('+password').select('+role').select('-__v').select('-createtime')
   }
    if (user) {
        res.status(200).json(user)
