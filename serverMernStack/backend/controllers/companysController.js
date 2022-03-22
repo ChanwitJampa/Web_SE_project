@@ -16,6 +16,26 @@ const getCompanys = asyncHandler(async (req, res) => {
 //@route POST /api/Companys
 //@access Private
 const setCompany = asyncHandler(async (req, res) => {
+    if(!req.body.companyName){
+        res.status(400)
+        throw new Error('ใส่ companyName ด้วย')
+    }
+    if(!req.body.businessType){
+        res.status(400)
+        throw new Error('ใส่ businessType ด้วย')
+    }
+    if(!req.body.address){
+        res.status(400)
+        throw new Error('ใส่ address ด้วย')
+    }
+    if(!req.body.phoneNumber){
+        res.status(400)
+        throw new Error('ใส่ phoneNumber ด้วย')
+    }
+    if(!req.body.tel){
+        res.status(400)
+        throw new Error('ใส่ tel ด้วย')
+    }
     const company = await Company.create({
         companyName: req.body.companyName,
         businessType: req.body.businessType,
