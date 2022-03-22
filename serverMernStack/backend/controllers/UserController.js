@@ -151,13 +151,12 @@ const getUser = asyncHandler(async (req, res) => {
    
     var   user
     if( mongoose.Types.ObjectId.isValid(req.params.id) ) {
-        user = await User.findById(req.params.id)
+        user = await User.find({'_id':req.params.id}).select('+password').select('+role').select('-__v').select('-createtime')
     }
-   
-  if(!user){
-      user = await User.findOne({'studentID':req.params.id}).select('+password').select('+role').select('-__v').select('-createtime')
+  else{
+      user = await User.find({'studentID':req.params.id}).select('+password').select('+role').select('-__v').select('-createtime')
   }
-   if (user) {
+   if (user.length >0) {
        res.status(200).json(user)
    }
    else{
