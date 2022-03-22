@@ -82,7 +82,7 @@ const deleteannounce = asyncHandler(async (req, res) => {
 //@desc Delete announce
 //@route DELETE /api/announces/:id
 //@access Private
-const getAnnouce = asyncHandler(async (req, res) => {
+const getannounce = asyncHandler(async (req, res) => {
     var request
     if (mongoose.Types.ObjectId.isValid(req.params.id)) {
         request = await Announce.findById(req.params.id)
@@ -105,5 +105,5 @@ module.exports = {
     putannounce,
     setannounce,
     deleteannounce,
-    getAnnouce
+    getannounce
 }
