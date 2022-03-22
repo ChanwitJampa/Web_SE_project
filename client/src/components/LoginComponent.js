@@ -29,7 +29,9 @@ const LoginComponent=()=>{
                 password:""})
                 Swal.fire(
                     'เข้าสู่ระบบสำเร็จ',
-                )
+                ).then(()=>{
+                    window.location.href = "/"
+                })
         })
         .catch((error)=>{
             Swal.fire(

@@ -2,8 +2,23 @@ import {Link,withRouter} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowRightFromBracket, faBullhorn, faHome, faHospital, faMap, faPlus, faRegistered, faSyringe, faList, faUser, faPowerOff, faNewspaper, faIndustry, faBuilding, faClipboardCheck, faFileContract, faChartLine, faBuildingColumns, faCircleCheck, faEnvelopeOpen } from "@fortawesome/free-solid-svg-icons";
 //import { getUser,logout } from "../servies/authorize";
+import { getRole, getUser,logout } from "../servies/authorize";
 import './NavbarComponent.css';
+import Swal from "sweetalert2";
+
 const NavbarComponent=(props)=>{
+
+    const logOut = () => {
+
+        Swal.fire(
+            'ออกจากระบบสำเร็จ',
+        ).then(()=>{
+            window.location.href = "/login"
+        })
+
+    }
+
+
     return(
         <div>
             <div className="navbar">
@@ -18,7 +33,7 @@ const NavbarComponent=(props)=>{
 
                     </li>
                 <li>
-                    <Link to="/login" className="navbar-link"><FontAwesomeIcon icon={faPowerOff} className="navbar-icon"/><span></span></Link>
+                    <div onClick={logOut} className="navbar-link" style={{cursor:"pointer"}}><FontAwesomeIcon icon={faPowerOff} className="navbar-icon"/><span></span></div>
                 </li>
                 {/* <li>
                     <Link to="/announce" className="navbar-link"><FontAwesomeIcon icon={faBullhorn} className="navbar-icon"/>Announce</Link>
@@ -36,25 +51,28 @@ const NavbarComponent=(props)=>{
                 */}
                 </ul>
             </div>
-    <div class="sidenav">
-        {/* <div className="roleBar">
-            <FontAwesomeIcon icon={faUser} className="listIcon"/>
-            <h2 className="roleText">ROLE : NISIT </h2>
-        </div> */}
 
-        {/* <div className="space1"></div> */}
-        <div to="" className="sidenav-link2"><FontAwesomeIcon icon={faUser} className="sidenav-iconRole"/><h1 className="roleText">role : Nisit</h1></div>
-        <div to="" className="sidenav-link2"><FontAwesomeIcon icon={faUser} className="sidenav-icon2"/></div>
-        <div to="" className="sidenav-link2"><FontAwesomeIcon icon={faList} className="sidenav-icon3"/></div>
-        <Link to="/" className="sidenav-link"><FontAwesomeIcon icon={faNewspaper} className="sidenav-icon"/>ข่าวสารประกาศ</Link>
-        <Link to="/organization1" className="sidenav-link"><FontAwesomeIcon icon={faBuilding} className="sidenav-icon"/>สถานประกอบการ</Link>
-        <Link to="/req" className="sidenav-link"><FontAwesomeIcon icon={faEnvelopeOpen} className="sidenav-icon"/>คำร้องฝึกงาน</Link>
-        {/*<Link to="/organization" className="sidenav-link"><FontAwesomeIcon icon={faBuilding} className="sidenav-icon"/>สถานประกอบการ</Link>*/}
-        <Link to="/checkstatusfornisit" className="sidenav-link"><FontAwesomeIcon icon={faClipboardCheck} className="sidenav-icon"/>ตรวจสอบสถานะ forNisit</Link>
-        <Link to="/checkstatusforsuper" className="sidenav-link"><FontAwesomeIcon icon={faClipboardCheck} className="sidenav-icon"/>ตรวจสอบสถานะ forSuper</Link>
-        <Link to="/documents" className="sidenav-link"><FontAwesomeIcon icon={faFileContract} className="sidenav-icon"/>เอกสารที่เกี่ยวข้อง</Link>
-        <Link to="/result" className="sidenav-link"><FontAwesomeIcon icon={faChartLine} className="sidenav-icon"/>ผลการฝึกงาน</Link>
-    </div>
+    
+
+    
+        <div class="sidenav">
+            <div to="" className="sidenav-link2"><FontAwesomeIcon icon={faUser} className="sidenav-iconRole"/><h1 className="roleText">role : Nisit</h1></div>
+            <div to="" className="sidenav-link2"><FontAwesomeIcon icon={faUser} className="sidenav-icon2"/></div>
+            <div to="" className="sidenav-link2"><FontAwesomeIcon icon={faList} className="sidenav-icon3"/></div>
+            <Link to="/" className="sidenav-link"><FontAwesomeIcon icon={faNewspaper} className="sidenav-icon"/>ข่าวสารประกาศ</Link>
+            <Link to="/organization1" className="sidenav-link"><FontAwesomeIcon icon={faBuilding} className="sidenav-icon"/>สถานประกอบการ</Link>
+            <Link to="/req" className="sidenav-link"><FontAwesomeIcon icon={faEnvelopeOpen} className="sidenav-icon"/>คำร้องฝึกงาน</Link>
+            {/*<Link to="/organization" className="sidenav-link"><FontAwesomeIcon icon={faBuilding} className="sidenav-icon"/>สถานประกอบการ</Link>*/}
+            <Link to="/checkstatusfornisit" className="sidenav-link"><FontAwesomeIcon icon={faClipboardCheck} className="sidenav-icon"/>ตรวจสอบสถานะ forNisit</Link>
+            <Link to="/checkstatusforsuper" className="sidenav-link"><FontAwesomeIcon icon={faClipboardCheck} className="sidenav-icon"/>ตรวจสอบสถานะ forSuper</Link>
+            <Link to="/documents" className="sidenav-link"><FontAwesomeIcon icon={faFileContract} className="sidenav-icon"/>เอกสารที่เกี่ยวข้อง</Link>
+            <Link to="/result" className="sidenav-link"><FontAwesomeIcon icon={faChartLine} className="sidenav-icon"/>ผลการฝึกงาน</Link>
+            
+
+
+        </div>
+
+
     </div>
         
     );
