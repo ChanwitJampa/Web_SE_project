@@ -1,7 +1,7 @@
 
 const asyncHandler = require('express-async-handler')
 const version = require('nodemon/lib/version')
-
+const mongoose = require('mongoose')
 const Company = require('../models/companyModel')
 
 //@desc Get Companys
