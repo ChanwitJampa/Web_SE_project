@@ -16,6 +16,26 @@ const getannounces = asyncHandler(async (req, res) => {
 //@route POST /api/announces
 //@access Private
 const setannounce = asyncHandler(async (req, res) => {
+    if(!req.body.titleName){
+        res.status(400)
+        throw new Error('ใส่ titleName ด้วย')
+    }
+    if(!req.body.detail){
+        res.status(400)
+        throw new Error('ใส่ detail ด้วย')
+    }
+    if(!req.body.phoneNumber){
+        res.status(400)
+        throw new Error('ใส่ phoneNumber ด้วย')
+    }
+    if(!req.body.email){
+        res.status(400)
+        throw new Error('ใส่ email ด้วย')
+    }
+    if(!req.body.type){
+        res.status(400)
+        throw new Error('ใส่ type ด้วย')
+    }
     const announce = await Announce.create({
         titleName: req.body.titleName,
         detail: req.body.detail,

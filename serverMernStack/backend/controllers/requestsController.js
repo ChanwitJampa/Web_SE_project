@@ -16,6 +16,66 @@ const getRequests = asyncHandler(async (req, res) => {
 //@route POST /api/requests
 //@access Private
 const setRequest = asyncHandler(async (req, res) => {
+    if(!req.body.companyName){
+        res.status(400)
+        throw new Error('ใส่ companyName ด้วย')
+    }
+    if(!req.body.typeRequest){
+        res.status(400)
+        throw new Error('ใส่ typeRequest ด้วย')
+    }
+    if(!req.body.jobTitle){
+        res.status(400)
+        throw new Error('ใส่ jobTitle ด้วย')
+    }
+    if(!req.body.jobTitle){
+        res.status(400)
+        throw new Error('ใส่ email ด้วย')
+    }
+    if(!req.body.studentID){
+        res.status(400)
+        throw new Error('ใส่ studentID ด้วย')
+    }
+    if(!req.body.assistanceName){
+        res.status(400)
+        throw new Error('ใส่ assistanceName ด้วย')
+    }
+    if(!req.body.assistanceRole){
+        res.status(400)
+        throw new Error('ใส่ assistanceRole ด้วย')
+    }
+    if(!req.body.address){
+        res.status(400)
+        throw new Error('ใส่ address ด้วย')
+    }
+    if(!req.body.HRName){
+        res.status(400)
+        throw new Error('ใส่ HRName ด้วย')
+    }
+    if(!req.body.HRPhoneNumber){
+        res.status(400)
+        throw new Error('ใส่ HRPhoneNumber ด้วย')
+    }
+    if(!req.body.HREmail){
+        res.status(400)
+        throw new Error('ใส่ HREmail ด้วย')
+    }
+    if(!req.body.dateStart){
+        res.status(400)
+        throw new Error('ใส่ dateStart ด้วย')
+    }
+    if(!req.body.dateEnd){
+        res.status(400)
+        throw new Error('ใส่ dateEnd ด้วย')
+    }
+    if(!req.body.budget){
+        res.status(400)
+        throw new Error('ใส่ budget ด้วย')
+    }
+    if(!req.body.accommodation){
+        res.status(400)
+        throw new Error('ใส่ accommodation ด้วย')
+    }
     const request = await Request.create({
         companyName: req.body.companyName,
         typeRequest: req.body.typeRequest,
