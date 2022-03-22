@@ -43,6 +43,30 @@ const setUser = asyncHandler(async (req, res) => {
 
     encryptedPassword = await bcrypt.hash(password, 10)
 
+    if(!req.body.firstName){
+        res.status(400)
+        throw new Error('ใส่ firstName ด้วย')
+    }
+    if(!req.body.lastName){
+        res.status(400)
+        throw new Error('ใส่ lastName ด้วย')
+    }
+    if(!req.body.idCard){
+        res.status(400)
+        throw new Error('ใส่ idCard ด้วย')
+    }
+    if(!req.body.email){
+        res.status(400)
+        throw new Error('ใส่ email ด้วย')
+    }
+    if(!req.body.studentID){
+        res.status(400)
+        throw new Error('ใส่ studentID ด้วย')
+    }
+    if(req.body.role){
+        res.status(400)
+        throw new Error('not need add role')
+    }
     const user = await User.create({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -50,7 +74,7 @@ const setUser = asyncHandler(async (req, res) => {
         email: req.body.email,
         studentID: req.body.studentID,
         password: encryptedPassword,
-        role: req.body.role 
+   
     })
 
     //create token
