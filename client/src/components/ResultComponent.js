@@ -81,6 +81,7 @@ const ResultComponent = () => {
   return (
     <div>
       <NavbarComponent />
+
       <div className="container">
         <h1>ผลการฝึกงาน</h1>
         <div class="headd">
@@ -103,22 +104,52 @@ const ResultComponent = () => {
               คณะ วิศวกรรมศาสตร์ สาขา วิศวกรรมคอมพิวเตอร์ E29
             </span>
           </div>
+
           <div className="pak">
             <span>ภาคปกติ</span>
           </div>
+
         </div>
+
+        
         <div class="header-table">
           <span>ผลการฝึกงาน/สหกิจ</span>
         </div>
 
         <div className="result">
-          <div>
-            <span>s</span>
-          </div>
+          
           <div className="result-table">
-            <table
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">บริษัท</th>
+                <th scope="col">ตำแหน่ง</th>
+                <th scope="col">ฝึกงานหรือสหกิจ</th>
+                <th scope="col">ผลการฝึก</th>
+                <th scope="col">ช่วงเวลา</th>
+                <th scope="col">อัพโหลดรายงาน</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Bluebik</th>
+                <td>frontend developer</td>
+                <td>ฝึกงาน</td>
+                <td>ผลการฝึก</td>
+                <td>18/04/65 - 11/06/65</td>
+                <td>
+                  <div className="faArrowUpFromBracket">
+                    <FontAwesomeIcon icon={faArrowUpFromBracket} />
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+            {/* <table
               class="table table-bordered border-primary"
-              className="table"
+              className="tableRESULT"
             >
               <thead>
                 <tr className="colInfo">
@@ -142,7 +173,7 @@ const ResultComponent = () => {
                   </td>
                 </tr>
               </thead>
-            </table>
+            </table> */}
           </div>
         </div>
       </div>

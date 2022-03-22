@@ -19,6 +19,7 @@ import ReqAddComponent from "./components/ReqAddComponent";
 import CheckStatusForNisitComponent from "./components/CheckStatusForNisitComponent";
 import CheckStatusForSuperComponent from "./components/CheckStatusForSuperComponent";
 import ApproveStatusForSuperComponent from "./components/ApproveStatusForSuperComponent";
+import NewsAddComponent from "./components/NewsAddComponent";
 const MyRoute=()=>{
     return(
         <BrowserRouter>
@@ -44,6 +45,8 @@ const MyRoute=()=>{
                 <Route path="/req" exact component={ReqComponent} />
                 <Route path="/addreq" exact component={ReqAddComponent} />
                 <Route path="/appstatussuper" exact component={ApproveStatusForSuperComponent} />
+                <Route path="/addnews/:_id" exact component={NewsAddComponent} />
+                
             </Switch>
         </BrowserRouter>
     );

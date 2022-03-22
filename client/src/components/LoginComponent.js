@@ -9,22 +9,23 @@ import LOGO from "../assets/img/login_photo.png";
 
 const LoginComponent=()=>{
     const [user,setUser]=useState({
-        email:"",
+        studentID:"",
         password:""
     })
-    const {email,password}=user
+    const {studentID,password}=user
     const inputValue=name=>event=>{
         //console.log(name,"=",event.target.value)
         setUser({...user,[name]:event.target.value});
     }
+    
     const signinForm=(event)=>{
         event.preventDefault();
-        axios.post(`http://localhost:5000/api/login`,{email,password}).then(res=>{
+        axios.post(`http://localhost:5000/api/login`,{studentID,password}).then(res=>{
             console.log(res.data)
             setUser(res.data)
             console.log(user)
             setUser({...user,
-                email:"",
+                studentID:"",
                 password:""})
                 Swal.fire(
                     'เข้าสู่ระบบสำเร็จ',
@@ -33,7 +34,7 @@ const LoginComponent=()=>{
         .catch((error)=>{
             Swal.fire(
                 'เข้าสู่ระบบไม่สำเร็จ',
-                'Email or Password is wrong'
+                'StudentID or Password is wrong'
                )
         })
     }
@@ -54,7 +55,7 @@ const LoginComponent=()=>{
                             <form onSubmit={signinForm}>
                                 <div className="form-group">
                                     <label>Nontri Account</label>
-                                    <input type="text" className="form-control" placeholder="bxxxxxxxxxx" onChange={inputValue("email")}/>
+                                    <input type="text" className="form-control" placeholder="bxxxxxxxxxx" onChange={inputValue("studentID")}/>
                                 </div>
 
                                 <div className="form-group">
@@ -67,8 +68,8 @@ const LoginComponent=()=>{
                                 </p> */}
                                 
                                 <button type="submit" className="btn btn-success" >Sign in</button>
-                                <button to="" type="submit" className="btn btn-success" style={{backgroundColor:"#005334"}}>Login as Guest</button>
-                                <Link to="" type="submit" className="btn btn-success" style={{backgroundColor:"#005334",marginTop:"3rem"}}>go to app</Link>
+                                <Link to="/" ><button to="" type="submit" className="btn btn-success" style={{backgroundColor:"#005334"}}>Login as Guest</button></Link>
+                                {/* <Link to="" type="submit" className="btn btn-success" style={{backgroundColor:"#005334",marginTop:"3rem"}}>go to app</Link> */}
                                 
                             </form>
                         </div>

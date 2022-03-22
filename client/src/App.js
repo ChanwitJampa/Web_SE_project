@@ -128,13 +128,10 @@ function App() {
       }
     })
 
-    
-
-
-
-
   }
 
+
+  //EditItemWithAxios
 
   let d = new Date();
 
@@ -294,9 +291,11 @@ function App() {
                               <div className="rightBotBox">
                                 
                                 <div className="">
+                                  <Link to={`/addnews/${announce._id}`}>
+                                  
                                   <EditOutlined
                                     onClick={() => {
-                                      deleteItem(announce._id);
+                                      // deleteItem(announce._id);
                                     }}
                                     style={{
                                       marginRight: "1rem",
@@ -304,6 +303,8 @@ function App() {
                                       fontSize: "1.5rem",
                                     }}
                                   />
+
+                                </Link>
                                   <DeleteFilled
                                     onClick={() => {
                                       deleteItem(announce._id);
@@ -390,16 +391,20 @@ function App() {
                               <div className="rightBotBox">
                                 
                                 <div className="">
-                                  <EditOutlined
-                                    onClick={() => {
-                                      deleteItem(announce._id);
-                                    }}
-                                    style={{
-                                      marginRight: "1rem",
-                                      color: "#39AEA9",
-                                      fontSize: "1.5rem",
-                                    }}
-                                  />
+                                  <Link to={`/addnews/${announce._id}`}>
+                                  
+                                    <EditOutlined
+                                      onClick={() => {
+                                        // deleteItem(announce._id);
+                                      }}
+                                      style={{
+                                        marginRight: "1rem",
+                                        color: "#39AEA9",
+                                        fontSize: "1.5rem",
+                                      }}
+                                    />
+
+                                  </Link>
                                   <DeleteFilled
                                     onClick={() => {
                                       deleteItem(announce._id);
