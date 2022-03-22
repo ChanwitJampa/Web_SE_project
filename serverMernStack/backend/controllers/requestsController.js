@@ -162,6 +162,7 @@ const getRequest = asyncHandler(async (req, res) => {
     }
     else {
         res.status(404)
+        throw new Error("หาไม่เจอ")
     }
 })
 module.exports = {

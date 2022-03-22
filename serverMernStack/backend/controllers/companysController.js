@@ -77,9 +77,32 @@ const deleteCompany = asyncHandler(async (req, res) => {
     res.status(200).json({id:req.params.id})
 })
 
+
+//@desc getCompany
+//@route get /api/Companys/:id
+//@access Private
+const getCompany = asyncHandler(async (req, res) => {
+    var company
+    if (mongoose.Types.ObjectId.isValid(req.params.id)) {
+        company = await Company.findById(req.params.id)
+    }
+    else {
+        res.status(400)
+        throw new Error('ใส่ object id มาผิด')
+    }
+
+    if (company) {
+        res.status(200).json(company)
+    }
+    else {
+        res.status(400)
+        throw new Error(' เอา object id ไปหาแล้ว หาไม่เจออะ พยายามละ โทษหวะ')
+    }
+})
 module.exports = {
     getCompanys,
     putCompany,
     setCompany,
     deleteCompany,
+    getCompany
 }
