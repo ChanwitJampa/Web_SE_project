@@ -28,10 +28,6 @@ const setRequest = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('ใส่ jobTitle ด้วย')
     }
-    if(!req.body.jobTitle){
-        res.status(400)
-        throw new Error('ใส่ email ด้วย')
-    }
     if(!req.body.studentID){
         res.status(400)
         throw new Error('ใส่ studentID ด้วย')
