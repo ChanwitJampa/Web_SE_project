@@ -39,7 +39,7 @@ const CheckStatusForSuperComponent = () => {
 
   useEffect(() => {
     fetchData();
-    console.log(requests);
+    // console.log(requests);
   }, []);
 
   let Button
