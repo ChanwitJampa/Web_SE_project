@@ -41,12 +41,8 @@ const NewsComponent=()=>{
     const inputValue = (name) => (event) => {
         console.log(name, "=", event.target.value);
 
-        setState({ ...state, [name]: event.target.value });
-        
-
+        setState({ ...state, [name]: event.target.value }); 
     };
-
-
     const {companyName,
         typeRequest,
         studentID,
@@ -117,6 +113,7 @@ const NewsComponent=()=>{
                )
         })
     }
+
 
     return(
         <div>
