@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import NavbarComponent from './NavbarComponent';
 import "./OrganizationComponent1.css";
 import { Link, withRouter } from "react-router-dom";
+import { getRole, getUser,logout,getStudentID,getLastName,getFirstName } from "../servies/authorize";
+
 import axios from "axios";
 import Swal from "sweetalert2";
 import {
@@ -170,30 +172,39 @@ const OrganizationComponent1 = () => {
               สถานประกอบการ
             </h1>
             
-            <Link to="/organization">
-              <button
-                to=""
-                type="submit"
-                className="btn btn-success"
-                // onClick={}
-                style={{
-                  backgroundColor: "#02BC77",
-                  width: "15rem",
-                  height: "3rem",
-                }}
-              >
-                <FormOutlined
-                  style={{
-                    marginLeft: "0rem",
-                    marginRight: "1rem",
-                    fontSize: "1.5rem",
-                    color: "#FFFFF",
-                  }}
-                />
-                เพิ่มสถานประกอบการ
-              </button>
 
-            </Link>
+            {getRole()=='professor' &&(
+                      <div>
+                        <Link to="/organization">
+                          <button
+                            to=""
+                            type="submit"
+                            className="btn btn-success"
+                            // onClick={}
+                            style={{
+                              backgroundColor: "#02BC77",
+                              width: "15rem",
+                              height: "3rem",
+                            }}
+                          >
+                            <FormOutlined
+                              style={{
+                                marginLeft: "0rem",
+                                marginRight: "1rem",
+                                fontSize: "1.5rem",
+                                color: "#FFFFF",
+                              }}
+                            />
+                            เพิ่มสถานประกอบการ
+                          </button>
+
+                        </Link>
+                        
+                          
+                      </div> 
+                  )
+              }
+              
           </div>
 
 
@@ -249,26 +260,36 @@ const OrganizationComponent1 = () => {
                               <div className="rightBotBoxO">
                                 
                                 <div className="">
-                                  <EditOutlined
-                                    onClick={() => {
-                                      deleteItem(companies._id);
-                                    }}
-                                    style={{
-                                      marginRight: "1rem",
-                                      color: "#39AEA9",
-                                      fontSize: "1.5rem",
-                                    }}
-                                  />
-                                  <DeleteFilled
-                                    onClick={() => {
-                                      deleteItem(companies._id);
-                                    }}
-                                    style={{
-                                      marginRight: "3rem",
-                                      color: "#B33030",
-                                      fontSize: "1.5rem",
-                                    }}
-                                  />
+
+                                {getRole()=='professor' &&(
+                                        <div>
+                                          <EditOutlined
+                                            onClick={() => {
+                                              deleteItem(companies._id);
+                                            }}
+                                            style={{
+                                              marginRight: "1rem",
+                                              color: "#39AEA9",
+                                              fontSize: "1.5rem",
+                                            }}
+                                          />
+                                          <DeleteFilled
+                                            onClick={() => {
+                                              deleteItem(companies._id);
+                                            }}
+                                            style={{
+                                              marginRight: "3rem",
+                                              color: "#B33030",
+                                              fontSize: "1.5rem",
+                                            }}
+                                          />
+                                          
+                                            
+                                        </div> 
+                                    )
+                                }
+                
+
                 
                                 </div>
                 
@@ -333,26 +354,34 @@ const OrganizationComponent1 = () => {
                               <div className="rightBotBoxO">
                                 
                                 <div className="">
-                                  <EditOutlined
-                                    onClick={() => {
-                                      // deleteItem(announce._id);
-                                    }}
-                                    style={{
-                                      marginRight: "1rem",
-                                      color: "#39AEA9",
-                                      fontSize: "1.5rem",
-                                    }}
-                                  />
-                                  <DeleteFilled
-                                    onClick={() => {
-                                      deleteItem(companies._id);
-                                    }}
-                                    style={{
-                                      marginRight: "3rem",
-                                      color: "#B33030",
-                                      fontSize: "1.5rem",
-                                    }}
-                                  />
+
+                                {getRole()=='professor' &&(
+                                        <div>
+                                          <EditOutlined
+                                            onClick={() => {
+                                              // deleteItem(announce._id);
+                                            }}
+                                            style={{
+                                              marginRight: "1rem",
+                                              color: "#39AEA9",
+                                              fontSize: "1.5rem",
+                                            }}
+                                          />
+                                          <DeleteFilled
+                                            onClick={() => {
+                                              deleteItem(companies._id);
+                                            }}
+                                            style={{
+                                              marginRight: "3rem",
+                                              color: "#B33030",
+                                              fontSize: "1.5rem",
+                                            }}
+                                          />
+                                          
+                                            
+                                        </div> 
+                                    )
+                                }
                 
                                 </div>
                 

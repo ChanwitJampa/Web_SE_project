@@ -43,7 +43,9 @@ const ReqComponent=()=>{
                        <th scope="col">ฝึกงาน/สหกิจ</th>
                        <th scope="col">สถานะ</th>
                        <th scope="col">วันที่</th>
-                       <th scope="col"><Link to="/addreq">
+                       <th scope="col">
+                           
+                           <Link to="/addreq">
               <button
                 to=""
                 type="submit"
@@ -66,7 +68,9 @@ const ReqComponent=()=>{
                 เพิ่มคำร้อง
               </button>
 
-            </Link></th>
+            </Link>
+            
+            </th>
                     </tr>
                     </thead>
                 <tbody>

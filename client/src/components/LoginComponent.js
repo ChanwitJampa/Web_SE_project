@@ -6,8 +6,10 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import kuLogo2 from "../assets/ku_logo.jpg";
 import LOGO from "../assets/img/login_photo.png";
+import { authenticate } from "../servies/authorize";
 
-const LoginComponent=()=>{
+
+const LoginComponent=(props)=>{
     const [user,setUser]=useState({
         studentID:"",
         password:""
@@ -30,13 +32,18 @@ const LoginComponent=()=>{
                 Swal.fire(
                     'เข้าสู่ระบบสำเร็จ',
                 ).then(()=>{
-                    window.location.href = "/"
+                    authenticate(res,()=>props.history.push("/"))
                 })
+                // ).then(()=>{
+                //     window.location.href = "/"
+                // })
         })
-        .catch((error)=>{
+        .catch((err)=>{
             Swal.fire(
                 'เข้าสู่ระบบไม่สำเร็จ',
-                'StudentID or Password is wrong'
+                'StudentID or Password is wrong',
+                'error',
+                err.response.data.error,
                )
         })
     }

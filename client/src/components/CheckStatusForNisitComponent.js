@@ -7,6 +7,22 @@ import axios from "axios";
 import { Table, Divider } from "antd";
 // import 'antd/dist/antd.css';
 import { DownloadOutlined } from "@ant-design/icons";
+import { Link, withRouter } from "react-router-dom";
+
+import {
+  SmileTwoTone,
+  HeartTwoTone,
+  CheckCircleTwoTone,
+  ClockCircleOutlined,
+  NotificationOutlined,
+  PhoneOutlined,
+  MailOutlined,
+  DeleteOutlined,
+  DeleteFilled,
+  EditOutlined,
+  PlusOutlined,
+  FormOutlined,
+} from "@ant-design/icons";
 
 const CheckStatusForNisitComponent = () => {
   
@@ -46,6 +62,34 @@ const CheckStatusForNisitComponent = () => {
               >
                 ตรวจสอบสถานะ
               </h1>
+
+              <Link to="/addreq">
+              <button
+                to=""
+                type="submit"
+                className="btn btn-success"
+                // onClick={}
+                style={{
+                  backgroundColor: "#02BC77",
+                  width: "4rem",
+                  height: "3rem",
+                  marginLeft: "76rem",
+
+                }}
+              >
+                <FormOutlined
+                  style={{
+                    // marginLeft: "0rem",
+                    // marginRight: "1rem",
+                    fontSize: "1.5rem",
+                    color: "#FFFFF",
+                  }}
+                />
+                
+              </button>
+
+            </Link>
+
               <div className="contentBox">
                 <div className="leftBoxC">
                   <h1 className="btextStatus">สถานะ </h1>

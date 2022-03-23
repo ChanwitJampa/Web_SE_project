@@ -136,10 +136,10 @@ const ResultComponent = () => {
                 <th scope="row">Bluebik</th>
                 <td>frontend developer</td>
                 <td>ฝึกงาน</td>
-                <td>ผลการฝึก</td>
+                <td>ผ่าน</td>
                 <td>18/04/65 - 11/06/65</td>
                 <td>
-                  <div className="faArrowUpFromBracket">
+                  <div className="faArrowUpFromBracket" style={{cursor:"pointer"}}>
                     <FontAwesomeIcon icon={faArrowUpFromBracket} />
                   </div>
                 </td>

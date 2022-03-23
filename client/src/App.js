@@ -12,6 +12,7 @@ import { Link, withRouter } from "react-router-dom";
 import Swal from "sweetalert2";
 
 // import MapChart from "./MapChart";
+import { getRole, getUser,logout,getStudentID,getLastName,getFirstName } from "./servies/authorize";
 
 import BarLoader from "react-spinners/BarLoader";
 
@@ -19,6 +20,7 @@ import { Table, Header } from "semantic-ui-react";
 import { Icon } from "semantic-ui-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { virus-covid } from "@fortawesome/free-solid-svg-icons";
+
 import {
   faAdd,
   faHospital,
@@ -127,7 +129,6 @@ function App() {
           });
       }
     })
-
   }
 
 
@@ -205,31 +206,39 @@ function App() {
             >
               ข่าวสารประกาศ
             </h1>
-            
-            <Link to="/news">
-              <button
-                to=""
-                type="submit"
-                className="btn btn-success"
-                // onClick={}
-                style={{
-                  backgroundColor: "#02BC77",
-                  width: "10rem",
-                  height: "3rem",
-                }}
-              >
-                <FormOutlined
-                  style={{
-                    marginLeft: "0rem",
-                    marginRight: "1rem",
-                    fontSize: "1.5rem",
-                    color: "#FFFFF",
-                  }}
-                />
-                เพิ่มคำร้อง
-              </button>
 
-            </Link>
+            {getRole()=='professor' &&(
+                    <div>
+                      <Link to="/news">
+                        <button
+                          to=""
+                          type="submit"
+                          className="btn btn-success"
+                          // onClick={}
+                          style={{
+                            backgroundColor: "#02BC77",
+                            width: "10rem",
+                            height: "3rem",
+                          }}
+                        >
+                          <FormOutlined
+                            style={{
+                              marginLeft: "0rem",
+                              marginRight: "1rem",
+                              fontSize: "1.5rem",
+                              color: "#FFFFF",
+                            }}
+                          />
+                          เพิ่มคำร้อง
+                        </button>
+
+                      </Link>
+                        
+                        
+                    </div> 
+                )
+            }
+            
           </div>
 
 
@@ -291,30 +300,40 @@ function App() {
                               <div className="rightBotBox">
                                 
                                 <div className="">
-                                  <Link to={`/addnews/${announce._id}`}>
-                                  
-                                  <EditOutlined
-                                    onClick={() => {
-                                      // deleteItem(announce._id);
-                                    }}
-                                    style={{
-                                      marginRight: "1rem",
-                                      color: "#39AEA9",
-                                      fontSize: "1.5rem",
-                                    }}
-                                  />
 
-                                </Link>
-                                  <DeleteFilled
-                                    onClick={() => {
-                                      deleteItem(announce._id);
-                                    }}
-                                    style={{
-                                      marginRight: "3rem",
-                                      color: "#B33030",
-                                      fontSize: "1.5rem",
-                                    }}
-                                  />
+                                
+                                {getRole()=='professor' &&(
+                                        <div>
+                                          <Link to={`/addnews/${announce._id}`}>
+                                            
+                                            <EditOutlined
+                                              onClick={() => {
+                                                // deleteItem(announce._id);
+                                              }}
+                                              style={{
+                                                marginRight: "1rem",
+                                                color: "#39AEA9",
+                                                fontSize: "1.5rem",
+                                              }}
+                                            />
+        
+                                          </Link>
+                                            <DeleteFilled
+                                              onClick={() => {
+                                                deleteItem(announce._id);
+                                              }}
+                                              style={{
+                                                marginRight: "3rem",
+                                                color: "#B33030",
+                                                fontSize: "1.5rem",
+                                              }}
+                                            />
+                                          
+                                            
+                                        </div> 
+                                    )
+                                }
+                                
                 
                                 </div>
                 
@@ -391,30 +410,38 @@ function App() {
                               <div className="rightBotBox">
                                 
                                 <div className="">
-                                  <Link to={`/addnews/${announce._id}`}>
                                   
-                                    <EditOutlined
-                                      onClick={() => {
-                                        // deleteItem(announce._id);
-                                      }}
-                                      style={{
-                                        marginRight: "1rem",
-                                        color: "#39AEA9",
-                                        fontSize: "1.5rem",
-                                      }}
-                                    />
-
-                                  </Link>
-                                  <DeleteFilled
-                                    onClick={() => {
-                                      deleteItem(announce._id);
-                                    }}
-                                    style={{
-                                      marginRight: "3rem",
-                                      color: "#B33030",
-                                      fontSize: "1.5rem",
-                                    }}
-                                  />
+                                {getRole()=='professor' &&(
+                                        <div>
+                                          <Link to={`/addnews/${announce._id}`}>
+                                            
+                                            <EditOutlined
+                                              onClick={() => {
+                                                // deleteItem(announce._id);
+                                              }}
+                                              style={{
+                                                marginRight: "1rem",
+                                                color: "#39AEA9",
+                                                fontSize: "1.5rem",
+                                              }}
+                                            />
+        
+                                          </Link>
+                                            <DeleteFilled
+                                              onClick={() => {
+                                                deleteItem(announce._id);
+                                              }}
+                                              style={{
+                                                marginRight: "3rem",
+                                                color: "#B33030",
+                                                fontSize: "1.5rem",
+                                              }}
+                                            />
+                                          
+                                            
+                                        </div> 
+                                    )
+                                }
                 
                                 </div>
                 
