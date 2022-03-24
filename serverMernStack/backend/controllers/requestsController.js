@@ -108,6 +108,7 @@ const setRequest = asyncHandler(async (req, res) => {
         budget: req.body.budget,
         status: req.body.status,
         accommodation: req.body.accommodation,
+        detail: ""
     })
 
     res.status(200).json(request)
