@@ -173,7 +173,7 @@ const OrganizationComponent1 = () => {
             </h1>
             
 
-            {getRole()=='professor' &&(
+            {getRole()=='Professor' &&(
                       <div>
                         <Link to="/organization">
                           <button
@@ -261,7 +261,7 @@ const OrganizationComponent1 = () => {
                                 
                                 <div className="">
 
-                                {getRole()=='professor' &&(
+                                {getRole()=='Professor' &&(
                                         <div>
                                           <EditOutlined
                                             onClick={() => {
@@ -355,7 +355,7 @@ const OrganizationComponent1 = () => {
                                 
                                 <div className="">
 
-                                {getRole()=='professor' &&(
+                                {getRole()=='Professor' &&(
                                         <div>
                                           <EditOutlined
                                             onClick={() => {

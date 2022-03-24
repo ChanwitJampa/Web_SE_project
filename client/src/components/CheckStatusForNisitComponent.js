@@ -8,6 +8,8 @@ import { Table, Divider } from "antd";
 // import 'antd/dist/antd.css';
 import { DownloadOutlined } from "@ant-design/icons";
 import { Link, withRouter } from "react-router-dom";
+import Swal from "sweetalert2";
+
 
 import {
   SmileTwoTone,
@@ -46,18 +48,59 @@ const CheckStatusForNisitComponent = () => {
     console.log(requests);
   }, []);
 
+  const deleteItem = (id) => {
+    //askbeforeDelete
+    Swal.fire({
+      title: 'คุณต้องการลบข้อมูลนี้ใช่หรือไม่?',
+      text: "ข้อมูลที่ลบจะไม่สามารถกู้คืนได้",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'ยืนยัน',
+      cancelButtonText: 'ยกเลิก'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+          'ลบข้อมูลสำเร็จ',
+          'ข้อมูลของคุณถูกลบเรียบร้อยแล้ว',
+          'success'
+        )
+        //delete
+        axios
+          .delete(`http://localhost:5000/api/requests/${id}`)
+          .then((res) => {
+            console.log("DELETE SUCCESS");
+            console.log(res);
+            fetchData();
+            Swal.fire(
+              'Alert',
+              'บันทึกข้อมูลเรียบร้อย',
+              'success'
+          ).then(()=>{
+              window.location.href = "/"
+          })
+          })
+          .catch((err) => {
+            console.log("DELETE NOT SUCCESS");
+            console.log(err);
+          });
+      }
+    })
+  }
+
   return (
     <div>
       <NavbarComponent />
       <div className="container">
-        {requests.filter(request => request.studentID.includes('6220504888')).map((filteredRequest) => {
-          return (
-            <div>
-              <h1
+        
+      <h1
                 style={{
+                  marginTop: "7rem",
+                  marginBottom: "2rem",
                   fontWeight: "bold",
-                  marginTop: "4rem",
-                  marginLeft: "2rem",
+                  color: "#FF6464",
+                  fontSize:"2.5rem"
                 }}
               >
                 ตรวจสอบสถานะ
@@ -89,6 +132,10 @@ const CheckStatusForNisitComponent = () => {
               </button>
 
             </Link>
+        {requests.filter(request => request.studentID.includes('6220504640')).map((filteredRequest) => {
+          return (
+            <div>
+              
 
               <div className="contentBox">
                 <div className="leftBoxC">
@@ -118,7 +165,17 @@ const CheckStatusForNisitComponent = () => {
                   </h1>
                   <h1 className="textStatus2">{filteredRequest.jobTitle}</h1>
                 </div>
-
+                <DeleteFilled
+                                              onClick={() => {
+                                                deleteItem(filteredRequest._id);
+                                              }}
+                                              style={{
+                                                marginLeft: "53rem",
+                                                marginTop: "17rem",
+                                                color: "#B33030",
+                                                fontSize: "1.5rem",
+                                              }}
+                                            />
                 
               </div>
 
@@ -139,6 +196,7 @@ const CheckStatusForNisitComponent = () => {
                   />{" "}
                   หนังสือส่งตัว
                 </button>
+                
               </div>
             </div>
           );

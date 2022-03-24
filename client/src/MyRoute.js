@@ -46,6 +46,7 @@ const MyRoute=()=>{
                 <Route path="/addreq" exact component={ReqAddComponent} />
                 <Route path="/appstatussuper" exact component={ApproveStatusForSuperComponent} />
                 <Route path="/addnews/:_id" exact component={NewsAddComponent} />
+                <Route path="/appstatussuper/:_id" exact component={ApproveStatusForSuperComponent} />
                 
             </Switch>
         </BrowserRouter>

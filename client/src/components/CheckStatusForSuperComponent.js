@@ -44,7 +44,8 @@ const CheckStatusForSuperComponent = () => {
 
   let Button
   if (1) {
-    Button = <Link to="/appstatussuper"><button class="btn btn-danger">เปลี่ยนสถานะ</button></Link>;
+    // Button = <Link to="/appstatussuper"><button class="btn btn-danger">เปลี่ยนสถานะ</button></Link>;
+    Button = <Link to={`/appstatussuper/${requests._id}`}><button class="btn btn-danger">เปลี่ยนสถานะ</button></Link>;
   }else{
     Button = <button class="btn btn-primary">พิจารณา</button>;
   }
@@ -53,15 +54,25 @@ const CheckStatusForSuperComponent = () => {
     <div>
       <NavbarComponent />
       <div className="container">
-        <h1>คำร้อง</h1>
+        <h1
+        style={{
+          // marginTop: "7rem",
+          marginBottom: "2rem",
+          fontWeight: "bold",
+          color: "#FF6464",
+          fontSize:"2.5rem"
+        }}
+        
+        >คำร้อง</h1>
         <div className="">
           <table class="table table-hover">
             <thead>
             <tr className="organ-head">
-                <th scope="col">คำร้องที่ยื่นมา</th>
+                <th scope="col">เลขรหัสนิสิต</th>
+                <th scope="col">ชื่อบริษัท</th>
                 <th scope="col">ฝึกงานหรือสหกิจ</th>
                 <th scope="col">สถานะ</th>
-                <th scope="col">วันที่</th>
+                <th scope="col">วันที่ยื่นคำร้อง</th>
                 <th scope="col">สถานะ</th>
                 <th scope="col"><div className="">
                       <FontAwesomeIcon icon={faBars} />
@@ -72,12 +83,19 @@ const CheckStatusForSuperComponent = () => {
                 .map((filteredRequest) => {
                   return (
                     <tr className="organ-in">
+                      <td>{filteredRequest.studentID}</td>
                       <td>{filteredRequest.companyName}</td>
                       <td>{filteredRequest.jobTitle}</td>
                       <td>{filteredRequest.typeRequest}</td>
                       <td>{filteredRequest.createtime}</td>
                       <td>{filteredRequest.status}</td>
-                      <td>{Button}</td>
+                      {/* <td>{Button}</td> */}
+                      <td>
+                        {<Link to={`/appstatussuper/${filteredRequest._id}`}>
+                          <button class="btn btn-danger">เปลี่ยนสถานะ</button>
+                        </Link>}
+                      </td>
+                      {/* <td>{<Link to={`/appstatussuper`}><button class="btn btn-danger">เปลี่ยนสถานะ</button></Link>}</td> */}
                     </tr>
                   );
                 })}

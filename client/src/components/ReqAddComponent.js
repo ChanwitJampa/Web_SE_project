@@ -103,7 +103,7 @@ const NewsComponent=()=>{
                     
                     
                 ).then(()=>{
-                    window.location.href = "/req"
+                    window.location.href = "/checkstatusfornisit"
                 })
         })
         .catch((error)=>{
@@ -161,15 +161,15 @@ const NewsComponent=()=>{
                         </div>
                         <div className="formnews">
                         <label>เวลาเริ่มต้นฝึกงาน</label>
-                        <input type="text" className="form-control"  placeholder="เวลาเริ่มต้น" onChange={inputValue("dateStart")}/>
+                        <input type="text" className="form-control"  placeholder="ว/ด/ป เริ่มต้น" onChange={inputValue("dateStart")}/>
                         </div>
                         <div className="formnews">
                         <label>เวลาสิ้นสุดการฝึกงาน</label>
-                        <input type="text" className="form-control"  placeholder="เวลาสิ้นสุด" onChange={inputValue("dateEnd")}/>
+                        <input type="text" className="form-control"  placeholder="ว/ด/ป สิ้นสุด" onChange={inputValue("dateEnd")}/>
                         </div>
                         <div className="formnews">
                         <label>จำนวนค่าตอบเเทน</label>
-                        <input type="text" className="form-control"  placeholder="จำนวนค่าตอบเเทน" onChange={inputValue("budget")}/>
+                        <input type="text" className="form-control"  placeholder="จำนวนค่าตอบเเทน บ/วัน" onChange={inputValue("budget")}/>
                         </div>
                         <div className="formnews">
                         <label>มีที่พักให้หรือไม่</label>
