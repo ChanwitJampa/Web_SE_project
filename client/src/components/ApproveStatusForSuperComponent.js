@@ -10,54 +10,42 @@ import { Table, Divider } from "antd";
 import { DownloadOutlined, CheckOutlined } from "@ant-design/icons";
 import Swal from "sweetalert2";
 
-
 const ApproveStatusForSuperComponent = (props) => {
   const [searchAnnounce, setSearchAnnounce] = useState("");
   const [requests, setRequest] = useState([]);
-  const [status, setStatus] = useState([]);
+  const [detail, setDetail] = useState([""]);
 
   const [num, setNum] = useState(0);
 
-  
-
-  useEffect(()=>{
+  useEffect(() => {
     // axios.get(`http://localhost:5000/api/requests/${props.match.params._id}`)
-    axios.get(`http://localhost:5000/api/requests`)
-    .then(response=>{
-
-      setRequest(response.data);
-      // setNum(response.data._id);
-      console.log("response.data");
-      console.log(response.data);
-
-    })
-    .catch(err=>alert(err))
+    axios
+      .get(`http://localhost:5000/api/requests`)
+      .then((response) => {
+        setRequest(response.data);
+        // setNum(response.data._id);
+        console.log("response.data");
+        console.log(response.data);
+      })
+      .catch((err) => alert(err));
     // eslint-disable-next-line
 
-    axios.get(`http://localhost:5000/api/requests/${props.match.params._id}`)
-    // axios.get(`http://localhost:5000/api/requests/623c88e00914cfc5184cd739`)
-    // axios.get(`http://localhost:5000/api/requests/623c88f10914cfc5184cd73e`)
-    .then(response=>{
-
-      // setRequest(response);
-      setNum(response.data.studentID);
-      console.log("response.data.studentID");
-      console.log(response.data.studentID);
-
-    })
-    .catch(err=>alert(err))
+    axios
+      .get(`http://localhost:5000/api/requests/${props.match.params._id}`)
+      // axios.get(`http://localhost:5000/api/requests/623c88e00914cfc5184cd739`)
+      // axios.get(`http://localhost:5000/api/requests/623c88f10914cfc5184cd73e`)
+      .then((response) => {
+        // setRequest(response);
+        setNum(response.data.studentID);
+        console.log("response.data.studentID");
+        console.log(response.data.studentID);
+      })
+      .catch((err) => alert(err));
     // eslint-disable-next-line
-
-
-
-
 
     console.log("num");
     console.log(num);
-
-
-},[])
-
+  }, []);
 
   // const fetchData = (props) => {
   //   axios
@@ -71,54 +59,46 @@ const ApproveStatusForSuperComponent = (props) => {
   //     });
   // };
 
-  
-
   const approved = (_id) => {
-  
-    console.log("-----------test-------------")
+    console.log("-----------test-------------");
     axios
-      .put(`http://localhost:5000/api/requests/${_id}`,{status:'อนุมัติ'})
+      .put(`http://localhost:5000/api/requests/${_id}`, { status: "อนุมัติ", detail: detail })
       .then((response) => {
-        console.log(response.status)
-        console.log(response.data)
+        console.log(response.status);
+        console.log(response.data);
         Swal.fire(
-          'แก้ไขสถานะเป็น อนุมัติ สำเร็จ',
-          'กดตกลงเพื่อไปยังหน้ารวมข้อมูล',
-          
-          
-      ).then(()=>{
-          window.location.href = "/checkstatusforsuper"
-      })
-
+          "แก้ไขสถานะเป็น อนุมัติ สำเร็จ",
+          "กดตกลงเพื่อไปยังหน้ารวมข้อมูล"
+        ).then(() => {
+          window.location.href = "/checkstatusforsuper";
+        });
       })
       .catch((err) => alert(err));
   };
 
   const disApproved = (_id) => {
-  
-    console.log("-----------test-------------")
+    console.log("-----------test-------------");
     axios
-      .put(`http://localhost:5000/api/requests/${_id}`,{status:'ไม่อนุมัติ'})
-      .then((response) => {
-        console.log(response.status)
-        console.log(response.data)
-        Swal.fire(
-          'แก้ไขสถานะเป็น ไม่อนุติ สำเร็จ',
-          'กดตกลงเพื่อไปยังหน้ารวมข้อมูล',
-          
-          
-      ).then(()=>{
-          window.location.href = "/checkstatusforsuper"
+      .put(`http://localhost:5000/api/requests/${_id}`, {
+        status: "ไม่อนุมัติ", detail: detail
       })
+      .then((response) => {
+        console.log(response.status);
+        console.log(response.data);
+        Swal.fire(
+          "แก้ไขสถานะเป็น ไม่อนุมัติ สำเร็จ",
+          "กดตกลงเพื่อไปยังหน้ารวมข้อมูล"
+        ).then(() => {
+          window.location.href = "/checkstatusforsuper";
+        });
       })
       .catch((err) => alert(err));
   };
 
-
-
-  const inputStatus = (event)=>{
-    setStatus(event.target.value)
-  }
+  const inputDetail = (event) => {
+    console.log(event.target.value);
+    setDetail(event.target.value);
+  };
 
   // useEffect(() => {
   //   fetchData();
@@ -130,10 +110,8 @@ const ApproveStatusForSuperComponent = (props) => {
     <div>
       <NavbarComponent />
       <div className="container">
-
         {requests
-          .filter((request) => request.studentID
-          .includes(num))
+          .filter((request) => request.studentID.includes(num))
           .map((filteredResults) => {
             return (
               <div>
@@ -173,9 +151,7 @@ const ApproveStatusForSuperComponent = (props) => {
                     <h1 className="textStatus">{filteredResults.status}</h1>
 
                     <br />
-                    <h1 className="textStatus2">
-                      {filteredResults.studentID}
-                    </h1>
+                    <h1 className="textStatus2">{filteredResults.studentID}</h1>
                     <h1 className="textStatus2">
                       {filteredResults.companyName}
                     </h1>
@@ -192,12 +168,61 @@ const ApproveStatusForSuperComponent = (props) => {
                     </h1>
                   </div>
                   {/* onSubmit={submitForm} */}
-                  <div className="buttonBoxApp">
-                 
-                      {/* <input type={"text"} name="_id" value={filteredResults._id}></input> */}
-                      <button
+                  {/* <div className="buttonBoxApp">
+                    <button
+                      onClick={() => approved(filteredResults._id)}
+                      // type="submit"
+                      className="btn btn-success"
+                      style={{ marginRight: "2rem" }}
+                    >
+                      <CheckOutlined
+                        style={{ fontSize: "1rem", marginRight: "1rem" }}
+                      />{" "}
+                      อนุมัติ
+                    </button>
 
-                        onClick={()=>approved(filteredResults._id)}
+                    <button
+                      onClick={() => disApproved(filteredResults._id)}
+                      type="submit"
+                      className="btn btn-outline-primary"
+                      style={{
+                        marginRight: "2rem",
+                        backgroundColor: "#B33030",
+                        borderColor: "#B33030",
+                        color: "#EEEEEE",
+                      }}
+                    >
+                      <CheckOutlined
+                        style={{ fontSize: "1rem", marginRight: "1rem" }}
+                      />{" "}
+                      ไม่อนุมัติ
+                    </button>
+                  </div> */}
+                </div>
+                <div style={{ height: "100%", width: "100%" }}>
+                  <div
+                    class="form-control"
+                    style={{
+                      padding: "15px",
+                      borderRadius: "10px",
+                      borderColor: "black",
+                    }}
+                  >
+                    <from>
+                      <span style={{ fontSize: "1rem", marginRight: "10px" }}>
+                        เหตุผล
+                      </span>
+                      <input
+                        type={"text"}
+                        style={{ width: "30%" }}
+                        placeholder="กรุณาใส่เหตุผล"
+                        // value={detail}
+                        onChange={inputDetail}
+                      />
+
+                      {/* <div style={{textAlign: "right", display: "flex"}}> */}
+                      <button
+                        onClick={() => approved(filteredResults._id)}
                         // type="submit"
                         className="btn btn-success"
                         style={{ marginRight: "2rem" }}
@@ -208,9 +233,8 @@ const ApproveStatusForSuperComponent = (props) => {
                         อนุมัติ
                       </button>
 
-
                       <button
-                         onClick={()=>disApproved(filteredResults._id)}
+                        onClick={() => disApproved(filteredResults._id)}
                         type="submit"
                         className="btn btn-outline-primary"
                         style={{
@@ -218,7 +242,6 @@ const ApproveStatusForSuperComponent = (props) => {
                           backgroundColor: "#B33030",
                           borderColor: "#B33030",
                           color: "#EEEEEE",
-                          
                         }}
                       >
                         <CheckOutlined
@@ -226,7 +249,8 @@ const ApproveStatusForSuperComponent = (props) => {
                         />{" "}
                         ไม่อนุมัติ
                       </button>
-                   
+                    </from>
+                    {/* </div> */}
                   </div>
                 </div>
               </div>
