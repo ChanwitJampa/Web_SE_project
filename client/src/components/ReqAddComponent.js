@@ -162,8 +162,8 @@ const NewsComponent=()=>{
                         <input type="text" className="form-control"  placeholder="เบอร์โทรผู้ประสานงานของทางบริษัท" onChange={inputValue("HRPhoneNumber")}/>
                         </div>
                         <div className="formnews">
-                        <label>อีเมล์ผู้ประสานงาน</label>
-                        <input type="text" className="form-control"  placeholder="อีเมล์ผู้ประสานงาน" onChange={inputValue("HREmail")}/>
+                        <label>อีเมลผู้ประสานงาน</label>
+                        <input type="text" className="form-control"  placeholder="อีเมลผู้ประสานงาน" onChange={inputValue("HREmail")}/>
                         </div>
                         <div className="formnews">
                         <label>เวลาเริ่มต้นฝึกงาน</label>
