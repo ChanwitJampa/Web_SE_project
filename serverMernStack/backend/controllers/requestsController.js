@@ -76,7 +76,7 @@ const setRequest = asyncHandler(async (req, res) => {
 
 
     var user
-    if (mongoose.Types.ObjectId.isValid(body.studentID)) {
+    if (mongoose.Types.ObjectId.isValid(req.body.studentID)) {
         user = await User.find({ '_id': req.body.studentID })
     }
 
