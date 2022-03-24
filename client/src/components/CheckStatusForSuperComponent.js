@@ -17,6 +17,7 @@ const CheckStatusForSuperComponent = () => {
 
   const [filteredResults, setFilteredResults] = useState([]);
   const [searchInput, setSearchInput] = useState('');
+  
 
   const searchItems = (searchValue) => {
     setSearchInput(searchValue)
@@ -73,7 +74,7 @@ const CheckStatusForSuperComponent = () => {
       <div className="container">
         <h1
         style={{
-          // marginTop: "7rem",
+          marginTop: "5rem",
           marginBottom: "2rem",
           fontWeight: "bold",
           color: "#FF6464",
