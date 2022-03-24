@@ -38,7 +38,7 @@ const CheckStatusForSuperComponent = () => {
     var x = []
     for(var i=0;i<props.length ; i++){
       var res = await axios.get(`http://localhost:5000/api/users/${props[i].studentID}`)
-        x = [...x,{...props[i],firstName:res.data[0].firstName}]
+        x = [...x,{...props[i],firstName: `${res.data[0].firstName}`+ `${res.data[0].lastName}`}]
     }
     setRequest(x)
   }
