@@ -142,8 +142,8 @@ const CheckStatusForNisitComponent = () => {
                 <div className="leftBoxC">
                   <h1 className="btextStatus">สถานะ </h1>
 
-                  <h1 className="btextStatus2" style={{marginTop:"3rem"}}>รายละเอียด</h1>
-                  <h1 className="btextStatus2">บริษัท</h1>
+                  {/* <h1 className="btextStatus2" style={{marginTop:"3rem"}}>รายละเอียด</h1> */}
+                  <h1 className="btextStatus2" style={{marginTop:"3rem"}}>บริษัท</h1>
                   <h1 className="btextStatus2">ประเภท </h1>
                   <h1 className="btextStatus2">ระยะเวลา </h1>
                   <h1 className="btextStatus2">ตำแหน่ง </h1>
