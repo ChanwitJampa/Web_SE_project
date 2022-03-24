@@ -143,7 +143,7 @@ const ApproveStatusForSuperComponent = () => {
                   {/* onSubmit={submitForm} */}
                   <div className="buttonBoxApp">
                  
-                      <input type={"text"} name="_id" value={filteredRequest._id}></input>
+                      {/* <input type={"text"} name="_id" value={filteredRequest._id}></input> */}
                       <button
 
                         onClick={()=>approved(filteredRequest._id)}
