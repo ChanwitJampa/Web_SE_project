@@ -73,6 +73,7 @@ const setRequest = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('ใส่ accommodation ด้วย')
     }
+    
 
 
     var user
@@ -119,6 +120,7 @@ const setRequest = asyncHandler(async (req, res) => {
 //@route PUT /api/requests/:id
 //@access Private
 const putRequest = asyncHandler(async (req, res) => {
+  
     const request = await Request.findById(req.params.id)
     if (!request) {
         res.status(400)

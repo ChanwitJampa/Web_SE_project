@@ -65,6 +65,10 @@ var requestSchema = mongoose.Schema({
         type: String,  
         default:"รอการอนุมัติ"
     },
+    detail:{
+        type: String,
+        default: ""
+    },
     createtime:{
         type:String
     }
