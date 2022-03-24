@@ -85,7 +85,13 @@ const DocumentComponent = () => {
     <div>
       <NavbarComponent />
       <div className="container">
-        <h1>เอกสารที่เกี่ยวข้อง</h1>
+        <h1
+        style={{
+          marginBottom: "2rem",
+          fontWeight: "bold",
+          color: "#FF6464",
+        }}
+        >เอกสารที่เกี่ยวข้อง</h1>
         <div className="text-line">
           <i className="faFileLines">
             <FontAwesomeIcon icon={faFileLines} />

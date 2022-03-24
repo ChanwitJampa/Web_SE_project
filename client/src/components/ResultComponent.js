@@ -83,7 +83,13 @@ const ResultComponent = () => {
       <NavbarComponent />
 
       <div className="container">
-        <h1>ผลการฝึกงาน</h1>
+        <h1
+        style={{
+          marginBottom: "2rem",
+          fontWeight: "bold",
+          color: "#FF6464",
+        }}
+        >ผลการฝึกงาน</h1>
         <div class="headd">
           <span>ข้อมูลนิสิต</span>
         </div>

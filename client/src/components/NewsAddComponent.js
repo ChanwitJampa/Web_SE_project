@@ -131,7 +131,7 @@ const NewsAddComponent=(props)=>{
 
                 <form onSubmit={submitForm}>
 
-                    <div className="content-boxnews">
+                    <div className="n1">
                         <div className="formnews">
                         <label>ชื่อสถานประกอบการ</label>
                         <input type="text" id="disabledInput" className="form-control" value={titleName} onChange={inputValue("titleName")} />
@@ -154,7 +154,7 @@ const NewsAddComponent=(props)=>{
                         </div>
                         
 
-                        <button type="submit" className="btn btn-color" style={{color:"#F5F5F5",fontWeight:"bold"}}><FontAwesomeIcon icon={faAdd} style={{color:"#F5F5F5",fontWeight:"bold",marginRight:"1rem"}}/>อัพโหลดประกาศ</button> 
+                        <button type="submit" className="btn btn-color" style={{color:"#F5F5F5",fontWeight:"bold",marginLeft:"30rem",marginTop:"2rem"}}><FontAwesomeIcon icon={faAdd} style={{color:"#F5F5F5",fontWeight:"bold",marginRight:"1rem"}}/>อัพโหลดประกาศ</button> 
                     </div>
 
                 </form>

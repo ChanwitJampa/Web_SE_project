@@ -119,10 +119,16 @@ const NewsComponent=()=>{
         <div>
             <NavbarComponent/>
             <div className="container"> 
-                <h1>กรอกคำร้อง</h1>
+                <h1
+                style={{
+                    marginBottom: "2rem",
+                    fontWeight: "bold",
+                    color: "#FF6464",
+                  }}
+                  >กรอกคำร้อง</h1>
 
                 <form onSubmit={signinForm} >
-                    <div className="content-boxnews">
+                    <div className="ra1">
                         <div className="formnews">
                         <label>ชื่อสถานประกอบการ/หน่วยงาน</label>
                         <input type="text" className="form-control" placeholder="ชื่อสถานประกอบการ/หน่วยงาน" onChange={inputValue("companyName")} />
@@ -176,7 +182,7 @@ const NewsComponent=()=>{
                         <input type="text" className="form-control"  placeholder="มีที่พักหรือไม่" onChange={inputValue("accommodation")}/>
                         </div>
                         
-                        <button type="submit" className="btn btn-color" >อัพโหลดคำร้อง</button> 
+                        <button type="submit" className="btn btn-color" style={{marginLeft:"40rem",marginTop:"1rem",marginBottom:"5rem"}} >อัพโหลดคำร้อง</button> 
                     </div>
 
                 </form>
