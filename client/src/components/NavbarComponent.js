@@ -51,7 +51,7 @@ const NavbarComponent=(props)=>{
 
                     </li>
                 )}
-                
+
                 {/* <li>
                     <div onClick={logOut} className="navbar-link" style={{cursor:"pointer"}}><FontAwesomeIcon icon={faPowerOff} className="navbar-icon"/><span></span></div>
                 </li> */}
@@ -92,13 +92,13 @@ const NavbarComponent=(props)=>{
 
             {getRole() &&(
         <div class="sidenav">
-            <div to="" className="sidenav-link2"><FontAwesomeIcon icon={faUser} className="sidenav-iconRole"/><h1 className="roleText">role : {getRole()}</h1></div>
+            <div to="" className="sidenav-link2"><FontAwesomeIcon icon={faUser} className="sidenav-iconRole"/><h1 className="roleText">{getRole()}</h1></div>
             <div to="" className="sidenav-link2"><FontAwesomeIcon icon={faUser} className="sidenav-icon2"/></div>
             <div to="" className="sidenav-link2"><FontAwesomeIcon icon={faList} className="sidenav-icon3"/></div>
             <Link to="/" className="sidenav-link"><FontAwesomeIcon icon={faNewspaper} className="sidenav-icon"/>ข่าวสารประกาศ</Link>
             <Link to="/organization1" className="sidenav-link"><FontAwesomeIcon icon={faBuilding} className="sidenav-icon"/>สถานประกอบการ</Link>
             {/*<Link to="/organization" className="sidenav-link"><FontAwesomeIcon icon={faBuilding} className="sidenav-icon"/>สถานประกอบการ</Link>*/}
-            {getRole()=='student' &&(
+            {getRole()=='Student' &&(
                 <div>
                      <Link to="/checkstatusfornisit" className="sidenav-link"><FontAwesomeIcon icon={faClipboardCheck} className="sidenav-icon"/>ตรวจสอบสถานะ</Link>
                      <Link to="/documents" className="sidenav-link"><FontAwesomeIcon icon={faFileContract} className="sidenav-icon"/>เอกสารที่เกี่ยวข้อง</Link>
@@ -107,7 +107,7 @@ const NavbarComponent=(props)=>{
                     </div> 
                 )
             }
-            {getRole()=='professor' &&(
+            {getRole()=='Professor' &&(
                 <div>
                         <Link to="/checkstatusforsuper" className="sidenav-link"><FontAwesomeIcon icon={faClipboardCheck} className="sidenav-icon"/>ตรวจสอบสถานะ</Link>
                         {/* <Link to="/req" className="sidenav-link"><FontAwesomeIcon icon={faEnvelopeOpen} className="sidenav-icon"/>คำร้องฝึกงาน</Link> */}

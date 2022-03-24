@@ -207,7 +207,7 @@ function App() {
               ข่าวสารประกาศ
             </h1>
 
-            {getRole()=='professor' &&(
+            {getRole()=='Professor' &&(
                     <div>
                       <Link to="/news">
                         <button
@@ -302,7 +302,7 @@ function App() {
                                 <div className="">
 
                                 
-                                {getRole()=='professor' &&(
+                                {getRole()=='Professor' &&(
                                         <div>
                                           <Link to={`/addnews/${announce._id}`}>
                                             
@@ -411,7 +411,7 @@ function App() {
                                 
                                 <div className="">
                                   
-                                {getRole()=='professor' &&(
+                                {getRole()=='Professor' &&(
                                         <div>
                                           <Link to={`/addnews/${announce._id}`}>
                                             

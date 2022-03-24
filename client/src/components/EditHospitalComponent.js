@@ -6,6 +6,7 @@ import { faAdd } from "@fortawesome/free-solid-svg-icons";
 import Swal from "sweetalert2";
 import axios from "axios";
 const EditHospitalComponent=(props)=>{
+  
     useEffect(()=>{
         axios.get(`http://localhost:5000/api/hospitals/${props.match.params._id}`)
         .then(response=>{
@@ -15,6 +16,7 @@ const EditHospitalComponent=(props)=>{
         .catch(err=>alert(err))
         // eslint-disable-next-line
     },[])
+
     const [allprovinces, setAllProvinces] = useState([]);
     const [state,setState]=useState({
       __id:"",
@@ -26,6 +28,7 @@ const EditHospitalComponent=(props)=>{
       district:"",
       subDistrict:""
     })
+
     const {_id,hospitalName,address,latitude,longitude,province,district,subDistrict}=state
     const inputValue=name=>event=>{
         console.log(name,"=",event.target.value)
