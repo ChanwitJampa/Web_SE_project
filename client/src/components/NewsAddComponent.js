@@ -4,6 +4,24 @@ import { useEffect, useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
 
+import {
+    SmileTwoTone,
+    HeartTwoTone,
+    CheckCircleTwoTone,
+    ClockCircleOutlined,
+    NotificationOutlined,
+    PhoneOutlined,
+    MailOutlined,
+    DeleteOutlined,
+    DeleteFilled,
+    EditOutlined,
+    PlusOutlined,
+    FormOutlined,
+    CheckOutlined
+    
+  } from "@ant-design/icons";
+
+
 import axios from "axios";
 import Swal from "sweetalert2";
 const NewsAddComponent=(props)=>{
@@ -154,7 +172,7 @@ const NewsAddComponent=(props)=>{
                         </div>
                         
 
-                        <button type="submit" className="btn btn-color" style={{color:"#F5F5F5",fontWeight:"bold",marginLeft:"30rem",marginTop:"2rem"}}><FontAwesomeIcon icon={faAdd} style={{color:"#F5F5F5",fontWeight:"bold",marginRight:"1rem"}}/>อัพโหลดประกาศ</button> 
+                        <button type="submit" className="btn btn-color" style={{color:"#F5F5F5",fontWeight:"bold",marginLeft:"30rem",marginTop:"2rem"}}><CheckOutlined style={{color:"#F5F5F5",fontWeight:"bold",marginRight:"1rem"}}/>แก้ไขประกาศ</button> 
                     </div>
 
                 </form>

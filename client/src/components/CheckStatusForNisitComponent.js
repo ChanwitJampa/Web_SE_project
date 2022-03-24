@@ -163,7 +163,7 @@ const CheckStatusForNisitComponent = () => {
                   <h1 className="textStatus2" style={{marginTop:"2.7rem"}}>{filteredRequest.companyName}</h1>
                   <h1 className="textStatus2">{filteredRequest.typeRequest}</h1>
                   <h1 className="textStatus2">
-                    {filteredRequest.dateStart} - {filteredRequest.dateEnd}
+                    {filteredRequest.dateStart} ถึง {filteredRequest.dateEnd}
                   </h1>
                   <h1 className="textStatus2">{filteredRequest.jobTitle}</h1>
                   <h1 className="textStatus2">{filteredRequest.detail}</h1>

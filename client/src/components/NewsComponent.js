@@ -134,7 +134,7 @@ const NewsComponent=()=>{
                     <div className="b1">
                         <div className="formnews">
                         <label>ชื่อสถานประกอบการ</label>
-                        <input type="text" id="disabledInput" className="form-control" onChange={inputValue("titleName")} />
+                        <input type="text" id="disabledInput" className="form-control" placeholder="กรอกชื่อของสถานประกอบการ" onChange={inputValue("titleName")} />
                         </div>
                         <div className="formnews">
                         <label>รายละเอียด</label>
@@ -145,8 +145,8 @@ const NewsComponent=()=>{
                         <input type="text" id="disabledInput" className="form-control" placeholder="0xx-xxxxxxx" onChange={inputValue("phoneNumber")}/>
                         </div>
                         <div className="formnews">
-                        <label>email</label>
-                        <input type="text" id="disabledInput" className="form-control"  onChange={inputValue("email")}/>
+                        <label>E-mail</label>
+                        <input type="text" id="disabledInput" className="form-control"  placeholder="กรอก Email ของคุณ" onChange={inputValue("email")}/>
                         </div>
                         <div className="formnews">
                         <label>ประเภท(ฝึกงาน/สหกิจ)</label>
@@ -154,7 +154,7 @@ const NewsComponent=()=>{
                         </div>
                         
 
-                        <button type="submit" className="btn btn-color"  style={{marginLeft:"35rem",marginTop:"2rem"}}>อัพโหลดประกาศ</button> 
+                        <button type="submit" className="btn btn-color"  style={{marginLeft:"35rem",marginTop:"2rem",color:"#F5F5F5"}}>อัพโหลดประกาศ</button> 
                     </div>
 
                 </form>

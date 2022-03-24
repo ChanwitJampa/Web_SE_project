@@ -138,13 +138,13 @@ const ApproveStatusForSuperComponent = (props) => {
                     <h1 className="btextStatus2">ตำแหน่ง </h1>
                     <h1 className="btextStatus2">ค่าตอบเเทน / วัน </h1>
                     <h1 className="btextStatus2">มีที่พักหรือไม่ </h1>
-                    <h1 className="btextStatus2">assistanceName </h1>
-                    <h1 className="btextStatus2">assistanceRole </h1>
-                    <h1 className="btextStatus2">address </h1>
-                    <h1 className="btextStatus2">HRName </h1>
-                    <h1 className="btextStatus2">HRPhoneNumber </h1>
-                    <h1 className="btextStatus2">HREmail </h1>
-                    <h1 className="btextStatus2">assistanceRole </h1>
+                    <h1 className="btextStatus2">ชื่อของผู้ที่ยื่นคำร้องถึง </h1>
+                    <h1 className="btextStatus2">ตำแหน่งของผู้ที่ยื่นคำร้องถึง </h1>
+                    <h1 className="btextStatus2">ที่อยู่ของสถานที่ฝึกงาน </h1>
+                    <h1 className="btextStatus2">ชื่อผู้ประสานงานของทางบริษัท </h1>
+                    <h1 className="btextStatus2">เบอร์โทรผู้ประสานงานของทางบริษัท </h1>
+                    <h1 className="btextStatus2">อีเมล์ผู้ประสานงานของทางบริษัท </h1>
+                    {/* <h1 className="btextStatus2">assistanceRole </h1> */}
                   </div>
 
                   <Divider
@@ -166,7 +166,7 @@ const ApproveStatusForSuperComponent = (props) => {
                       {filteredResults.typeRequest}
                     </h1>
                     <h1 className="textStatus2">
-                      {filteredResults.dateStart} - {filteredResults.dateEnd}
+                      {filteredResults.dateStart} ถึง {filteredResults.dateEnd}
                     </h1>
                     <h1 className="textStatus2">{filteredResults.jobTitle}</h1>
                     <h1 className="textStatus2">{filteredResults.budget}</h1>
@@ -186,11 +186,14 @@ const ApproveStatusForSuperComponent = (props) => {
                       {filteredResults.HRName}
                     </h1>
                     <h1 className="textStatus2">
-                      {filteredResults.HREmail}
+                      {filteredResults.HRPhoneNumber}
                     </h1>
                     <h1 className="textStatus2">
-                      {filteredResults.assistanceRole}
+                      {filteredResults.HREmail}
                     </h1>
+                    {/* <h1 className="textStatus2">
+                      {filteredResults.assistanceRole}
+                    </h1> */}
                     
                   </div>
                   {/* onSubmit={submitForm} */}
@@ -236,11 +239,11 @@ const ApproveStatusForSuperComponent = (props) => {
                   >
                     <from>
                       <span style={{ fontSize: "1rem", marginRight: "10px" }}>
-                        เหตุผล
+                          เหตุผล
                       </span>
                       <input
                         type={"text"}
-                        style={{ width: "30%" }}
+                        style={{ width: "30%",height:"4rem" }}
                         placeholder="กรุณาใส่เหตุผล"
                         // value={detail}
                         onChange={inputDetail}
