@@ -24,6 +24,7 @@ import {
   EditOutlined,
   PlusOutlined,
   FormOutlined,
+  CheckOutlined
   
 } from "@ant-design/icons";
 
@@ -193,7 +194,8 @@ const CheckStatusForNisitComponent = () => {
                   />{" "}
                   หนังสือขอความอนุเคราะห์
                 </button>
-                <button type="submit" className="btn btn-outline-primary">
+                <button type="submit" className="btn btn-success"
+                >
                   <DownloadOutlined
                     style={{ fontSize: "1rem", marginRight: "1rem" }}
                   />{" "}
