@@ -44,25 +44,35 @@ const NavbarComponent=(props)=>{
                     </h1>
                 </div>
                 <ul>
+
+                {getRole() &&(
                     <li>
                         <h3 className="userName">{getFirstName() + "   " +  getLastName()}</h3> 
 
                     </li>
+                )}
+                
                 {/* <li>
                     <div onClick={logOut} className="navbar-link" style={{cursor:"pointer"}}><FontAwesomeIcon icon={faPowerOff} className="navbar-icon"/><span></span></div>
                 </li> */}
+
+                
                 {!getUser() &&(
                     <li>
                         <Link to="/login" className="navbar-link"><FontAwesomeIcon icon={faUser} className="navbar-icon"/>Login</Link>
                     </li>
                     )
                 }
+
                 {getUser() &&(
                     <li>
                         <a onClick={logOut} className="navbar-link" style={{cursor:"pointer"}}><FontAwesomeIcon icon={faPowerOff} className="navbar-icon"/>Logout</a>
                     </li>
                 )
                 }
+
+            
+
                 {/* <li>
                     <Link to="/announce" className="navbar-link"><FontAwesomeIcon icon={faBullhorn} className="navbar-icon"/>Announce</Link>
                 </li>

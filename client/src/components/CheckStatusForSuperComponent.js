@@ -62,6 +62,7 @@ const CheckStatusForSuperComponent = () => {
                 <th scope="col">ฝึกงานหรือสหกิจ</th>
                 <th scope="col">สถานะ</th>
                 <th scope="col">วันที่</th>
+                <th scope="col">สถานะ</th>
                 <th scope="col"><div className="">
                       <FontAwesomeIcon icon={faBars} />
                     </div></th>
@@ -75,6 +76,7 @@ const CheckStatusForSuperComponent = () => {
                       <td>{filteredRequest.jobTitle}</td>
                       <td>{filteredRequest.typeRequest}</td>
                       <td>{filteredRequest.createtime}</td>
+                      <td>{filteredRequest.status}</td>
                       <td>{Button}</td>
                     </tr>
                   );

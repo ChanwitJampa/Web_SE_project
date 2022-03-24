@@ -8,6 +8,8 @@ import axios from "axios";
 import { Table, Divider } from "antd";
 // import 'antd/dist/antd.css';
 import { DownloadOutlined, CheckOutlined } from "@ant-design/icons";
+import Swal from "sweetalert2";
+
 
 const ApproveStatusForSuperComponent = () => {
   const [searchAnnounce, setSearchAnnounce] = useState("");
@@ -35,6 +37,15 @@ const ApproveStatusForSuperComponent = () => {
       .then((response) => {
         console.log(response.status)
         console.log(response.data)
+        Swal.fire(
+          'แก้ไขสถานะเป็น อนุมัติ สำเร็จ',
+          'กดตกลงเพื่อไปยังหน้ารวมข้อมูล',
+          
+          
+      ).then(()=>{
+          window.location.href = "/checkstatusforsuper"
+      })
+
       })
       .catch((err) => alert(err));
   };
@@ -47,6 +58,14 @@ const ApproveStatusForSuperComponent = () => {
       .then((response) => {
         console.log(response.status)
         console.log(response.data)
+        Swal.fire(
+          'แก้ไขสถานะเป็น ไม่อนุติ สำเร็จ',
+          'กดตกลงเพื่อไปยังหน้ารวมข้อมูล',
+          
+          
+      ).then(()=>{
+          window.location.href = "/checkstatusforsuper"
+      })
       })
       .catch((err) => alert(err));
   };
