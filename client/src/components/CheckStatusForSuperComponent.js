@@ -32,11 +32,23 @@ const CheckStatusForSuperComponent = () => {
     }
 }
 
-  const fetchData = () => {
-    axios
+ 
+  const setfirstNameAndLastName = async (props) =>{
+    var x = []
+    for(var i=0;i<props.length ; i++){
+      var res = await axios.get(`http://localhost:5000/api/users/${props[i].studentID}`)
+        x = [...x,{...props[i],firstName:res.data[0].firstName}]
+    }
+    setRequest(x)
+  }
+
+    const fetchData = () => {
+     axios
       .get(`http://localhost:5000/api/requests`)
       .then((res) => {
-        setRequest(res.data);
+        
+        setfirstNameAndLastName(res.data);
+        //setRequest(res.data);
         console.log(res);
       })
       .catch((err) => {
@@ -46,18 +58,27 @@ const CheckStatusForSuperComponent = () => {
       axios
       .get(`http://localhost:5000/api/users`)
       .then((res) => {
+      
         setUser(res.data);
         console.log(res);
       })
       .catch((err) => {
         console.log(err);
       });
+
+     
+
   };
 
   useEffect(() => {
     fetchData();
+
+    
+    
+
     // console.log(requests);
   }, []);
+
 
   let Button
   if (1) {
@@ -66,7 +87,7 @@ const CheckStatusForSuperComponent = () => {
   }else{
     Button = <button class="btn btn-primary">พิจารณา</button>;
   }
-
+ 
   return (
     <div>
       <NavbarComponent />
@@ -113,6 +134,7 @@ const CheckStatusForSuperComponent = () => {
                 <th scope="col">สถานะ</th>
                 <th scope="col">วันที่ยื่นคำร้อง</th>
                 <th scope="col">สถานะ</th>
+                <th scope="col">ชื่อ</th>
                 <th scope="col"><div className="">
                       <FontAwesomeIcon icon={faBars} />
                     </div></th>
@@ -128,6 +150,7 @@ const CheckStatusForSuperComponent = () => {
                       <td>{filteredRequest.typeRequest}</td>
                       <td>{filteredRequest.createtime}</td>
                       <td>{filteredRequest.status}</td>
+                      <td>{filteredRequest.firstName}</td>
                       {/* <td>{Button}</td> */}
                       <td>
                         {<Link to={`/appstatussuper/${filteredRequest._id}`}>
@@ -150,6 +173,7 @@ const CheckStatusForSuperComponent = () => {
                 <th scope="col">สถานะ</th>
                 <th scope="col">วันที่ยื่นคำร้อง</th>
                 <th scope="col">สถานะ</th>
+                <th scope="col">ชื่อ</th>
                 <th scope="col"><div className="">
                       <FontAwesomeIcon icon={faBars} />
                     </div></th>
@@ -165,6 +189,7 @@ const CheckStatusForSuperComponent = () => {
                       <td>{filteredRequest.typeRequest}</td>
                       <td>{filteredRequest.createtime}</td>
                       <td>{filteredRequest.status}</td>
+                      <td>{filteredRequest.firstName}</td>
                       {/* <td>{Button}</td> */}
                       <td>
                         {<Link to={`/appstatussuper/${filteredRequest._id}`}>
@@ -187,7 +212,9 @@ const CheckStatusForSuperComponent = () => {
 
 
   );
+ 
 };
+
 export default CheckStatusForSuperComponent;
 
 {
