@@ -1,3 +1,10 @@
+.container {
+    width: 100rem;
+    height: 50rem;
+    padding: 100px 20px 10px 20px;
+    background-color: #ffffff;
+}
+
 .buttonBoxApp{
     display: flex;
     justify-content: center;
@@ -9,6 +16,20 @@
     /* margin-right: -29rem; */
     margin-top: 7rem;
     
+}
+
+.contentBoxS{
+    height: 35rem;
+    /* background-color: whitesmoke; */
+    /* margin-top: 2rem; */
+    display: flex;
+    flex-direction: row;
+    border-radius: 0.5rem;
+    border-width: 0.1rem;
+    border-style: solid;
+    border-color: black;
+    background-color: #ffffff;
+
 }
 
 .leftBoxCApp{

@@ -141,14 +141,14 @@ const ApproveStatusForSuperComponent = (props) => {
                   style={{
                     fontSize: "2rem",
                     fontWeight: "bold",
-                    marginTop: "7rem",
+                    marginTop: "5rem",
                     marginLeft: "2rem",
                     marginBottom: "5rem",
                   }}
                 >
                   ทำการอนุมัติคำร้องของนิสิตนักศึกษา
                 </h1>
-                <div className="contentBox">
+                <div className="contentBoxS">
                   <div className="leftBoxCApp">
                     <h1 className="btextStatus">สถานะของคำร้อง</h1>
 
@@ -160,6 +160,13 @@ const ApproveStatusForSuperComponent = (props) => {
                     <h1 className="btextStatus2">ตำแหน่ง </h1>
                     <h1 className="btextStatus2">ค่าตอบเเทน / วัน </h1>
                     <h1 className="btextStatus2">มีที่พักหรือไม่ </h1>
+                    <h1 className="btextStatus2">assistanceName </h1>
+                    <h1 className="btextStatus2">assistanceRole </h1>
+                    <h1 className="btextStatus2">address </h1>
+                    <h1 className="btextStatus2">HRName </h1>
+                    <h1 className="btextStatus2">HRPhoneNumber </h1>
+                    <h1 className="btextStatus2">HREmail </h1>
+                    <h1 className="btextStatus2">assistanceRole </h1>
                   </div>
 
                   <Divider
@@ -190,6 +197,25 @@ const ApproveStatusForSuperComponent = (props) => {
                     <h1 className="textStatus2">
                       {filteredResults.accommodation}
                     </h1>
+                    <h1 className="textStatus2">
+                      {filteredResults.assistanceName}
+                    </h1>
+                    <h1 className="textStatus2">
+                      {filteredResults.assistanceRole}
+                    </h1>
+                    <h1 className="textStatus2">
+                      {filteredResults.address}
+                    </h1>
+                    <h1 className="textStatus2">
+                      {filteredResults.HRName}
+                    </h1>
+                    <h1 className="textStatus2">
+                      {filteredResults.HREmail}
+                    </h1>
+                    <h1 className="textStatus2">
+                      {filteredResults.assistanceRole}
+                    </h1>
+                    
                   </div>
                   {/* onSubmit={submitForm} */}
                   <div className="buttonBoxApp">
@@ -233,10 +259,19 @@ const ApproveStatusForSuperComponent = (props) => {
             );
           })}
 
+
+
+          
+
         {/* <button type="submit" className="btn btn-color">Download หนังสือขอความอนุเคราะห์</button> 
             <button2 type="submit" className="btn btn-color">Download หนังสือส่งตัว</button2>  */}
       </div>
     </div>
+
+
+
+
+
   );
 };
 export default ApproveStatusForSuperComponent;

@@ -15,6 +15,23 @@ const CheckStatusForSuperComponent = () => {
   const [requests, setRequest] = useState([]);
   const [users, setUser] = useState([]);
 
+  const [filteredResults, setFilteredResults] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
+
+  const searchItems = (searchValue) => {
+    setSearchInput(searchValue)
+    if (searchInput !== '') {
+        const filteredData = requests.filter((item) => {
+            return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase())
+        })
+        setFilteredResults(filteredData)
+        console.log(filteredData);
+    }
+    else{
+        setFilteredResults(requests)
+    }
+}
+
   const fetchData = () => {
     axios
       .get(`http://localhost:5000/api/requests`)
@@ -64,8 +81,67 @@ const CheckStatusForSuperComponent = () => {
         }}
         
         >คำร้อง</h1>
+
         <div className="">
-          <table class="table table-hover">
+
+        <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search.."
+              aria-label="Search"
+              style={{
+                // marginTop: "7rem",
+                marginBottom: "2rem",
+                marginLeft: "50rem",
+                height:"3rem",
+                width:"30rem",
+                
+              }}
+
+              onChange={(e) => searchItems(e.target.value)}
+            ></input>
+
+
+
+          {searchInput.length > 1 ? (
+            <table class="table table-hover">
+            <thead>
+            <tr className="organ-head">
+                <th scope="col">เลขรหัสนิสิต</th>
+                <th scope="col">ชื่อบริษัท</th>
+                <th scope="col">ฝึกงานหรือสหกิจ</th>
+                <th scope="col">สถานะ</th>
+                <th scope="col">วันที่ยื่นคำร้อง</th>
+                <th scope="col">สถานะ</th>
+                <th scope="col"><div className="">
+                      <FontAwesomeIcon icon={faBars} />
+                    </div></th>
+              </tr>
+              {filteredResults
+                .filter((request) => request.studentID.includes(""))
+                .map((filteredRequest) => {
+                  return (
+                    <tr className="organ-in">
+                      <td>{filteredRequest.studentID}</td>
+                      <td>{filteredRequest.companyName}</td>
+                      <td>{filteredRequest.jobTitle}</td>
+                      <td>{filteredRequest.typeRequest}</td>
+                      <td>{filteredRequest.createtime}</td>
+                      <td>{filteredRequest.status}</td>
+                      {/* <td>{Button}</td> */}
+                      <td>
+                        {<Link to={`/appstatussuper/${filteredRequest._id}`}>
+                          <button class="btn btn-danger">เปลี่ยนสถานะ</button>
+                        </Link>}
+                      </td>
+                      {/* <td>{<Link to={`/appstatussuper`}><button class="btn btn-danger">เปลี่ยนสถานะ</button></Link>}</td> */}
+                    </tr>
+                  );
+                })}
+            </thead>
+          </table>
+
+          ) : ( <table class="table table-hover">
             <thead>
             <tr className="organ-head">
                 <th scope="col">เลขรหัสนิสิต</th>
@@ -100,10 +176,16 @@ const CheckStatusForSuperComponent = () => {
                   );
                 })}
             </thead>
-          </table>
+          </table>)}
+
+
+
+
         </div>
       </div>
     </div>
+
+
   );
 };
 export default CheckStatusForSuperComponent;
