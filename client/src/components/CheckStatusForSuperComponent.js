@@ -99,7 +99,7 @@ const CheckStatusForSuperComponent = () => {
           marginBottom: "2rem",
           fontWeight: "bold",
           color: "#FF6464",
-          fontSize:"2.5rem"
+          fontSize:"4rem"
         }}
         
         >คำร้อง</h1>
