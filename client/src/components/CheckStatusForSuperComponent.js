@@ -38,7 +38,7 @@ const CheckStatusForSuperComponent = () => {
     var x = []
     for(var i=0;i<props.length ; i++){
       var res = await axios.get(`http://localhost:5000/api/users/${props[i].studentID}`)
-        x = [...x,{...props[i],firstName: `${res.data[0].firstName}`+ `${res.data[0].lastName}`}]
+        x = [...x,{...props[i],firstName: `${res.data[0].firstName}`+ " "+ `${res.data[0].lastName}`}]
     }
     setRequest(x)
   }
@@ -130,12 +130,12 @@ const CheckStatusForSuperComponent = () => {
             <thead>
             <tr className="organ-head">
                 <th scope="col">เลขรหัสนิสิต</th>
+                <th scope="col">ชื่อ</th>
                 <th scope="col">ชื่อบริษัท</th>
                 <th scope="col">ชื่อตำแหน่ง</th>
                 <th scope="col">ฝึกงานหรือสหกิจ</th>
                 <th scope="col">วันที่ยื่นคำร้อง</th>
                 <th scope="col">สถานะ</th>
-                <th scope="col">ชื่อ</th>
                 <th scope="col"><div className="">
                       <FontAwesomeIcon icon={faBars} />
                     </div></th>
@@ -146,12 +146,12 @@ const CheckStatusForSuperComponent = () => {
                   return (
                     <tr className="organ-in">
                       <td>{filteredRequest.studentID}</td>
+                      <td>{filteredRequest.firstName}</td>
                       <td>{filteredRequest.companyName}</td>
                       <td>{filteredRequest.jobTitle}</td>
                       <td>{filteredRequest.typeRequest}</td>
                       <td>{filteredRequest.createtime}</td>
                       <td>{filteredRequest.status}</td>
-                      <td>{filteredRequest.firstName}</td>
                       {/* <td>{Button}</td> */}
                       <td>
                         {<Link to={`/appstatussuper/${filteredRequest._id}`}>
@@ -169,12 +169,12 @@ const CheckStatusForSuperComponent = () => {
             <thead>
             <tr className="organ-head">
                 <th scope="col">เลขรหัสนิสิต</th>
+                <th scope="col">ชื่อ</th>
                 <th scope="col">ชื่อบริษัท</th>
                 <th scope="col">ชื่อตำแหน่ง</th>
                 <th scope="col">ฝึกงานหรือสหกิจ</th>
                 <th scope="col">วันที่ยื่นคำร้อง</th>
                 <th scope="col">สถานะ</th>
-                <th scope="col">ชื่อ</th>
                 <th scope="col"><div className="">
                       <FontAwesomeIcon icon={faBars} />
                     </div></th>
@@ -185,12 +185,12 @@ const CheckStatusForSuperComponent = () => {
                   return (
                     <tr className="organ-in">
                       <td>{filteredRequest.studentID}</td>
+                      <td>{filteredRequest.firstName}</td>
                       <td>{filteredRequest.companyName}</td>
                       <td>{filteredRequest.jobTitle}</td>
                       <td>{filteredRequest.typeRequest}</td>
                       <td>{filteredRequest.createtime}</td>
                       <td>{filteredRequest.status}</td>
-                      <td>{filteredRequest.firstName}</td>
                       {/* <td>{Button}</td> */}
                       <td>
                         {<Link to={`/appstatussuper/${filteredRequest._id}`}>
