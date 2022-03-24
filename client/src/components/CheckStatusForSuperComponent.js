@@ -17,6 +17,7 @@ const CheckStatusForSuperComponent = () => {
 
   const [filteredResults, setFilteredResults] = useState([]);
   const [searchInput, setSearchInput] = useState('');
+  
 
   const searchItems = (searchValue) => {
     setSearchInput(searchValue)
@@ -94,7 +95,7 @@ const CheckStatusForSuperComponent = () => {
       <div className="container">
         <h1
         style={{
-          // marginTop: "7rem",
+          marginTop: "5rem",
           marginBottom: "2rem",
           fontWeight: "bold",
           color: "#FF6464",
@@ -130,8 +131,8 @@ const CheckStatusForSuperComponent = () => {
             <tr className="organ-head">
                 <th scope="col">เลขรหัสนิสิต</th>
                 <th scope="col">ชื่อบริษัท</th>
+                <th scope="col">ชื่อตำแหน่ง</th>
                 <th scope="col">ฝึกงานหรือสหกิจ</th>
-                <th scope="col">สถานะ</th>
                 <th scope="col">วันที่ยื่นคำร้อง</th>
                 <th scope="col">สถานะ</th>
                 <th scope="col">ชื่อ</th>
@@ -169,8 +170,8 @@ const CheckStatusForSuperComponent = () => {
             <tr className="organ-head">
                 <th scope="col">เลขรหัสนิสิต</th>
                 <th scope="col">ชื่อบริษัท</th>
+                <th scope="col">ชื่อตำแหน่ง</th>
                 <th scope="col">ฝึกงานหรือสหกิจ</th>
-                <th scope="col">สถานะ</th>
                 <th scope="col">วันที่ยื่นคำร้อง</th>
                 <th scope="col">สถานะ</th>
                 <th scope="col">ชื่อ</th>

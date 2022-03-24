@@ -83,7 +83,13 @@ const ResultComponent = () => {
       <NavbarComponent />
 
       <div className="container">
-        <h1>ผลการฝึกงาน</h1>
+        <h1
+        style={{
+          marginBottom: "2rem",
+          fontWeight: "bold",
+          color: "#FF6464",
+        }}
+        >ผลการฝึกงาน</h1>
         <div class="headd">
           <span>ข้อมูลนิสิต</span>
         </div>
@@ -134,10 +140,10 @@ const ResultComponent = () => {
             <tbody>
               <tr>
                 <th scope="row">Bluebik</th>
-                <td>frontend developer</td>
+                <td>Frontend Developer</td>
                 <td>ฝึกงาน</td>
                 <td>ผ่าน</td>
-                <td>18/04/65 - 11/06/65</td>
+                <td>18/04/65 - 18/06/66</td>
                 <td>
                   <div className="faArrowUpFromBracket" style={{cursor:"pointer"}}>
                     <FontAwesomeIcon icon={faArrowUpFromBracket} />

@@ -131,7 +131,7 @@ const NewsComponent=()=>{
 
                 <form onSubmit={signinForm}>
 
-                    <div className="content-boxnews">
+                    <div className="b1">
                         <div className="formnews">
                         <label>ชื่อสถานประกอบการ</label>
                         <input type="text" id="disabledInput" className="form-control" onChange={inputValue("titleName")} />
@@ -154,7 +154,7 @@ const NewsComponent=()=>{
                         </div>
                         
 
-                        <button type="submit" className="btn btn-color" >อัพโหลดประกาศ</button> 
+                        <button type="submit" className="btn btn-color"  style={{marginLeft:"35rem",marginTop:"2rem"}}>อัพโหลดประกาศ</button> 
                     </div>
 
                 </form>

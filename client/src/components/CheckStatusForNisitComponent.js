@@ -24,6 +24,7 @@ import {
   EditOutlined,
   PlusOutlined,
   FormOutlined,
+  
 } from "@ant-design/icons";
 
 const CheckStatusForNisitComponent = () => {
@@ -120,7 +121,7 @@ const CheckStatusForNisitComponent = () => {
 
                 }}
               >
-                <FormOutlined
+                <PlusOutlined
                   style={{
                     // marginLeft: "0rem",
                     // marginRight: "1rem",
@@ -141,11 +142,12 @@ const CheckStatusForNisitComponent = () => {
                 <div className="leftBoxC">
                   <h1 className="btextStatus">สถานะ </h1>
 
-                  <h1 className="btextStatus2">รายละเอียด</h1>
-                  <h1 className="btextStatus2">บริษัท</h1>
+                  {/* <h1 className="btextStatus2" style={{marginTop:"3rem"}}>รายละเอียด</h1> */}
+                  <h1 className="btextStatus2" style={{marginTop:"3rem"}}>บริษัท</h1>
                   <h1 className="btextStatus2">ประเภท </h1>
                   <h1 className="btextStatus2">ระยะเวลา </h1>
                   <h1 className="btextStatus2">ตำแหน่ง </h1>
+                  <h1 className="btextStatus2">เหตุผล </h1>
                 </div>
 
                 <Divider
@@ -157,13 +159,14 @@ const CheckStatusForNisitComponent = () => {
                 <div className="rightBoxC">
                   <h1 className="textStatus">{filteredRequest.status}</h1>
 
-                  <br />
-                  <h1 className="textStatus2">{filteredRequest.companyName}</h1>
+                  
+                  <h1 className="textStatus2" style={{marginTop:"2.7rem"}}>{filteredRequest.companyName}</h1>
                   <h1 className="textStatus2">{filteredRequest.typeRequest}</h1>
                   <h1 className="textStatus2">
                     {filteredRequest.dateStart} - {filteredRequest.dateEnd}
                   </h1>
                   <h1 className="textStatus2">{filteredRequest.jobTitle}</h1>
+                  <h1 className="textStatus2">{filteredRequest.detail}</h1>
                 </div>
                 <DeleteFilled
                                               onClick={() => {
