@@ -123,7 +123,7 @@ const OrganizationComponent = () => {
       <NavbarComponent />
       <div className="container">
         <h1>กรอกข้อมูลสถานประกอบการ</h1>
-        <div className="content-box">
+        <div className="c1">
 
         <form onSubmit={signinForm}>
 
@@ -140,7 +140,7 @@ const OrganizationComponent = () => {
             <label>เบอร์โทรสาร</label>
               <input class="form-control" id="disabledInput" type="text" placeholder="xxxx-xxxxxxx" onChange={inputValue("tel")} />
 
-            <button type="submit" className="btn btn-color">ยืนยัน</button> 
+            <button type="submit" className="btn btn-color" style={{marginLeft:"30rem",marginTop:"2rem"}}>ยืนยัน</button> 
           </div>
          </form> 
 

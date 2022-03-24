@@ -110,8 +110,8 @@ const CheckStatusForSuperComponent = () => {
             <tr className="organ-head">
                 <th scope="col">เลขรหัสนิสิต</th>
                 <th scope="col">ชื่อบริษัท</th>
+                <th scope="col">ชื่อตำแหน่ง</th>
                 <th scope="col">ฝึกงานหรือสหกิจ</th>
-                <th scope="col">สถานะ</th>
                 <th scope="col">วันที่ยื่นคำร้อง</th>
                 <th scope="col">สถานะ</th>
                 <th scope="col"><div className="">
@@ -147,8 +147,8 @@ const CheckStatusForSuperComponent = () => {
             <tr className="organ-head">
                 <th scope="col">เลขรหัสนิสิต</th>
                 <th scope="col">ชื่อบริษัท</th>
+                <th scope="col">ชื่อตำแหน่ง</th>
                 <th scope="col">ฝึกงานหรือสหกิจ</th>
-                <th scope="col">สถานะ</th>
                 <th scope="col">วันที่ยื่นคำร้อง</th>
                 <th scope="col">สถานะ</th>
                 <th scope="col"><div className="">
