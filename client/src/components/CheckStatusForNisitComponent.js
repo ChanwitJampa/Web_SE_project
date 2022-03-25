@@ -184,16 +184,25 @@ const CheckStatusForNisitComponent = () => {
               </div>
 
               <div className="buttonBox">
-                <button
-                  type="submit"
-                  className="btn btn-success"
-                  style={{ marginRight: "2rem" }}
+                
+                <Link 
+                    to="/form_internship2565.pdf"
+                    target="_blank"
+                    download
                 >
-                  <DownloadOutlined
-                    style={{ fontSize: "1rem", marginRight: "1rem" }}
-                  />{" "}
-                  หนังสือขอความอนุเคราะห์
-                </button>
+                  <button
+                    type="submit"
+                    className="btn btn-success"
+                    style={{ marginRight: "2rem" }}
+                    download
+                    >
+                    <DownloadOutlined
+                      style={{ fontSize: "1rem", marginRight: "1rem" }}
+                      />{" "}
+                    ใบคำร้อง
+                  </button>
+                </Link>
+
                 <button type="submit" className="btn btn-success"
                 >
                   <DownloadOutlined
